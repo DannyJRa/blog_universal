@@ -28,17 +28,23 @@ paginate = 10
     url  = "/blog/"
     weight = 2
 
-[[menu.main]]
-    identifier = "faq"
-    name = "FAQ"
-    url  = "/faq/"
-    weight = 3
+#[[menu.main]]
+#    identifier = "faq"
+#    name = "FAQ"
+#    url  = "/faq/"
+#    weight = 3
 
 [[menu.main]]
     identifier = "contact"
     name = "Contact"
     url  = "/contact/"
     weight = 4
+    
+#Save in static folder any file, will be copied to public folder
+#[[menu.main]]
+#  name = "Test"
+#  url = "/test/"
+#  weight = 99
 
 # Top bar social links menu
 
@@ -63,14 +69,14 @@ paginate = 10
 [[menu.topbar]]
     weight = 4
     name = "Email"
-    url = "mailto:your@email.com"
+    url = "mailto:danny.rasch@outlook.com"
     pre = "<i class='fa fa-2x fa-envelope'></i>"
 
 [params]
     viewMorePostLink = "/blog/"
-    author = "DevCows"
-    defaultKeywords = ["devows", "hugo", "go"]
-    defaultDescription = "Site template made by devcows using hugo"
+    author = "DannyJRa"
+    defaultKeywords = ["dannyjra", "hugo", "go"]
+    defaultDescription = "Uuuups"
 
     # Twitter
     twitter = "GoHugoIO"
@@ -95,11 +101,11 @@ paginate = 10
     # - you're done. Happy mailing!
     #
     # Enable the contact form by entering your Formspree.io email
-    email = "your@email.com"
+    email = "danny.rasch@outlook.com"
     contact_form_ajax = false
 
     about_us = "<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>"
-    copyright = "Copyright (c) 2015 - 2016, YourCompany; all rights reserved."
+    copyright = "Copyright (c) 2019, DannyJRa; all rights reserved."
 
     # Format dates with Go's time formatting
     date_format = "January 2, 2006"
@@ -112,7 +118,7 @@ paginate = 10
         <br>45Y 73J
         <br>England
         <br>
-        <strong>Great Britain</strong>
+        <strong>Switzerland</strong>
       </p>
       """
     latitude = "-12.043333"
@@ -124,7 +130,7 @@ paginate = 10
 # Enable or disable top bar with social icons
 [params.topbar]
     enable = true
-    text = """<p class="hidden-sm hidden-xs">Contact us on +420 777 555 333 or hello@universal.com.</p>
+    text = """<p class="hidden-sm hidden-xs">Contact me via info@dannyrasch.com.</p>
       <p class="hidden-md hidden-lg"><a href="#" data-animate-hover="pulse"><i class="fa fa-phone"></i></a>
       <a href="#" data-animate-hover="pulse"><i class="fa fa-envelope"></i></a>
       </p>
@@ -174,5 +180,5 @@ paginate = 10
 
 [params.recent_posts]
     enable = true
-    title = "From our blog"
+    title = "From my blog"
     subtitle = "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo."

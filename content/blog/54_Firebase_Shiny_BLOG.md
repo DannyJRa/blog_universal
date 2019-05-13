@@ -8,7 +8,7 @@ categories:
 tags:
   - Shiny
 hidden: false
-banner: "img/banners/Shiny_Firebase_BLOG.gif"
+banner: "img/banners/54_Firebase_Shiny_BLOG.gif"
 share: false
 output:
   html_document:

@@ -8,11 +8,14 @@ categories:
 tags:
   - Engineering
 hidden: false
-banner: "img/banners/pipenv_BLOG.gif"
+banner: "img/banners/19_pipenv_BLOG.gif"
 share: false
 output:
   html_document:
     keep_md: yes
+    includes:
+      before_body: header.html
+      after_body: footer.html
     theme: cerulean
     highlight: tango
     code_folding: show
@@ -28,7 +31,6 @@ always_allow_html: yes
 
 Apache NiFi supports powerful and scalable directed graphs of data routing, transformation, and system mediation logic.
 
-<!--more-->
 
 
 
@@ -36,8 +38,7 @@ Apache NiFi supports powerful and scalable directed graphs of data routing, tran
 
 
 
-
-
+<a href=""><img width="149" height="149" src="https://github.blog/wp-content/uploads/2008/12/forkme_right_red_aa0000.png?resize=149%2C149" class="attachment-full size-full" alt="Fork me on GitHub" data-recalc-dims="1"></a>
 
 
 
