@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Engineering on Universal</title>
+    <link>/tags/engineering/</link>
+    <description>Recent content in Engineering on Universal</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 27 Apr 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/engineering/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>VS-Code as a Server</title>
+      <link>/blog/2019/04/27/70_vscode_blog/</link>
+      <pubDate>Sat, 27 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/2019/04/27/70_vscode_blog/</guid>
+      <description>&lt;p&gt;Code on your Chromebook, tablet, and laptop with a consistent dev environment. If you have a Windows or Mac workstation, more easily develop for Linux. Take advantage of large cloud servers to speed up tests, compilations, downloads, and more.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Pipenv</title>
+      <link>/blog/2019/03/25/19_docker_nifi_blog/</link>
+      <pubDate>Mon, 25 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/2019/03/25/19_docker_nifi_blog/</guid>
+      <description>&lt;p&gt;Apache NiFi supports powerful and scalable directed graphs of data routing, transformation, and system mediation logic.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

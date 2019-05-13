@@ -1,0 +1,10 @@
+---
+title: test
+author: danny
+date: '2019-05-13'
+slug: test
+categories:
+  - DataScience
+tags:
+  - Azure
+---

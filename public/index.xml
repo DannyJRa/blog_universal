@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Universal</title>
+    <link>/</link>
+    <description>Recent content on Universal</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 09 May 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Installing Nginx Server</title>
+      <link>/blog/2019/05/09/72_nginx_blog/</link>
+      <pubDate>Thu, 09 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/2019/05/09/72_nginx_blog/</guid>
+      <description>Installing Nginx Server How To Install Nginx on Ubuntu 18.04[^1] Introduction Nginx is one of the most popular web servers in the world and is responsible for hosting some of the largest and highest-traffic sites on the internet. It is more resource-friendly than Apache in most cases and can be used as a web server or reverse proxy.
+Installing Nginx Install on Ubuntu 18.04 with &amp;hellip;
+sudo apt install nginx  FIrewall (optional) After accepting the procedure, apt will install Nginx and any required dependencies to your server.</description>
+    </item>
+    
+    <item>
+      <title>VS-Code as a Server</title>
+      <link>/blog/2019/04/27/70_vscode_blog/</link>
+      <pubDate>Sat, 27 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/2019/04/27/70_vscode_blog/</guid>
+      <description>&lt;p&gt;Code on your Chromebook, tablet, and laptop with a consistent dev environment. If you have a Windows or Mac workstation, more easily develop for Linux. Take advantage of large cloud servers to speed up tests, compilations, downloads, and more.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>GCP - Cloud Scheduler</title>
+      <link>/blog/2019/04/14/63_cloud_scheduler_blog/</link>
+      <pubDate>Sun, 14 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/2019/04/14/63_cloud_scheduler_blog/</guid>
+      <description>&lt;p&gt;Add summary desdcription here&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Pipenv</title>
+      <link>/blog/2019/03/25/19_docker_nifi_blog/</link>
+      <pubDate>Mon, 25 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/2019/03/25/19_docker_nifi_blog/</guid>
+      <description>&lt;p&gt;Apache NiFi supports powerful and scalable directed graphs of data routing, transformation, and system mediation logic.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Firebase Auth - Shiny</title>
+      <link>/blog/2019/02/14/54_firebase_shiny_blog/</link>
+      <pubDate>Thu, 14 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/2019/02/14/54_firebase_shiny_blog/</guid>
+      <description>&lt;p&gt;Shiny App with Google Firebase authentification.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Docker PostGreSQL</title>
+      <link>/blog/2019/01/15/15_docker_postgresql_blog/</link>
+      <pubDate>Tue, 15 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/2019/01/15/15_docker_postgresql_blog/</guid>
+      <description>&lt;p&gt;The reticulate package provides a comprehensive set of tools for interoperability between Python and R.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>ML with Caret</title>
+      <link>/blog/2019/01/11/01_blog_caret_tut_blog/</link>
+      <pubDate>Fri, 11 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/2019/01/11/01_blog_caret_tut_blog/</guid>
+      <description>&lt;p&gt;Add summary desdcription of blog&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Network Analysis</title>
+      <link>/blog/2019/01/11/06_blog/</link>
+      <pubDate>Fri, 11 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/2019/01/11/06_blog/</guid>
+      <description>&lt;p&gt;Original post here: &lt;a href=&#34;https://dannyjra.github.io/06_Network_Analysis/01_blog_caret_Tut.html&#34;&gt;https://dannyjra.github.io/06_Network_Analysis/01_blog_caret_Tut.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Add summary desdcription of blog&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>R-Python Bridge with Reticulate</title>
+      <link>/blog/2018/11/11/09_reticulate3_blog/</link>
+      <pubDate>Sun, 11 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/2018/11/11/09_reticulate3_blog/</guid>
+      <description>&lt;p&gt;The reticulate package provides a comprehensive set of tools for interoperability between Python and R.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>R packages</title>
+      <link>/blog/2018/06/15/04_r_packages_blog/</link>
+      <pubDate>Fri, 15 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/2018/06/15/04_r_packages_blog/</guid>
+      <description>&lt;p&gt;Original post here: &lt;a href=&#34;https://dannyjra.github.io/04_R_Packages/01_blog_caret_Tut.html&#34;&gt;https://dannyjra.github.io/04_R_Packages/01_blog_caret_Tut.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Add summary desdcription of blog&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>DSVM Part1</title>
+      <link>/blog/2018/06/07/07_dsvm_part1_blog/</link>
+      <pubDate>Thu, 07 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/2018/06/07/07_dsvm_part1_blog/</guid>
+      <description>&lt;p&gt;DSVM Part 1 &amp;hellip;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>BigData with Spark</title>
+      <link>/blog/2018/06/05/05_blog/</link>
+      <pubDate>Tue, 05 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/2018/06/05/05_blog/</guid>
+      <description>&lt;p&gt;Original post here: &lt;a href=&#34;https://dannyjra.github.io/05_Blog_BigData_Spark/01_blog_caret_Tut.html&#34;&gt;https://dannyjra.github.io/05_Blog_BigData_Spark/01_blog_caret_Tut.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Add summary desdcription of blog&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>MathArt with R</title>
+      <link>/blog/2018/05/22/08_matharts_blog/</link>
+      <pubDate>Tue, 22 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/2018/05/22/08_matharts_blog/</guid>
+      <description>&lt;p&gt;Add summary desdcription here&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>/blog/1/01/01/58_django_basics_blog/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/1/01/01/58_django_basics_blog/</guid>
+      <description>Getting started with Django Why Django Django is a Web framework written in Python. A Web framework is a software that supports the development of dynamic Web sites, applications, and services. It provides a set of tools and functionalities that solves many common problems associated with Web development, such as security features, database access, sessions, template processing, URL routing, internationalization, localization, and much more.
+Using a Web framework, such as Django, enables us to develop secure and reliable Web applications very quickly in a standardized way, without having to reinvent the wheel.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>/blog/1/01/01/69_python_r_blog/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/1/01/01/69_python_r_blog/</guid>
+      <description>&lt;p&gt;Linear models
+The R code is:&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Contact</title>
+      <link>/contact/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/contact/</guid>
+      <description>We are here to help you Are you curious about something? Do you have some kind of problem with our products? As am hastily invited settled at limited civilly fortune me. Really spring in extent an by. Judge but built gay party world. Of so am he remember although required. Bachelor unpacked be advanced at. Confined in declared marianne is vicinity.
+Please feel free to contact us, our customer service center is working for you 24&amp;frasl;7.</description>
+    </item>
+    
+    <item>
+      <title>FAQ</title>
+      <link>/faq/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/faq/</guid>
+      <description>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.
+1. WHAT TO DO IF I HAVE STILL NOT RECEIVED THE ORDER? Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.</description>
+    </item>
+    
+  </channel>
+</rss>

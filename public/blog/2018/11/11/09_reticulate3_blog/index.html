@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <meta charset="utf-8">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>R-Python Bridge with Reticulate</title>
+  <meta name="author" content="" />
+
+  
+  <meta name="keywords" content="devows, hugo, go">	
+  
+
+  
+  <meta name="description" content="Site template made by devcows using hugo">	
+  
+
+  <meta name="generator" content="Hugo 0.55.1" />
+
+  <link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,500,700,800' rel='stylesheet' type='text/css'>
+
+  
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  
+  <link href="../../../../../css/animate.css" rel="stylesheet">
+
+  
+  
+    <link href="../../../../../css/style.default.css" rel="stylesheet" id="theme-stylesheet">
+  
+
+
+  
+  <link href="../../../../../css/custom.css" rel="stylesheet">
+
+  
+  
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+  <link rel="shortcut icon" href="../../../../../img/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="../../../../../img/apple-touch-icon.png" />
+  
+
+  <link href="../../../../../css/owl.carousel.css" rel="stylesheet">
+  <link href="../../../../../css/owl.theme.css" rel="stylesheet">
+
+  <link rel="alternate" href="../../../../../index.xml" type="application/rss+xml" title="Universal">
+
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@GoHugoIO">
+  <meta name="twitter:title" content="R-Python Bridge with Reticulate">
+  <meta name="twitter:image" content="/img/twitter-default.png">
+  <meta name="twitter:description" content="Site template made by devcows using hugo">
+
+  
+  <meta property="og:title" content="R-Python Bridge with Reticulate" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="/blog/2018/11/11/09_reticulate3_blog//" />
+  <meta property="og:image" content="img/logo.png" />
+
+</head>
+
+
+  <body>
+
+    <div id="all">
+
+        <header>
+
+          <div class="navbar-affixed-top" data-spy="affix" data-offset-top="200">
+
+    <div class="navbar navbar-default yamm" role="navigation" id="navbar">
+
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand home" href="../../../../../">
+                    <img src="../../../../../img/logo.png" alt="R-Python Bridge with Reticulate logo" class="hidden-xs hidden-sm">
+                    <img src="../../../../../img/logo-small.png" alt="R-Python Bridge with Reticulate logo" class="visible-xs visible-sm">
+                    <span class="sr-only">R-Python Bridge with Reticulate - go to homepage</span>
+                </a>
+                <div class="navbar-buttons">
+                    <button type="button" class="navbar-toggle btn-template-main" data-toggle="collapse" data-target="#navigation">
+                      <span class="sr-only">Toggle Navigation</span>
+                        <i class="fa fa-align-justify"></i>
+                    </button>
+                </div>
+            </div>
+            
+
+            <div class="navbar-collapse collapse" id="navigation">
+                <ul class="nav navbar-nav navbar-right">
+                  
+                  
+                  
+                  <li class="dropdown">
+                    
+                    <a href="../../../../../">Home</a>
+                    
+                  </li>
+                  
+                  
+                  <li class="dropdown active">
+                    
+                    <a href="../../../../../blog/">Blog</a>
+                    
+                  </li>
+                  
+                  
+                  <li class="dropdown">
+                    
+                    <a href="../../../../../faq/">FAQ</a>
+                    
+                  </li>
+                  
+                  
+                  <li class="dropdown">
+                    
+                    <a href="../../../../../contact/">Contact</a>
+                    
+                  </li>
+                  
+                </ul>
+            </div>
+            
+
+            <div class="collapse clearfix" id="search">
+
+                <form class="navbar-form" role="search">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                        <span class="input-group-btn">
+
+                    <button type="submit" class="btn btn-template-main"><i class="fa fa-search"></i></button>
+
+                </span>
+                    </div>
+                </form>
+
+            </div>
+            
+
+        </div>
+    </div>
+    
+
+</div>
+
+
+
+
+        </header>
+
+        <div id="heading-breadcrumbs">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>R-Python Bridge with Reticulate</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+        <div id="content">
+            <div class="container">
+
+                <div class="row">
+
+                    
+
+                    <div class="col-md-9" id="blog-post">
+
+                        <p class="text-muted text-uppercase mb-small text-right">By <a href="#">DannyJRa</a> | November 11, 2018</p>
+
+                        <div id="post-content">
+                          <p>The reticulate package provides a comprehensive set of tools for interoperability between Python and R.</p>
+
+<p>d
+&gt;The original blog entry is here <a href="https://dannyjra.github.io/09_Reticulate/09_Reticulate3_BLOG.html">https://dannyjra.github.io/09_Reticulate/09_Reticulate3_BLOG.html</a> and the code can be found in this repository folder <a href="https://github.com/DannyJRa/DannyJRa.github.io/tree/master//09_Reticulate/09_Reticulate3_BLOG.html">https://github.com/DannyJRa/DannyJRa.github.io/tree/master//09_Reticulate/09_Reticulate3_BLOG.html</a></p>
+
+<pre><code class="language-r">#testfsfs
+library(reticulate)
+
+### Then Matplotlib works
+matplotlib &lt;- import(&quot;matplotlib&quot;)
+matplotlib$use(&quot;Agg&quot;, force = TRUE)
+########################################
+
+
+#Test
+os &lt;- import(&quot;os&quot;)
+os$getcwd()
+</code></pre>
+
+<pre><code>## [1] &quot;/home/danny/OneDrive/DataScience/11_GitHub_DannyJRa.github.io/09_Reticulate&quot;
+</code></pre>
+
+<pre><code class="language-r">os$getcwd()
+</code></pre>
+
+<pre><code>## [1] &quot;/home/danny/OneDrive/DataScience/11_GitHub_DannyJRa.github.io/09_Reticulate&quot;
+</code></pre>
+
+<pre><code>## [Text(0, 0.5, 'voltage (mV)'), Text(0.5, 0, 'time (s)'), Text(0.5, 1.0, 'About as simple as it gets, folks')]
+</code></pre>
+
+<p><img src="09_Reticulate3_BLOG_files/figure-html/pyplot-1.png" width="672" /></p>
+
+<p>#Sourcing Python scripts</p>
+
+<p>You can source any Python script just as you would source an R script using the source_python() function. For example, if you had the following Python script flights.py:</p>
+
+<p>import pandas
+def read_flights(file):
+  flights = pandas.read_csv(file)
+  flights = flights[flights[&lsquo;dest&rsquo;] == &ldquo;ORD&rdquo;]
+  flights = flights[[&lsquo;carrier&rsquo;, &lsquo;dep_delay&rsquo;, &lsquo;arr_delay&rsquo;]]
+  flights = flights.dropna()
+  return flights
+Then you can source the script and call the read_flights() function as follows:</p>
+
+<pre><code class="language-r">library(reticulate)
+source_python(&quot;flights.py&quot;)
+flights &lt;- read_flights(&quot;flights.csv&quot;)
+
+library(ggplot2)
+ggplot(flights, aes(carrier, arr_delay)) + geom_point() + geom_jitter()
+</code></pre>
+
+<p><img src="09_Reticulate3_BLOG_files/figure-html/unnamed-chunk-4-1.png" alt="" /><!-- --></p>
+
+<p>#R Markdown Python Engine</p>
+
+<h2 id="python-version">Python Version</h2>
+
+<p>By default, reticulate uses the version of Python found on your PATH (i.e. Sys.which(&ldquo;python&rdquo;)). If you want to use an alternate version you should add one of the use_python() family of functions to your R Markdown setup chunk, for example:</p>
+
+<p>See the article on Python Version Configuration for additional details on configuring Python versions (including the use of conda or virtualenv environments).</p>
+
+<pre><code class="language-r">python&lt;-Sys.which(&quot;python&quot;)
+</code></pre>
+
+<p>##Python Chunks</p>
+
+<p>Python code chunks work exactly like R code chunks: Python code is executed and any print or graphical (matplotlib) output is included within the document.</p>
+
+<p>Python chunks all execute within a single Python session so have access to all objects created in previous chunks. Chunk options like echo, include, etc. all work as expected.</p>
+
+<p>Here’s an R Markdown document that demonstrates this:</p>
+
+<pre><code class="language-python">
+import os
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+X = np.linspace(-np.pi, np.pi, 256, endpoint=True)
+C, S = np.cos(X), np.sin(X)
+
+plt.plot(X, C)
+plt.plot(X, S)
+
+plt.show()
+</code></pre>
+
+<p><img src="09_Reticulate3_BLOG_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+
+<p>Requirement RStudio &gt;v1.2</p>
+
+<h2 id="calling-python-from-r">Calling Python from R</h2>
+
+<p>All objects created within Python chunks are available to R using the py object exported by the reticulate package. For example, the following code demonstrates reading and filtering a CSV file using Pandas then plotting the resulting data frame using ggplot2:</p>
+
+<p>#DJR <a href="https://rstudio.github.io/reticulate/articles/r_markdown.html">https://rstudio.github.io/reticulate/articles/r_markdown.html</a></p>
+
+<p>See the Calling Python from R article for additional details on how to interact with Python types from within R</p>
+
+<h2 id="calling-r-from-python">Calling R from Python</h2>
+
+<p>You can analagously access R objects within Python chunks via the r object. For example:</p>
+
+<pre><code class="language-r">library(tidyverse)
+</code></pre>
+
+<pre><code>## ── Attaching packages ────────────────────────────────────────────────────────── tidyverse 1.2.1 ──
+</code></pre>
+
+<pre><code>## ✔ tibble  2.1.1       ✔ purrr   0.3.2  
+## ✔ tidyr   0.8.3       ✔ dplyr   0.8.0.1
+## ✔ readr   1.3.1       ✔ stringr 1.4.0  
+## ✔ tibble  2.1.1       ✔ forcats 0.4.0
+</code></pre>
+
+<pre><code>## ── Conflicts ───────────────────────────────────────────────────────────── tidyverse_conflicts() ──
+## ✖ dplyr::filter() masks stats::filter()
+## ✖ dplyr::lag()    masks stats::lag()
+</code></pre>
+
+<pre><code class="language-r">data&lt;-c(1,2,3)
+</code></pre>
+
+<pre><code class="language-r">library(tidyverse)
+flights &lt;- read_csv(&quot;flights.csv&quot;) %&gt;% 
+  filter(dest==&quot;ORD&quot;) %&gt;% 
+  select(carrier, dep_delay,arr_delay) %&gt;% 
+  na.omit()
+</code></pre>
+
+<pre><code>## Parsed with column specification:
+## cols(
+##   date = col_datetime(format = &quot;&quot;),
+##   hour = col_double(),
+##   minute = col_double(),
+##   dep = col_double(),
+##   arr = col_double(),
+##   dep_delay = col_double(),
+##   arr_delay = col_double(),
+##   carrier = col_character(),
+##   flight = col_double(),
+##   dest = col_character(),
+##   plane = col_character(),
+##   cancelled = col_double(),
+##   time = col_double(),
+##   dist = col_double()
+## )
+</code></pre>
+
+<pre><code class="language-python">print(r.flights.head())
+</code></pre>
+
+<pre><code>##   carrier  dep_delay  arr_delay
+## 0      CO       77.0       64.0
+## 1      CO        5.0        3.0
+## 2      CO       -6.0      -16.0
+## 3      CO        1.0       -1.0
+## 4      CO        3.0       -8.0
+</code></pre>
+                        </div>
+                        
+                        
+                        <div id="comments">
+                            <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "devcows" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+                        </div>
+                        
+
+                    </div>
+                    
+
+                    
+
+                    
+
+                    <div class="col-md-3">
+
+                        
+
+                        
+
+<div class="panel panel-default sidebar-menu">
+
+    <div class="panel-heading">
+      <h3 class="panel-title">Search</h3>
+    </div>
+
+    <div class="panel-body">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" role="search">
+            <div class="input-group">
+                <input type="search" name="q" class="form-control" placeholder="Search">
+                <input type="hidden" name="sitesearch" value="/">
+                <span class="input-group-btn">
+                    <button type="submit" class="btn btn-template-main"><i class="fa fa-search"></i></button>
+                </span>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+
+
+
+
+<div class="panel panel-default sidebar-menu">
+
+    <div class="panel-heading">
+      <h3 class="panel-title">Categories</h3>
+    </div>
+
+    <div class="panel-body">
+        <ul class="nav nav-pills nav-stacked">
+            
+            <li><a href="../../../../../categories/cloud">cloud (3)</a>
+            </li>
+            
+            <li><a href="../../../../../categories/datascience">datascience (1)</a>
+            </li>
+            
+            <li><a href="../../../../../categories/python">python (2)</a>
+            </li>
+            
+            <li><a href="../../../../../categories/r">r (8)</a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<div class="panel sidebar-menu">
+    <div class="panel-heading">
+      <h3 class="panel-title">Tags</h3>
+    </div>
+
+    <div class="panel-body">
+        <ul class="tag-cloud">
+            
+            <li><a href="../../../../../tags/azure"><i class="fa fa-tags"></i> azure</a>
+            </li>
+            
+            <li><a href="../../../../../tags/bigdata"><i class="fa fa-tags"></i> bigdata</a>
+            </li>
+            
+            <li><a href="../../../../../tags/docker"><i class="fa fa-tags"></i> docker</a>
+            </li>
+            
+            <li><a href="../../../../../tags/engineering"><i class="fa fa-tags"></i> engineering</a>
+            </li>
+            
+            <li><a href="../../../../../tags/gcp"><i class="fa fa-tags"></i> gcp</a>
+            </li>
+            
+            <li><a href="../../../../../tags/linux"><i class="fa fa-tags"></i> linux</a>
+            </li>
+            
+            <li><a href="../../../../../tags/ml"><i class="fa fa-tags"></i> ml</a>
+            </li>
+            
+            <li><a href="../../../../../tags/r-package"><i class="fa fa-tags"></i> r-package</a>
+            </li>
+            
+            <li><a href="../../../../../tags/rstudio"><i class="fa fa-tags"></i> rstudio</a>
+            </li>
+            
+            <li><a href="../../../../../tags/set-up"><i class="fa fa-tags"></i> set-up</a>
+            </li>
+            
+            <li><a href="../../../../../tags/shiny"><i class="fa fa-tags"></i> shiny</a>
+            </li>
+            
+            <li><a href="../../../../../tags/viz"><i class="fa fa-tags"></i> viz</a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+
+
+
+
+                        
+
+                    </div>
+                    
+
+                    
+
+                </div>
+                
+
+            </div>
+            
+        </div>
+        
+
+        <footer id="footer">
+    <div class="container">
+
+        
+        <div class="col-md-4 col-sm-6">
+            <h4>About us</h4>
+
+            Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+
+            <hr class="hidden-md hidden-lg hidden-sm">
+
+        </div>
+        
+        
+
+        <div class="col-md-4 col-sm-6">
+
+             
+            <h4>Recent posts</h4>
+
+            <div class="blog-entries">
+                
+                <div class="item same-height-row clearfix">
+                    <div class="image same-height-always">
+                        <a href="../../../../../blog/2019/05/09/72_nginx_blog/">
+                          
+                            <img src="../../../../../img/banners/72_Nginx_BLOG.png" class="img-responsive" alt="Installing Nginx Server">
+                          
+                        </a>
+                    </div>
+                    <div class="name same-height-always">
+                        <h5><a href="../../../../../blog/2019/05/09/72_nginx_blog/">Installing Nginx Server</a></h5>
+                    </div>
+                </div>
+                
+                <div class="item same-height-row clearfix">
+                    <div class="image same-height-always">
+                        <a href="../../../../../blog/2019/04/27/70_vscode_blog/">
+                          
+                            <img src="../../../../../img/banners/70_vscode-ide.jpg" class="img-responsive" alt="VS-Code as a Server">
+                          
+                        </a>
+                    </div>
+                    <div class="name same-height-always">
+                        <h5><a href="../../../../../blog/2019/04/27/70_vscode_blog/">VS-Code as a Server</a></h5>
+                    </div>
+                </div>
+                
+                <div class="item same-height-row clearfix">
+                    <div class="image same-height-always">
+                        <a href="../../../../../blog/2019/04/14/63_cloud_scheduler_blog/">
+                          
+                            <img src="../../../../../img/banners/63_GoogleCloudFunctions_Title.png" class="img-responsive" alt="GCP - Cloud Scheduler">
+                          
+                        </a>
+                    </div>
+                    <div class="name same-height-always">
+                        <h5><a href="../../../../../blog/2019/04/14/63_cloud_scheduler_blog/">GCP - Cloud Scheduler</a></h5>
+                    </div>
+                </div>
+                
+            </div>
+
+            <hr class="hidden-md hidden-lg">
+             
+
+        </div>
+        
+
+        
+        <div class="col-md-4 col-sm-6">
+
+          <h4>Contact</h4>
+
+            <strong>Universal Ltd.</strong>
+        <br>13/25 New Avenue
+        <br>Newtown upon River
+        <br>45Y 73J
+        <br>England
+        <br>
+        <strong>Great Britain</strong>
+
+            <a href="../../../../../contact" class="btn btn-small btn-template-main">Go to contact page</a>
+
+            <hr class="hidden-md hidden-lg hidden-sm">
+
+        </div>
+        
+        
+
+    </div>
+    
+</footer>
+
+
+
+
+
+
+
+<div id="copyright">
+    <div class="container">
+        <div class="col-md-12">
+            
+            <p class="pull-left">Copyright (c) 2015 - 2016, YourCompany; all rights reserved.</p>
+            
+            <p class="pull-right">
+              Template by <a href="http://bootstrapious.com/free-templates">Bootstrapious</a>.
+              
+
+              Ported to Hugo by <a href="https://github.com/devcows/hugo-universal-theme">DevCows</a>
+            </p>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+    </div>
+    
+
+    
+<script src="//code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0/jquery.counterup.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-parallax/1.1.3/jquery-parallax.js"></script>
+
+<script src="//maps.googleapis.com/maps/api/js?key=AIzaSyCFhtWLJcE30xOAjcbSFi-0fnoVmQZPb1Y&v=3.exp"></script>
+
+<script src="../../../../../js/hpneo.gmaps.js"></script>
+<script src="../../../../../js/gmaps.init.js"></script>
+<script src="../../../../../js/front.js"></script>
+
+
+<script src="../../../../../js/owl.carousel.min.js"></script>
+
+
+  </body>
+</html>

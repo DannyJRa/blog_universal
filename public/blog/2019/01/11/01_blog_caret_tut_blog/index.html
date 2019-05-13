@@ -1,0 +1,1620 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <meta charset="utf-8">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ML with Caret</title>
+  <meta name="author" content="" />
+
+  
+  <meta name="keywords" content="devows, hugo, go">	
+  
+
+  
+  <meta name="description" content="Site template made by devcows using hugo">	
+  
+
+  <meta name="generator" content="Hugo 0.55.1" />
+
+  <link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,500,700,800' rel='stylesheet' type='text/css'>
+
+  
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  
+  <link href="../../../../../css/animate.css" rel="stylesheet">
+
+  
+  
+    <link href="../../../../../css/style.default.css" rel="stylesheet" id="theme-stylesheet">
+  
+
+
+  
+  <link href="../../../../../css/custom.css" rel="stylesheet">
+
+  
+  
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+  <link rel="shortcut icon" href="../../../../../img/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="../../../../../img/apple-touch-icon.png" />
+  
+
+  <link href="../../../../../css/owl.carousel.css" rel="stylesheet">
+  <link href="../../../../../css/owl.theme.css" rel="stylesheet">
+
+  <link rel="alternate" href="../../../../../index.xml" type="application/rss+xml" title="Universal">
+
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@GoHugoIO">
+  <meta name="twitter:title" content="ML with Caret">
+  <meta name="twitter:image" content="/img/banners/01_blog_cover.jpg">
+  <meta name="twitter:description" content="Site template made by devcows using hugo">
+
+  
+  <meta property="og:title" content="ML with Caret" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="/blog/2019/01/11/01_blog_caret_tut_blog//" />
+  <meta property="og:image" content="img/logo.png" />
+
+</head>
+
+
+  <body>
+
+    <div id="all">
+
+        <header>
+
+          <div class="navbar-affixed-top" data-spy="affix" data-offset-top="200">
+
+    <div class="navbar navbar-default yamm" role="navigation" id="navbar">
+
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand home" href="../../../../../">
+                    <img src="../../../../../img/logo.png" alt="ML with Caret logo" class="hidden-xs hidden-sm">
+                    <img src="../../../../../img/logo-small.png" alt="ML with Caret logo" class="visible-xs visible-sm">
+                    <span class="sr-only">ML with Caret - go to homepage</span>
+                </a>
+                <div class="navbar-buttons">
+                    <button type="button" class="navbar-toggle btn-template-main" data-toggle="collapse" data-target="#navigation">
+                      <span class="sr-only">Toggle Navigation</span>
+                        <i class="fa fa-align-justify"></i>
+                    </button>
+                </div>
+            </div>
+            
+
+            <div class="navbar-collapse collapse" id="navigation">
+                <ul class="nav navbar-nav navbar-right">
+                  
+                  
+                  
+                  <li class="dropdown">
+                    
+                    <a href="../../../../../">Home</a>
+                    
+                  </li>
+                  
+                  
+                  <li class="dropdown active">
+                    
+                    <a href="../../../../../blog/">Blog</a>
+                    
+                  </li>
+                  
+                  
+                  <li class="dropdown">
+                    
+                    <a href="../../../../../faq/">FAQ</a>
+                    
+                  </li>
+                  
+                  
+                  <li class="dropdown">
+                    
+                    <a href="../../../../../contact/">Contact</a>
+                    
+                  </li>
+                  
+                </ul>
+            </div>
+            
+
+            <div class="collapse clearfix" id="search">
+
+                <form class="navbar-form" role="search">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                        <span class="input-group-btn">
+
+                    <button type="submit" class="btn btn-template-main"><i class="fa fa-search"></i></button>
+
+                </span>
+                    </div>
+                </form>
+
+            </div>
+            
+
+        </div>
+    </div>
+    
+
+</div>
+
+
+
+
+        </header>
+
+        <div id="heading-breadcrumbs">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>ML with Caret</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+        <div id="content">
+            <div class="container">
+
+                <div class="row">
+
+                    
+
+                    <div class="col-md-9" id="blog-post">
+
+                        <p class="text-muted text-uppercase mb-small text-right">By <a href="#">DannyJRa</a> | January 11, 2019</p>
+
+                        <div id="post-content">
+                          <p>Add summary desdcription of blog</p>
+
+<pre><code class="language-r">library(tictoc)
+
+tic.log(format = TRUE)
+</code></pre>
+
+<pre><code>## list()
+</code></pre>
+
+<pre><code class="language-r">tic(&quot;complete&quot;)
+</code></pre>
+
+<pre><code class="language-r">tic(&quot;libraries&quot;)
+# install.packages(c('caret', 'skimr', 'RANN', 'randomForest', 'fastAdaboost', 'gbm', 'xgboost', 'caretEnsemble', 'C50', 'earth'))
+
+# Load the caret package
+library(caret)
+</code></pre>
+
+<pre><code>## Loading required package: lattice
+</code></pre>
+
+<pre><code>## Loading required package: ggplot2
+</code></pre>
+
+<pre><code class="language-r"># Import dataset
+orange &lt;- read.csv('https://raw.githubusercontent.com/selva86/datasets/master/orange_juice_withmissing.csv')
+
+# Structure of the dataframe
+str(orange)
+</code></pre>
+
+<pre><code>## 'data.frame':	1070 obs. of  18 variables:
+##  $ Purchase      : Factor w/ 2 levels &quot;CH&quot;,&quot;MM&quot;: 1 1 1 2 1 1 1 1 1 1 ...
+##  $ WeekofPurchase: int  237 239 245 227 228 230 232 234 235 238 ...
+##  $ StoreID       : int  1 1 1 1 7 7 7 7 7 7 ...
+##  $ PriceCH       : num  1.75 1.75 1.86 1.69 1.69 1.69 1.69 1.75 1.75 1.75 ...
+##  $ PriceMM       : num  1.99 1.99 2.09 1.69 1.69 1.99 1.99 1.99 1.99 1.99 ...
+##  $ DiscCH        : num  0 0 0.17 0 0 0 0 0 0 0 ...
+##  $ DiscMM        : num  0 0.3 0 0 0 0 0.4 0.4 0.4 0.4 ...
+##  $ SpecialCH     : int  0 0 0 0 0 0 1 1 0 0 ...
+##  $ SpecialMM     : int  0 1 0 0 0 1 1 0 0 0 ...
+##  $ LoyalCH       : num  0.5 0.6 0.68 0.4 0.957 ...
+##  $ SalePriceMM   : num  1.99 1.69 2.09 1.69 1.69 1.99 1.59 1.59 1.59 1.59 ...
+##  $ SalePriceCH   : num  1.75 1.75 1.69 1.69 1.69 1.69 1.69 1.75 1.75 1.75 ...
+##  $ PriceDiff     : num  0.24 -0.06 0.4 0 0 0.3 -0.1 -0.16 -0.16 -0.16 ...
+##  $ Store7        : Factor w/ 2 levels &quot;No&quot;,&quot;Yes&quot;: 1 1 1 1 2 2 2 2 2 2 ...
+##  $ PctDiscMM     : num  0 0.151 0 0 0 ...
+##  $ PctDiscCH     : num  0 0 0.0914 0 0 ...
+##  $ ListPriceDiff : num  0.24 0.24 0.23 0 0 0.3 0.3 0.24 0.24 0.24 ...
+##  $ STORE         : int  1 1 1 1 0 0 0 0 0 0 ...
+</code></pre>
+
+<pre><code class="language-r"># See top 6 rows and 10 columns
+head(orange[, 1:10])
+</code></pre>
+
+<pre><code>##   Purchase WeekofPurchase StoreID PriceCH PriceMM DiscCH DiscMM SpecialCH
+## 1       CH            237       1    1.75    1.99   0.00    0.0         0
+## 2       CH            239       1    1.75    1.99   0.00    0.3         0
+## 3       CH            245       1    1.86    2.09   0.17    0.0         0
+## 4       MM            227       1    1.69    1.69   0.00    0.0         0
+## 5       CH            228       7    1.69    1.69   0.00    0.0         0
+## 6       CH            230       7    1.69    1.99   0.00    0.0         0
+##   SpecialMM  LoyalCH
+## 1         0 0.500000
+## 2         1 0.600000
+## 3         0 0.680000
+## 4         0 0.400000
+## 5         0 0.956535
+## 6         1 0.965228
+</code></pre>
+
+<pre><code class="language-r">toc(log = TRUE, quiet = TRUE)
+</code></pre>
+
+<ol>
+<li>Data Preparation and Preprocessing
+3.1. How to split the dataset into training and validation?</li>
+</ol>
+
+<pre><code class="language-r"># Create the training and test datasets
+set.seed(100)
+
+# Step 1: Get row numbers for the training data
+trainRowNumbers &lt;- createDataPartition(orange$Purchase, p=0.8, list=FALSE)
+
+# Step 2: Create the training  dataset
+trainData &lt;- orange[trainRowNumbers,]
+
+# Step 3: Create the test dataset
+testData &lt;- orange[-trainRowNumbers,]
+
+# Store X and Y for later use.
+x = trainData[, 2:18]
+y = trainData$Purchase
+</code></pre>
+
+<p>createDataPartition() takes as input the Y variable in the source dataset and the percentage data that should go into training as the p argument. It returns the rownumbers that should form the training dataset.</p>
+
+<p>Plus, you need to set list=F, to prevent returning the result as a list.</p>
+
+<pre><code class="language-r">library(skimr)
+</code></pre>
+
+<pre><code>## 
+## Attaching package: 'skimr'
+</code></pre>
+
+<pre><code>## The following object is masked from 'package:stats':
+## 
+##     filter
+</code></pre>
+
+<pre><code class="language-r">skimmed &lt;- skim_to_wide(trainData)
+skimmed[, c(1:5, 9:11, 13, 15:16)] 
+</code></pre>
+
+<pre><code>## # A tibble: 18 x 11
+##    type  variable missing complete n     mean  sd    p0    p50   p100 
+##    &lt;chr&gt; &lt;chr&gt;    &lt;chr&gt;   &lt;chr&gt;    &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;
+##  1 fact… Purchase 0       857      857   &lt;NA&gt;  &lt;NA&gt;  &lt;NA&gt;  &lt;NA&gt;  &lt;NA&gt; 
+##  2 fact… Store7   0       857      857   &lt;NA&gt;  &lt;NA&gt;  &lt;NA&gt;  &lt;NA&gt;  &lt;NA&gt; 
+##  3 inte… Special… 2       855      857   &quot;  0… &quot; 0.… 0     0     1    
+##  4 inte… Special… 4       853      857   &quot;  0… &quot; 0.… 0     0     1    
+##  5 inte… STORE    2       855      857   &quot;  1… &quot; 1.… 0     2     4    
+##  6 inte… StoreID  1       856      857   &quot;  3… &quot; 2.… 1     3     7    
+##  7 inte… WeekofP… 0       857      857   254.… 15.59 227   257   278  
+##  8 nume… DiscCH   2       855      857   0.054 &quot;0.1… &quot; 0 … &quot;0  … &quot;0.5…
+##  9 nume… DiscMM   3       854      857   &quot;0.1… &quot;0.2… &quot; 0 … &quot;0  … &quot;0.8…
+## 10 nume… ListPri… 0       857      857   &quot;0.2… &quot;0.1… &quot; 0 … 0.24  0.44 
+## 11 nume… LoyalCH  5       852      857   &quot;0.5… &quot;0.3… &quot; 1.… &quot;0.6… &quot;1  …
+## 12 nume… PctDisc… 2       855      857   0.028 0.063 &quot; 0 … &quot;0  … 0.25 
+## 13 nume… PctDisc… 2       855      857   0.058 0.099 &quot; 0 … &quot;0  … &quot;0.4…
+## 14 nume… PriceCH  1       856      857   &quot;1.8… &quot;0.1… &quot; 1.… 1.86  2.09 
+## 15 nume… PriceDi… 1       856      857   &quot;0.1… &quot;0.2… &quot;-0.… 0.23  0.64 
+## 16 nume… PriceMM  1       856      857   &quot;2.0… &quot;0.1… &quot; 1.… 2.09  2.29 
+## 17 nume… SalePri… 1       856      857   &quot;1.8… &quot;0.1… &quot; 1.… 1.86  2.09 
+## 18 nume… SalePri… 3       854      857   &quot;1.9… &quot;0.2… &quot; 1.… 2.09  2.29 
+## # … with 1 more variable: hist &lt;chr&gt;
+</code></pre>
+
+<p>3.3. How to impute missing values using preProcess()?</p>
+
+<pre><code class="language-r"># Create the knn imputation model on the training data
+preProcess_missingdata_model &lt;- preProcess(trainData, method='knnImpute')
+preProcess_missingdata_model
+</code></pre>
+
+<pre><code>## Created from 828 samples and 18 variables
+## 
+## Pre-processing:
+##   - centered (16)
+##   - ignored (2)
+##   - 5 nearest neighbor imputation (16)
+##   - scaled (16)
+</code></pre>
+
+<p>The above output shows the various preprocessing steps done in the process of knn imputation.</p>
+
+<p>That is, it has centered (subtract by mean) 16 variables, ignored 2, used k=5 (considered 5 nearest neighbors) to predict the missing values and finally scaled (divide by standard deviation) 16 variables.</p>
+
+<p>Let’s now use this model to predict the missing values in trainData.</p>
+
+<pre><code class="language-r"># Use the imputation model to predict the values of missing data points
+library(RANN)  # required for knnInpute
+trainData &lt;- predict(preProcess_missingdata_model, newdata = trainData)
+anyNA(trainData)
+</code></pre>
+
+<pre><code>## [1] FALSE
+</code></pre>
+
+<p>3.4. How to create One-Hot Encoding (dummy variables)?
+Let me first explain what is one-hot encoding and why it is required.</p>
+
+<p>Suppose if you have a categorical column as one of the features, it needs to be converted to numeric in order for it to be used by the machine learning algorithms.</p>
+
+<p>Just replacing the categories with a number may not be meaningful especially if there is no intrinsic ordering amongst the categories.</p>
+
+<p>So what you can do instead is to convert the categorical variable with as many binary (1 or 0) variables as there are categories.</p>
+
+<p>An important aspect you should be careful about here is, in real-world environments, you might get new values of categorical variables in the new scoring data. So, you should ensure the dummyVars model is built on the training data alone and that model is in turn used to create the dummy vars on the test data.</p>
+
+<p>One Hot Encoding
+ONE HOT ENCODING</p>
+
+<p>In caret, one-hot-encodings can be created using dummyVars(). Just pass in all the features to dummyVars() as the training data and all the factor columns will automatically be converted to one-hot-encodings.</p>
+
+<pre><code class="language-r"># One-Hot Encoding
+# Creating dummy variables is converting a categorical variable to as many binary variables as here are categories.
+dummies_model &lt;- dummyVars(Purchase ~ ., data=trainData)
+
+# Create the dummy variables using predict. The Y variable (Purchase) will not be present in trainData_mat.
+trainData_mat &lt;- predict(dummies_model, newdata = trainData)
+</code></pre>
+
+<pre><code>## Warning in model.frame.default(Terms, newdata, na.action = na.action, xlev
+## = object$lvls): variable 'Purchase' is not a factor
+</code></pre>
+
+<pre><code class="language-r"># # Convert to dataframe
+trainData &lt;- data.frame(trainData_mat)
+
+# # See the structure of the new dataset
+str(trainData)
+</code></pre>
+
+<pre><code>## 'data.frame':	857 obs. of  18 variables:
+##  $ WeekofPurchase: num  -1.1 -1.74 -1.68 -1.29 -1.04 ...
+##  $ StoreID       : num  -1.29 -1.29 1.33 1.33 1.33 ...
+##  $ PriceCH       : num  -1.14 -1.73 -1.73 -1.14 -1.14 ...
+##  $ PriceMM       : num  -0.688 -2.898 -2.898 -0.688 -0.688 ...
+##  $ DiscCH        : num  -0.452 -0.452 -0.452 -0.452 -0.452 ...
+##  $ DiscMM        : num  -0.582 -0.582 -0.582 1.341 1.341 ...
+##  $ SpecialCH     : num  -0.429 -0.429 -0.429 2.329 -0.429 ...
+##  $ SpecialMM     : num  -0.42 -0.42 -0.42 -0.42 -0.42 ...
+##  $ LoyalCH       : num  -0.205 -0.525 1.256 1.324 1.35 ...
+##  $ SalePriceMM   : num  0.113 -1.101 -1.101 -1.506 -1.506 ...
+##  $ SalePriceCH   : num  -0.431 -0.844 -0.844 -0.431 -0.431 ...
+##  $ PriceDiff     : num  0.341 -0.563 -0.563 -1.165 -1.165 ...
+##  $ Store7.No     : num  1 1 0 0 0 0 0 0 0 1 ...
+##  $ Store7.Yes    : num  0 0 1 1 1 1 1 1 1 0 ...
+##  $ PctDiscMM     : num  -0.588 -0.588 -0.588 1.447 1.447 ...
+##  $ PctDiscCH     : num  -0.448 -0.448 -0.448 -0.448 -0.448 ...
+##  $ ListPriceDiff : num  0.211 -1.988 -1.988 0.211 0.211 ...
+##  $ STORE         : num  -0.457 -0.457 -1.15 -1.15 -1.15 ...
+</code></pre>
+
+<p>In above case, we had one categorical variable, Store7 with 2 categories. It was one-hot-encoded to produce two new columns – Store7.No and Store7.Yes.</p>
+
+<p>3.5. How to preprocess to transform the data?
+With the missing values handled and the factors one-hot-encoded, our training dataset is now ready to undergo variable transformations if required.</p>
+
+<p>So what type of preprocessing are available in caret?</p>
+
+<p>range: Normalize values so it ranges between 0 and 1
+center: Subtract Mean
+scale: Divide by standard deviation
+BoxCox: Remove skewness leading to normality. Values must be &gt; 0
+YeoJohnson: Like BoxCox, but works for negative values.
+expoTrans: Exponential transformation, works for negative values.
+pca: Replace with principal components
+ica: Replace with independent components
+spatialSign: Project the data to a unit circle
+For our problem, let’s convert all the numeric variables to range between 0 and 1, by setting method=range in preProcess().</p>
+
+<pre><code class="language-r">preProcess_range_model &lt;- preProcess(trainData, method='range')
+trainData &lt;- predict(preProcess_range_model, newdata = trainData)
+
+# Append the Y variable
+trainData$Purchase &lt;- y
+
+apply(trainData[, 1:10], 2, FUN=function(x){c('min'=min(x), 'max'=max(x))})
+</code></pre>
+
+<pre><code>##     WeekofPurchase StoreID PriceCH PriceMM DiscCH DiscMM SpecialCH
+## min              0       0       0       0      0      0         0
+## max              1       1       1       1      1      1         1
+##     SpecialMM LoyalCH SalePriceMM
+## min         0       0           0
+## max         1       1           1
+</code></pre>
+
+<ol>
+<li>How to visualize the importance of variables using featurePlot()
+Now that the preprocessing is complete, let’s visually examine how the predictors influence the Y (Purchase).</li>
+</ol>
+
+<p>In this problem, the X variables are numeric whereas the Y is categorical.</p>
+
+<p>So how to gauge if a given X is an important predictor of Y?</p>
+
+<p>A simple common sense approach is, if you group the X variable by the categories of Y, a significant mean shift amongst the X’s groups is a strong indicator (if not the only indicator) that X will have a significant role to help predict Y.</p>
+
+<p>It is possible to watch this shift visually using box plots and density plots.</p>
+
+<p>In fact, caret’s featurePlot() function makes it so convenient.</p>
+
+<p>Simply set the X and Y parameters and set plot=&lsquo;box&rsquo;. You can additionally adjust the label font size (using strip) and the scales to be free as I have done in the below plot.</p>
+
+<pre><code class="language-r">featurePlot(x = trainData[, 1:18], 
+            y = trainData$Purchase, 
+            plot = &quot;box&quot;,
+            strip=strip.custom(par.strip.text=list(cex=.7)),
+            scales = list(x = list(relation=&quot;free&quot;), 
+                          y = list(relation=&quot;free&quot;)))
+</code></pre>
+
+<p><img src="01_blog_caret_Tut_files/figure-html/unnamed-chunk-10-1.png" alt="" /><!-- -->
+Let me quickly refresh how to interpret a boxplot.</p>
+
+<p>Each subplot in the above figure has two boxplots (in blue) inside it, one each for each of the Y categories, CH and MM. The top of the box represents the 25th %ile and the bottom of the box represents the 75th %ile. The black dot inside the box is the mean.</p>
+
+<p>The blue box represents the region where most of the regular data point lie.</p>
+
+<p>The subplots also show many blue dots lying outside the top and bottom dashed lines called whiskers. These dots are formally considered as extreme values.</p>
+
+<p>So, What did you observe in the above figure?</p>
+
+<p>Consider for example, LoyalCHs subplot, which measures the loyalty score of the customer to the CH brand. The mean and the placement of the two boxes are glaringly different.</p>
+
+<p>Just by seeing that, I am pretty sure, LoyalCH is going to be a significant predictor of Y.</p>
+
+<p>What other predictors do you notice have significant mean differences?</p>
+
+<p>Let’s do a similar exercise with density plots.</p>
+
+<p>In this case, For a variable to be important, I would expect the density curves to be significantly different for the 2 classes, both in terms of the height (kurtosis) and placement (skewness).</p>
+
+<p>Take a look at the density curves of the two categories for ‘LoyalCH’, ‘STORE’, ‘StoreID’, ‘WeekofPurchase’. Are they different?</p>
+
+<pre><code class="language-r">featurePlot(x = trainData[, 1:18], 
+            y = trainData$Purchase, 
+            plot = &quot;density&quot;,
+            strip=strip.custom(par.strip.text=list(cex=.7)),
+            scales = list(x = list(relation=&quot;free&quot;), 
+                          y = list(relation=&quot;free&quot;)))
+</code></pre>
+
+<p><img src="01_blog_caret_Tut_files/figure-html/unnamed-chunk-11-1.png" alt="" /><!-- --></p>
+
+<p>Having visualised the relationships between X and Y, We can only say which variables are likely to be important to predict Y. It may not be wise to conclude which variables are NOT important.</p>
+
+<p>Because sometimes, variables with uninteresting pattern can help explain certain aspects of Y that the visually important variables may not.</p>
+
+<p>So to be safe, let’s not arrive at conclusions about excluding variables prematurely.</p>
+
+<h1 id="5-how-to-do-feature-selection-using-recursive-feature-elimination-rfe">5. How to do feature selection using recursive feature elimination (rfe)?</h1>
+
+<p>Most machine learning algorithms are able to determine what features are important to predict the Y. But in some scenarios, you might be need to be careful to include only variables that may be significantly important and makes strong business sense.</p>
+
+<p>This is quite common in banking, economics and financial institutions.</p>
+
+<p>Or you might just be doing an exploratory analysis to determine important predictors and report it as a metric in your analytics dashboard.</p>
+
+<p>Or if you are using a traditional algorithm like like linear or logistic regression, determining what variable to feed to the model is in the hands of the practitioner.</p>
+
+<p>Given such requirements, you might need a rigorous way to determine the important variables first before feeding them to the ML algorithm.</p>
+
+<p>A good choice of selecting the important features is the recursive feature elimination (RFE).</p>
+
+<p>So how does recursive feature elimination work?</p>
+
+<p>RFE works in 3 broad steps:</p>
+
+<p>Step 1: Build a ML model on a training dataset and estimate the feature importances on the test dataset.</p>
+
+<p>Step 2: Keeping priority to the most important variables, iterate through by building models of given sizes. Ranking of the predictors is recalculated in each iteration.</p>
+
+<p>Step 3: The model performances are compared across different subset sizes to arrive at the optimal number and list of final predictors.</p>
+
+<p>It can be implemented using the rfe() function and you have the flexibility to control what algorithm rfe uses and how it cross validates by defining the rfeControl().</p>
+
+<pre><code class="language-r">library(randomForest)
+</code></pre>
+
+<pre><code>## randomForest 4.6-14
+</code></pre>
+
+<pre><code>## Type rfNews() to see new features/changes/bug fixes.
+</code></pre>
+
+<pre><code>## 
+## Attaching package: 'randomForest'
+</code></pre>
+
+<pre><code>## The following object is masked from 'package:ggplot2':
+## 
+##     margin
+</code></pre>
+
+<pre><code class="language-r">set.seed(100)
+options(warn=-1)
+
+subsets &lt;- c(1:5, 10, 15, 18)
+
+ctrl &lt;- rfeControl(functions = rfFuncs,
+                   method = &quot;repeatedcv&quot;,
+                   repeats = 5,
+                   verbose = FALSE)
+
+lmProfile &lt;- rfe(x=trainData[, 1:18], y=trainData$Purchase,
+                 sizes = subsets,
+                 rfeControl = ctrl)
+lmProfile
+</code></pre>
+
+<pre><code>## 
+## Recursive feature selection
+## 
+## Outer resampling method: Cross-Validated (10 fold, repeated 5 times) 
+## 
+## Resampling performance over subset size:
+## 
+##  Variables Accuracy  Kappa AccuracySD KappaSD Selected
+##          1   0.7440 0.4563    0.04010 0.08519         
+##          2   0.8147 0.6074    0.03647 0.07789         
+##          3   0.8205 0.6189    0.04137 0.08774        *
+##          4   0.8035 0.5852    0.04663 0.09682         
+##          5   0.8024 0.5818    0.04475 0.09458         
+##         10   0.8038 0.5838    0.04380 0.09314         
+##         15   0.8077 0.5896    0.04221 0.09025         
+##         18   0.8054 0.5853    0.03991 0.08606         
+## 
+## The top 3 variables (out of 3):
+##    LoyalCH, PriceDiff, StoreID
+</code></pre>
+
+<p>The top 3 variables (out of 3):
+   LoyalCH, PriceDiff, StoreID
+In the above code, we call the rfe() which implements the recursive feature elimination.</p>
+
+<p>Apart from the x and y datasets, RFE also takes two important parameters.</p>
+
+<p>sizes
+rfeControl
+The sizes determines what all model sizes (the number of most important features) the rfe should consider. In above case, it iterates models of size 1 to 5, 10, 15 and 18.</p>
+
+<p>The rfeControl parameter on the other hand receives the output of the rfeControl() as values. If you look at the call to rfeControl() we set what type of algorithm and what cross validation method should be used.</p>
+
+<p>In above case, the cross validation method is repeatedcv which implements k-Fold cross validation repeated 5 times, which is rigorous enough for our case.</p>
+
+<p>Once rfe() is run, the output shows the accuracy and kappa (and their standard deviation) for the different model sizes we provided. The final selected model subset size is marked with a * in the rightmost Selected column.</p>
+
+<p>From the above output, a model size of 3 with LoyalCH, PriceDiff and StoreID seems to achieve the optimal accuracy.</p>
+
+<p>That means, out of 18 other features, a model with just 3 features outperformed many other larger model. Interesting isn’t it! Can you explain why?</p>
+
+<p>However, it is not a mandate that only including these 3 variables will always give high accuracy over larger sized models.</p>
+
+<p>Thats because, the rfe() we just implemented is particular to random forest based rfFuncs</p>
+
+<p>Since ML algorithms have their own way of learning the relationship between the x and y, it is not wise to neglect the other predictors, especially when there is evidence that there is information contained in rest of the variables to explain the relationship between x and y.</p>
+
+<p>Plus also, since the training dataset isn’t large enough, the other predictors may not have had the chance to show its worth.</p>
+
+<p>In the next step, we will build the actual randomForest model on trainData.</p>
+
+<ol>
+<li>Training and Tuning the model
+6.1. How to train() the model and interpret the results?
+Now comes the important stage where you actually build the machine learning model.</li>
+</ol>
+
+<p>To know what models caret supports, run the following:</p>
+
+<pre><code class="language-r"># See available algorithms in caret
+modelnames &lt;- paste(names(getModelInfo()), collapse=',  ')
+modelnames
+</code></pre>
+
+<pre><code>## [1] &quot;ada,  AdaBag,  AdaBoost.M1,  adaboost,  amdai,  ANFIS,  avNNet,  awnb,  awtan,  bag,  bagEarth,  bagEarthGCV,  bagFDA,  bagFDAGCV,  bam,  bartMachine,  bayesglm,  binda,  blackboost,  blasso,  blassoAveraged,  bridge,  brnn,  BstLm,  bstSm,  bstTree,  C5.0,  C5.0Cost,  C5.0Rules,  C5.0Tree,  cforest,  chaid,  CSimca,  ctree,  ctree2,  cubist,  dda,  deepboost,  DENFIS,  dnn,  dwdLinear,  dwdPoly,  dwdRadial,  earth,  elm,  enet,  evtree,  extraTrees,  fda,  FH.GBML,  FIR.DM,  foba,  FRBCS.CHI,  FRBCS.W,  FS.HGD,  gam,  gamboost,  gamLoess,  gamSpline,  gaussprLinear,  gaussprPoly,  gaussprRadial,  gbm_h2o,  gbm,  gcvEarth,  GFS.FR.MOGUL,  GFS.LT.RS,  GFS.THRIFT,  glm.nb,  glm,  glmboost,  glmnet_h2o,  glmnet,  glmStepAIC,  gpls,  hda,  hdda,  hdrda,  HYFIS,  icr,  J48,  JRip,  kernelpls,  kknn,  knn,  krlsPoly,  krlsRadial,  lars,  lars2,  lasso,  lda,  lda2,  leapBackward,  leapForward,  leapSeq,  Linda,  lm,  lmStepAIC,  LMT,  loclda,  logicBag,  LogitBoost,  logreg,  lssvmLinear,  lssvmPoly,  lssvmRadial,  lvq,  M5,  M5Rules,  manb,  mda,  Mlda,  mlp,  mlpKerasDecay,  mlpKerasDecayCost,  mlpKerasDropout,  mlpKerasDropoutCost,  mlpML,  mlpSGD,  mlpWeightDecay,  mlpWeightDecayML,  monmlp,  msaenet,  multinom,  mxnet,  mxnetAdam,  naive_bayes,  nb,  nbDiscrete,  nbSearch,  neuralnet,  nnet,  nnls,  nodeHarvest,  null,  OneR,  ordinalNet,  ordinalRF,  ORFlog,  ORFpls,  ORFridge,  ORFsvm,  ownn,  pam,  parRF,  PART,  partDSA,  pcaNNet,  pcr,  pda,  pda2,  penalized,  PenalizedLDA,  plr,  pls,  plsRglm,  polr,  ppr,  PRIM,  protoclass,  qda,  QdaCov,  qrf,  qrnn,  randomGLM,  ranger,  rbf,  rbfDDA,  Rborist,  rda,  regLogistic,  relaxo,  rf,  rFerns,  RFlda,  rfRules,  ridge,  rlda,  rlm,  rmda,  rocc,  rotationForest,  rotationForestCp,  rpart,  rpart1SE,  rpart2,  rpartCost,  rpartScore,  rqlasso,  rqnc,  RRF,  RRFglobal,  rrlda,  RSimca,  rvmLinear,  rvmPoly,  rvmRadial,  SBC,  sda,  sdwd,  simpls,  SLAVE,  slda,  smda,  snn,  sparseLDA,  spikeslab,  spls,  stepLDA,  stepQDA,  superpc,  svmBoundrangeString,  svmExpoString,  svmLinear,  svmLinear2,  svmLinear3,  svmLinearWeights,  svmLinearWeights2,  svmPoly,  svmRadial,  svmRadialCost,  svmRadialSigma,  svmRadialWeights,  svmSpectrumString,  tan,  tanSearch,  treebag,  vbmpRadial,  vglmAdjCat,  vglmContRatio,  vglmCumulative,  widekernelpls,  WM,  wsrf,  xgbDART,  xgbLinear,  xgbTree,  xyf&quot;
+</code></pre>
+
+<p>Each of those is a machine learning algorithm caret supports.</p>
+
+<p>Yes, it’s a huge list!</p>
+
+<p>And if you want to know more details like the hyperparameters and if it can be used of regression or classification problem, then do a modelLookup(algo).</p>
+
+<p>Once you have chosen an algorithm, building the model is fairly easy using the train() function.</p>
+
+<p>Let’s train a Multivariate Adaptive Regression Splines (MARS) model by setting the method=&lsquo;earth&rsquo;.</p>
+
+<p>The MARS algorithm was named as ‘earth’ in R because of a possible trademark conflict with Salford Systems. May be a rumor. Or not.</p>
+
+<pre><code class="language-r">modelLookup('earth')
+</code></pre>
+
+<pre><code>##   model parameter          label forReg forClass probModel
+## 1 earth    nprune         #Terms   TRUE     TRUE      TRUE
+## 2 earth    degree Product Degree   TRUE     TRUE      TRUE
+</code></pre>
+
+<pre><code class="language-r"># Set the seed for reproducibility
+set.seed(100)
+
+# Train the model using randomForest and predict on the training data itself.
+model_mars = train(Purchase ~ ., data=trainData, method='earth')
+</code></pre>
+
+<pre><code>## Loading required package: earth
+</code></pre>
+
+<pre><code>## Loading required package: Formula
+</code></pre>
+
+<pre><code>## Loading required package: plotmo
+</code></pre>
+
+<pre><code>## Loading required package: plotrix
+</code></pre>
+
+<pre><code>## Loading required package: TeachingDemos
+</code></pre>
+
+<pre><code class="language-r">fitted &lt;- predict(model_mars)
+</code></pre>
+
+<p>But you may ask how is using train() different from using the algorithm’s function directly?</p>
+
+<p>The difference is, besides building the model train() does multiple other things like:</p>
+
+<p>Cross validating the model
+Tune the hyper parameters for optimal model performance
+Choose the optimal model based on a given evaluation metric
+Preprocess the predictors (what we did so far using preProcess())
+The train function also accepts the arguments used by the algorithm specified in the method argument.</p>
+
+<p>Now let’s see what the train() has generated.</p>
+
+<pre><code class="language-r">model_mars
+</code></pre>
+
+<pre><code>## Multivariate Adaptive Regression Spline 
+## 
+## 857 samples
+##  18 predictor
+##   2 classes: 'CH', 'MM' 
+## 
+## No pre-processing
+## Resampling: Bootstrapped (25 reps) 
+## Summary of sample sizes: 857, 857, 857, 857, 857, 857, ... 
+## Resampling results across tuning parameters:
+## 
+##   nprune  Accuracy   Kappa    
+##    2      0.8013184  0.5746285
+##   10      0.8102610  0.5987447
+##   19      0.8103685  0.5986923
+## 
+## Tuning parameter 'degree' was held constant at a value of 1
+## Accuracy was used to select the optimal model using the largest value.
+## The final values used for the model were nprune = 19 and degree = 1.
+</code></pre>
+
+<p>Tuning parameter &lsquo;degree&rsquo; was held constant at a value of 1
+Accuracy was used to select the optimal model using the largest value.
+The final values used for the model were nprune = 19 and degree = 1.
+You can see what is the Accuracy and Kappa for various combinations of the hyper parameters – interaction.depth and n.trees. And it says ‘Resampling: Bootstrapped (25 reps)’ with a summary of sample sizes.</p>
+
+<p>Looks like train() has already done a basic cross validation and hyper parameter tuning. And that is the default behaviour.</p>
+
+<p>The chosen model and its parameters is reported in the last 2 lines of the output.</p>
+
+<p>When we used model_mars to predict the Y, this final model was automatically used by predict() to compute the predictions.</p>
+
+<p>Plotting the model shows how the various iterations of hyperparameter search performed.</p>
+
+<pre><code class="language-r">plot(model_mars, main=&quot;Model Accuracies with MARS&quot;)
+</code></pre>
+
+<p><img src="01_blog_caret_Tut_files/figure-html/unnamed-chunk-17-1.png" alt="" /><!-- --></p>
+
+<h2 id="6-2-how-to-compute-variable-importance">6.2 How to compute variable importance?</h2>
+
+<p>Excellent, since MARS supports computing variable importances, let’s extract the variable importances using varImp() to understand which variables came out to be useful.</p>
+
+<pre><code class="language-r">varimp_mars &lt;- varImp(model_mars)
+plot(varimp_mars, main=&quot;Variable Importance with MARS&quot;)
+</code></pre>
+
+<p><img src="01_blog_caret_Tut_files/figure-html/unnamed-chunk-18-1.png" alt="" /><!-- --></p>
+
+<p>As suspected, LoyalCH was the most used variable, followed by PriceDiff and StoreID.</p>
+
+<h2 id="6-3-prepare-the-test-dataset-and-predict">6.3. Prepare the test dataset and predict</h2>
+
+<p>A default MARS model has been selected.</p>
+
+<p>Now in order to use the model to predict on new data, the data has to be preprocessed and transformed just the way we did on the training data.</p>
+
+<p>Thanks to caret, all the information required for pre-processing is stored in the respective preProcess model and dummyVar model.</p>
+
+<p>If you recall, we did the pre-processing in the following sequence:</p>
+
+<p>Missing Value imputation –&gt; One-Hot Encoding –&gt; Range Normalization</p>
+
+<p>You need to pass the testData through these models in the same sequence:</p>
+
+<p>preProcess_missingdata_model –&gt; dummies_model –&gt; preProcess_range_model</p>
+
+<pre><code class="language-r"># Step 1: Impute missing values 
+testData2 &lt;- predict(preProcess_missingdata_model, testData)  
+
+# Step 2: Create one-hot encodings (dummy variables)
+testData3 &lt;- predict(dummies_model, testData2)
+
+# Step 3: Transform the features to range between 0 and 1
+testData4 &lt;- predict(preProcess_range_model, testData3)
+
+# View
+head(testData4[, 1:10])
+</code></pre>
+
+<pre><code>##    WeekofPurchase StoreID PriceCH   PriceMM DiscCH DiscMM SpecialCH
+## 2      0.23529412       0   0.150 0.5000000   0.00  0.375         0
+## 3      0.35294118       0   0.425 0.6666667   0.34  0.000         0
+## 6      0.05882353       1   0.000 0.5000000   0.00  0.000         0
+## 7      0.09803922       1   0.000 0.5000000   0.00  0.500         1
+## 9      0.15686275       1   0.150 0.5000000   0.00  0.500         0
+## 13     0.96078431       1   0.750 0.7333333   0.00  0.675         0
+##    SpecialMM   LoyalCH SalePriceMM
+## 2          1 0.6000352   0.4545455
+## 3          0 0.6800414   0.8181818
+## 6          1 0.9652913   0.7272727
+## 7          1 0.9722459   0.3636364
+## 9          0 0.9822616   0.3636364
+## 13         1 0.9927734   0.3636364
+</code></pre>
+
+<h2 id="6-4-predict-on-testdata">6.4. Predict on testData</h2>
+
+<p>The test dataset is prepared. Let’s predict the Y.</p>
+
+<pre><code class="language-r"># Predict on testData
+predicted &lt;- predict(model_mars, testData4)
+head(predicted)
+</code></pre>
+
+<pre><code>## [1] CH CH CH CH CH MM
+## Levels: CH MM
+</code></pre>
+
+<h2 id="6-5-confusion-matrix">6.5. Confusion Matrix</h2>
+
+<p>The confusion matrix is a tabular representation to compare the predictions (data) vs the actuals (reference). By setting mode=&lsquo;everything&rsquo; pretty much most classification evaluation metrics are computed.</p>
+
+<pre><code class="language-r"># Compute the confusion matrix
+confusionMatrix(reference = testData$Purchase, data = predicted, mode='everything', positive='MM')
+</code></pre>
+
+<pre><code>## Confusion Matrix and Statistics
+## 
+##           Reference
+## Prediction  CH  MM
+##         CH 113  21
+##         MM  17  62
+##                                           
+##                Accuracy : 0.8216          
+##                  95% CI : (0.7635, 0.8705)
+##     No Information Rate : 0.6103          
+##     P-Value [Acc &gt; NIR] : 2.139e-11       
+##                                           
+##                   Kappa : 0.6216          
+##  Mcnemar's Test P-Value : 0.6265          
+##                                           
+##             Sensitivity : 0.7470          
+##             Specificity : 0.8692          
+##          Pos Pred Value : 0.7848          
+##          Neg Pred Value : 0.8433          
+##               Precision : 0.7848          
+##                  Recall : 0.7470          
+##                      F1 : 0.7654          
+##              Prevalence : 0.3897          
+##          Detection Rate : 0.2911          
+##    Detection Prevalence : 0.3709          
+##       Balanced Accuracy : 0.8081          
+##                                           
+##        'Positive' Class : MM              
+## 
+</code></pre>
+
+<p>You have an overall accuracy of 80.28%.</p>
+
+<h1 id="7-how-to-do-hyperparameter-tuning-to-optimize-the-model-for-better-performance">7. How to do hyperparameter tuning to optimize the model for better performance?</h1>
+
+<p>There are two main ways to do hyper parameter tuning using the train():</p>
+
+<p>Set the tuneLength
+Define and set the tuneGrid
+tuneLength corresponds to the number of unique values for the tuning parameters caret will consider while forming the hyper parameter combinations.</p>
+
+<p>Caret will automatically determine the values each parameter should take.</p>
+
+<p>Alternately, if you want to explicitly control what values should be considered for each parameter, then, you can define the tuneGrid and pass it to train().</p>
+
+<p>Let’s see an example of both these approaches but first let’s setup the trainControl().</p>
+
+<h1 id="7-1-setting-up-the-traincontrol">7.1. Setting up the trainControl()</h1>
+
+<p>The train() function takes a trControl argument that accepts the output of trainControl().</p>
+
+<p>Inside trainControl() you can control how the train() will:</p>
+
+<p>Cross validation method to use.
+How the results should be summarised using a summary function
+Cross validation method can be one amongst:</p>
+
+<p>‘boot’: Bootstrap sampling
+‘boot632’: Bootstrap sampling with 63.2% bias correction applied
+‘optimism_boot’: The optimism bootstrap estimator
+‘boot_all’: All boot methods.
+‘cv’: k-Fold cross validation
+‘repeatedcv’: Repeated k-Fold cross validation
+‘oob’: Out of Bag cross validation
+‘LOOCV’: Leave one out cross validation
+‘LGOCV’: Leave group out cross validation
+The summaryFunction can be twoClassSummary if Y is binary class or multiClassSummary if the Y has more than 2 categories.</p>
+
+<p>By settiung the classProbs=T the probability scores are generated instead of directly predicting the class based on a predetermined cutoff of 0.5.</p>
+
+<pre><code class="language-r"># Define the training control
+fitControl &lt;- trainControl(
+    method = 'cv',                   # k-fold cross validation
+    number = 5,                      # number of folds
+    savePredictions = 'final',       # saves predictions for optimal tuning parameter
+    classProbs = T,                  # should class probabilities be returned
+    summaryFunction=twoClassSummary  # results summary function
+) 
+</code></pre>
+
+<p>##7.2 Hyper Parameter Tuning using tuneLength
+Let’s take the train() function we used before, plus, additionally set the tuneLength, trControl and metric.</p>
+
+<pre><code class="language-r"># Step 1: Tune hyper parameters by setting tuneLength
+set.seed(100)
+model_mars2 = train(Purchase ~ ., data=trainData, method='earth', tuneLength = 5, metric='ROC', trControl = fitControl)
+model_mars2
+</code></pre>
+
+<pre><code>## Multivariate Adaptive Regression Spline 
+## 
+## 857 samples
+##  18 predictor
+##   2 classes: 'CH', 'MM' 
+## 
+## No pre-processing
+## Resampling: Cross-Validated (5 fold) 
+## Summary of sample sizes: 685, 685, 687, 686, 685 
+## Resampling results across tuning parameters:
+## 
+##   nprune  ROC        Sens       Spec     
+##    2      0.8745398  0.8700916  0.7006784
+##    6      0.8912361  0.8719414  0.7334238
+##   10      0.8879988  0.8623626  0.7423790
+##   14      0.8879988  0.8623626  0.7423790
+##   19      0.8879846  0.8661722  0.7483492
+## 
+## Tuning parameter 'degree' was held constant at a value of 1
+## ROC was used to select the optimal model using the largest value.
+## The final values used for the model were nprune = 6 and degree = 1.
+</code></pre>
+
+<pre><code class="language-r"># Step 2: Predict on testData and Compute the confusion matrix
+predicted2 &lt;- predict(model_mars2, testData4)
+confusionMatrix(reference = testData$Purchase, data = predicted2, mode='everything', positive='MM')
+</code></pre>
+
+<pre><code>## Confusion Matrix and Statistics
+## 
+##           Reference
+## Prediction  CH  MM
+##         CH 116  20
+##         MM  14  63
+##                                           
+##                Accuracy : 0.8404          
+##                  95% CI : (0.7841, 0.8869)
+##     No Information Rate : 0.6103          
+##     P-Value [Acc &gt; NIR] : 2.164e-13       
+##                                           
+##                   Kappa : 0.66            
+##  Mcnemar's Test P-Value : 0.3912          
+##                                           
+##             Sensitivity : 0.7590          
+##             Specificity : 0.8923          
+##          Pos Pred Value : 0.8182          
+##          Neg Pred Value : 0.8529          
+##               Precision : 0.8182          
+##                  Recall : 0.7590          
+##                      F1 : 0.7875          
+##              Prevalence : 0.3897          
+##          Detection Rate : 0.2958          
+##    Detection Prevalence : 0.3615          
+##       Balanced Accuracy : 0.8257          
+##                                           
+##        'Positive' Class : MM              
+## 
+</code></pre>
+
+<h2 id="7-3-hyper-parameter-tuning-using-tunegrid">7.3. Hyper Parameter Tuning using tuneGrid</h2>
+
+<p>Alternately, you can set the tuneGrid instead of tuneLength.</p>
+
+<pre><code class="language-r"># Step 1: Define the tuneGrid
+marsGrid &lt;-  expand.grid(nprune = c(2, 4, 6, 8, 10), 
+                        degree = c(1, 2, 3))
+
+# Step 2: Tune hyper parameters by setting tuneGrid
+set.seed(100)
+model_mars3 = train(Purchase ~ ., data=trainData, method='earth', metric='ROC', tuneGrid = marsGrid, trControl = fitControl)
+model_mars3
+</code></pre>
+
+<pre><code>## Multivariate Adaptive Regression Spline 
+## 
+## 857 samples
+##  18 predictor
+##   2 classes: 'CH', 'MM' 
+## 
+## No pre-processing
+## Resampling: Cross-Validated (5 fold) 
+## Summary of sample sizes: 685, 685, 687, 686, 685 
+## Resampling results across tuning parameters:
+## 
+##   degree  nprune  ROC        Sens       Spec     
+##   1        2      0.8745398  0.8700916  0.7006784
+##   1        4      0.8924657  0.8662454  0.7394844
+##   1        6      0.8912361  0.8719414  0.7334238
+##   1        8      0.8886974  0.8661722  0.7334238
+##   1       10      0.8879988  0.8623626  0.7423790
+##   2        2      0.8745398  0.8700916  0.7006784
+##   2        4      0.8925044  0.8758425  0.7395296
+##   2        6      0.8918962  0.8681868  0.7545002
+##   2        8      0.8911809  0.8624359  0.7634102
+##   2       10      0.8947444  0.8604579  0.7784261
+##   3        2      0.8582783  0.8777106  0.6618725
+##   3        4      0.8919687  0.8681502  0.7514699
+##   3        6      0.8889365  0.8509341  0.7665310
+##   3        8      0.8802930  0.8432784  0.7396653
+##   3       10      0.8790021  0.8452015  0.7486205
+## 
+## ROC was used to select the optimal model using the largest value.
+## The final values used for the model were nprune = 10 and degree = 2.
+</code></pre>
+
+<pre><code class="language-r"># Step 3: Predict on testData and Compute the confusion matrix
+predicted3 &lt;- predict(model_mars3, testData4)
+confusionMatrix(reference = testData$Purchase, data = predicted3, mode='everything', positive='MM')
+</code></pre>
+
+<pre><code>## Confusion Matrix and Statistics
+## 
+##           Reference
+## Prediction  CH  MM
+##         CH 114  18
+##         MM  16  65
+##                                           
+##                Accuracy : 0.8404          
+##                  95% CI : (0.7841, 0.8869)
+##     No Information Rate : 0.6103          
+##     P-Value [Acc &gt; NIR] : 2.164e-13       
+##                                           
+##                   Kappa : 0.6629          
+##  Mcnemar's Test P-Value : 0.8638          
+##                                           
+##             Sensitivity : 0.7831          
+##             Specificity : 0.8769          
+##          Pos Pred Value : 0.8025          
+##          Neg Pred Value : 0.8636          
+##               Precision : 0.8025          
+##                  Recall : 0.7831          
+##                      F1 : 0.7927          
+##              Prevalence : 0.3897          
+##          Detection Rate : 0.3052          
+##    Detection Prevalence : 0.3803          
+##       Balanced Accuracy : 0.8300          
+##                                           
+##        'Positive' Class : MM              
+## 
+</code></pre>
+
+<h1 id="8-how-to-evaluate-performance-of-multiple-machine-learning-algorithms">8. How to evaluate performance of multiple machine learning algorithms?</h1>
+
+<p>Caret provides the resamples() function where you can provide multiple machine learning models and collectively evaluate them.</p>
+
+<p>Let’s first train some more algorithms.</p>
+
+<p>##8.1. Training Adaboost</p>
+
+<pre><code class="language-r">set.seed(100)
+
+# Train the model using adaboost
+model_adaboost = train(Purchase ~ ., data=trainData, method='adaboost', tuneLength=2, trControl = fitControl)
+</code></pre>
+
+<p>##8.2. Training Random Forest</p>
+
+<pre><code class="language-r">set.seed(100)
+
+# Train the model using rf
+model_rf = train(Purchase ~ ., data=trainData, method='rf', tuneLength=5, trControl = fitControl)
+</code></pre>
+
+<p>8.3. Training xgBoost Dart</p>
+
+<pre><code class="language-r">set.seed(100)
+
+# Train the model using MARS
+model_xgbDART = train(Purchase ~ ., data=trainData, method='xgbDART', tuneLength=5, trControl = fitControl, verbose=F)
+</code></pre>
+
+<p>8.4. Training SVM</p>
+
+<pre><code class="language-r">set.seed(100)
+
+# Train the model using MARS
+model_svmRadial = train(Purchase ~ ., data=trainData, method='svmRadial', tuneLength=15, trControl = fitControl)
+</code></pre>
+
+<p>##8.5. Run resamples() to compare the models</p>
+
+<pre><code class="language-r"># Compare model performances using resample()
+models_compare &lt;- resamples(list(ADABOOST=model_adaboost, RF=model_rf, XGBDART=model_xgbDART, MARS=model_mars3, SVM=model_svmRadial))
+
+# Summary of the models performances
+summary(models_compare)
+</code></pre>
+
+<pre><code>## 
+## Call:
+## summary.resamples(object = models_compare)
+## 
+## Models: ADABOOST, RF, XGBDART, MARS, SVM 
+## Number of resamples: 5 
+## 
+## ROC 
+##               Min.   1st Qu.    Median      Mean   3rd Qu.      Max. NA's
+## ADABOOST 0.8126510 0.8462687 0.8682549 0.8657598 0.8868515 0.9147727    0
+## RF       0.8253021 0.8568586 0.8877727 0.8775297 0.9017768 0.9159382    0
+## XGBDART  0.8589197 0.8775409 0.9114524 0.8995839 0.9198718 0.9301350    0
+## MARS     0.8433547 0.8839375 0.9073622 0.8947444 0.9084353 0.9306326    0
+## SVM      0.8537313 0.8728500 0.8903559 0.8907736 0.9053030 0.9316276    0
+## 
+## Sens 
+##               Min.   1st Qu.    Median      Mean   3rd Qu.      Max. NA's
+## ADABOOST 0.7619048 0.7904762 0.7904762 0.8070330 0.8076923 0.8846154    0
+## RF       0.8000000 0.8190476 0.8365385 0.8490476 0.8761905 0.9134615    0
+## XGBDART  0.8285714 0.8666667 0.8846154 0.8738828 0.8857143 0.9038462    0
+## MARS     0.8190476 0.8476190 0.8653846 0.8604579 0.8750000 0.8952381    0
+## SVM      0.8653846 0.8761905 0.8857143 0.8814469 0.8857143 0.8942308    0
+## 
+## Spec 
+##               Min.   1st Qu.    Median      Mean   3rd Qu.      Max. NA's
+## ADABOOST 0.7014925 0.7462687 0.7727273 0.7635007 0.7761194 0.8208955    0
+## RF       0.6417910 0.7313433 0.7313433 0.7365445 0.7424242 0.8358209    0
+## XGBDART  0.6567164 0.6969697 0.7014925 0.7304387 0.7462687 0.8507463    0
+## MARS     0.6865672 0.7727273 0.7761194 0.7784261 0.7910448 0.8656716    0
+## SVM      0.6417910 0.6818182 0.7313433 0.7363636 0.7462687 0.8805970    0
+</code></pre>
+
+<p>Let’s plot the resamples summary output.</p>
+
+<pre><code class="language-r"># Draw box plots to compare models
+scales &lt;- list(x=list(relation=&quot;free&quot;), y=list(relation=&quot;free&quot;))
+bwplot(models_compare, scales=scales)
+</code></pre>
+
+<p><img src="01_blog_caret_Tut_files/figure-html/unnamed-chunk-30-1.png" alt="" /><!-- --></p>
+
+<p>In the above output you can see clearly how the algorithms performed in terms of ROC, Specificity and Sensitivity and how consistent has it been.</p>
+
+<p>The xgbDART model appears to be the be best performing model overall because of the high ROC. But if you need a model that predicts the positives better, you might want to consider MARS, given its high sensitivity.</p>
+
+<p>Either way, you can now make an informed decision on which model to pick.</p>
+
+<p>#9. Ensembling the predictions
+##9.1. How to ensemble predictions from multiple models using caretEnsemble?
+So we have predictions from multiple individual models. To do this we had to run the train() function once for each model, store the models and pass it to the res</p>
+
+<p>The caretEnsemble package lets you do just that.</p>
+
+<p>All you have to do is put the names of all the algorithms you want to run in a vector and pass it to caretEnsemble::caretList() instead of caret::train().</p>
+
+<pre><code class="language-r">library(caretEnsemble)
+</code></pre>
+
+<pre><code>## 
+## Attaching package: 'caretEnsemble'
+</code></pre>
+
+<pre><code>## The following object is masked from 'package:ggplot2':
+## 
+##     autoplot
+</code></pre>
+
+<pre><code class="language-r"># Stacking Algorithms - Run multiple algos in one call.
+trainControl &lt;- trainControl(method=&quot;repeatedcv&quot;, 
+                             number=10, 
+                             repeats=3,
+                             savePredictions=TRUE, 
+                             classProbs=TRUE)
+
+algorithmList &lt;- c('rf', 'adaboost', 'earth', 'xgbDART', 'svmRadial')
+
+set.seed(100)
+models &lt;- caretList(Purchase ~ ., data=trainData, trControl=trainControl, methodList=algorithmList) 
+results &lt;- resamples(models)
+</code></pre>
+
+<p>Plot the resamples output to compare the models.</p>
+
+<p>Excellent! It is possible for further tune the model within caretList in a customised way.</p>
+
+<p>##9.2. How to combine the predictions of multiple models to form a final prediction
+That one function simplified a whole lot of work in one line of code.</p>
+
+<p>Here is another thought: Is it possible to combine these predicted values from multiple models somehow and make a new ensemble that predicts better?</p>
+
+<p>Turns out this can be done too, using the caretStack(). You just need to make sure you don’t use the same trainControl you used to build the models.</p>
+
+<pre><code class="language-r"># Create the trainControl
+set.seed(101)
+stackControl &lt;- trainControl(method=&quot;repeatedcv&quot;, 
+                             number=10, 
+                             repeats=3,
+                             savePredictions=TRUE, 
+                             classProbs=TRUE)
+
+# Ensemble the predictions of `models` to form a new combined prediction based on glm
+stack.glm &lt;- caretStack(models, method=&quot;glm&quot;, metric=&quot;Accuracy&quot;, trControl=stackControl)
+print(stack.glm)
+</code></pre>
+
+<pre><code>## A glm ensemble of 2 base models: rf, adaboost, earth, xgbDART, svmRadial
+## 
+## Ensemble results:
+## Generalized Linear Model 
+## 
+## 2571 samples
+##    5 predictor
+##    2 classes: 'CH', 'MM' 
+## 
+## No pre-processing
+## Resampling: Cross-Validated (10 fold, repeated 3 times) 
+## Summary of sample sizes: 2314, 2314, 2314, 2314, 2313, 2313, ... 
+## Resampling results:
+## 
+##   Accuracy   Kappa    
+##   0.8331519  0.6444917
+</code></pre>
+
+<p>A point to consider: The ensembles tend to perform better if the predictions are less correlated with each other.</p>
+
+<p>So you may want to try passing different types of models, both high and low performing rather than just stick to passing high accuracy models to the caretStack.</p>
+
+<pre><code class="language-r">print(stack.glm)
+</code></pre>
+
+<pre><code>## A glm ensemble of 2 base models: rf, adaboost, earth, xgbDART, svmRadial
+## 
+## Ensemble results:
+## Generalized Linear Model 
+## 
+## 2571 samples
+##    5 predictor
+##    2 classes: 'CH', 'MM' 
+## 
+## No pre-processing
+## Resampling: Cross-Validated (10 fold, repeated 3 times) 
+## Summary of sample sizes: 2314, 2314, 2314, 2314, 2313, 2313, ... 
+## Resampling results:
+## 
+##   Accuracy   Kappa    
+##   0.8331519  0.6444917
+</code></pre>
+
+<pre><code class="language-r"># Predict on testData
+stack_predicteds &lt;- predict(stack.glm, newdata=testData4)
+head(stack_predicteds)
+</code></pre>
+
+<pre><code>## [1] CH CH CH CH CH CH
+## Levels: CH MM
+</code></pre>
+
+<h1 id="10-conclusion">10. Conclusion</h1>
+
+<p>The purpose of this post was to cover the core pieces of the caret package and how you can effectively use it to build machine learning models.</p>
+
+<p>This information should serve as a reference and also as a template you can use to build a standardised machine learning workflow, so you can develop it further from there.</p>
+
+<pre><code class="language-r">bot$sendMessage('RMarkdown ready')
+</code></pre>
+
+<pre><code class="language-r">sessionInfo()
+</code></pre>
+
+<pre><code>## R version 3.4.4 (2018-03-15)
+## Platform: x86_64-pc-linux-gnu (64-bit)
+## Running under: Ubuntu 18.04.2 LTS
+## 
+## Matrix products: default
+## BLAS: /usr/lib/x86_64-linux-gnu/blas/libblas.so.3.7.1
+## LAPACK: /usr/lib/x86_64-linux-gnu/lapack/liblapack.so.3.7.1
+## 
+## locale:
+##  [1] LC_CTYPE=C.UTF-8       LC_NUMERIC=C           LC_TIME=C.UTF-8       
+##  [4] LC_COLLATE=C.UTF-8     LC_MONETARY=C.UTF-8    LC_MESSAGES=C.UTF-8   
+##  [7] LC_PAPER=C.UTF-8       LC_NAME=C              LC_ADDRESS=C          
+## [10] LC_TELEPHONE=C         LC_MEASUREMENT=C.UTF-8 LC_IDENTIFICATION=C   
+## 
+## attached base packages:
+## [1] stats     graphics  grDevices utils     datasets  methods   base     
+## 
+## other attached packages:
+##  [1] caretEnsemble_2.0.0 earth_5.1.1         plotmo_3.5.4       
+##  [4] TeachingDemos_2.10  plotrix_3.7-4       Formula_1.2-3      
+##  [7] randomForest_4.6-14 RANN_2.6.1          skimr_1.0.5        
+## [10] caret_6.0-81        ggplot2_3.1.0       lattice_0.20-35    
+## [13] tictoc_1.0         
+## 
+## loaded via a namespace (and not attached):
+##  [1] Rcpp_1.0.1         lubridate_1.7.4    class_7.3-14      
+##  [4] assertthat_0.2.1   digest_0.6.18      ipred_0.9-8       
+##  [7] foreach_1.4.4      R6_2.4.0           plyr_1.8.4        
+## [10] fastAdaboost_1.0.0 stats4_3.4.4       evaluate_0.13     
+## [13] e1071_1.7-1        pillar_1.3.1       rlang_0.3.3       
+## [16] lazyeval_0.2.1     rstudioapi_0.10    data.table_1.12.0 
+## [19] kernlab_0.9-27     rpart_4.1-13       Matrix_1.2-12     
+## [22] rmarkdown_1.12     splines_3.4.4      gower_0.2.0       
+## [25] stringr_1.4.0      munsell_0.5.0      compiler_3.4.4    
+## [28] xfun_0.6           pkgconfig_2.0.2    htmltools_0.3.6   
+## [31] nnet_7.3-12        tidyselect_0.2.5   gridExtra_2.3     
+## [34] tibble_2.1.1       prodlim_2018.04.18 codetools_0.2-15  
+## [37] crayon_1.3.4       dplyr_0.8.0.1      withr_2.1.2       
+## [40] MASS_7.3-49        recipes_0.1.5      ModelMetrics_1.2.2
+## [43] grid_3.4.4         nlme_3.1-131       gtable_0.2.0      
+## [46] magrittr_1.5       scales_1.0.0       pbapply_1.4-0     
+## [49] stringi_1.4.3      reshape2_1.4.3     timeDate_3043.102 
+## [52] generics_0.0.2     xgboost_0.82.1     lava_1.6.5        
+## [55] iterators_1.0.10   tools_3.4.4        glue_1.3.1        
+## [58] purrr_0.3.2        parallel_3.4.4     survival_2.41-3   
+## [61] yaml_2.2.0         colorspace_1.4-1   knitr_1.22
+</code></pre>
+                        </div>
+                        
+                        
+                        <div id="comments">
+                            <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "devcows" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+                        </div>
+                        
+
+                    </div>
+                    
+
+                    
+
+                    
+
+                    <div class="col-md-3">
+
+                        
+
+                        
+
+<div class="panel panel-default sidebar-menu">
+
+    <div class="panel-heading">
+      <h3 class="panel-title">Search</h3>
+    </div>
+
+    <div class="panel-body">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" role="search">
+            <div class="input-group">
+                <input type="search" name="q" class="form-control" placeholder="Search">
+                <input type="hidden" name="sitesearch" value="/">
+                <span class="input-group-btn">
+                    <button type="submit" class="btn btn-template-main"><i class="fa fa-search"></i></button>
+                </span>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+
+
+
+
+<div class="panel panel-default sidebar-menu">
+
+    <div class="panel-heading">
+      <h3 class="panel-title">Categories</h3>
+    </div>
+
+    <div class="panel-body">
+        <ul class="nav nav-pills nav-stacked">
+            
+            <li><a href="../../../../../categories/cloud">cloud (3)</a>
+            </li>
+            
+            <li><a href="../../../../../categories/datascience">datascience (1)</a>
+            </li>
+            
+            <li><a href="../../../../../categories/python">python (2)</a>
+            </li>
+            
+            <li><a href="../../../../../categories/r">r (8)</a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<div class="panel sidebar-menu">
+    <div class="panel-heading">
+      <h3 class="panel-title">Tags</h3>
+    </div>
+
+    <div class="panel-body">
+        <ul class="tag-cloud">
+            
+            <li><a href="../../../../../tags/azure"><i class="fa fa-tags"></i> azure</a>
+            </li>
+            
+            <li><a href="../../../../../tags/bigdata"><i class="fa fa-tags"></i> bigdata</a>
+            </li>
+            
+            <li><a href="../../../../../tags/docker"><i class="fa fa-tags"></i> docker</a>
+            </li>
+            
+            <li><a href="../../../../../tags/engineering"><i class="fa fa-tags"></i> engineering</a>
+            </li>
+            
+            <li><a href="../../../../../tags/gcp"><i class="fa fa-tags"></i> gcp</a>
+            </li>
+            
+            <li><a href="../../../../../tags/linux"><i class="fa fa-tags"></i> linux</a>
+            </li>
+            
+            <li><a href="../../../../../tags/ml"><i class="fa fa-tags"></i> ml</a>
+            </li>
+            
+            <li><a href="../../../../../tags/r-package"><i class="fa fa-tags"></i> r-package</a>
+            </li>
+            
+            <li><a href="../../../../../tags/rstudio"><i class="fa fa-tags"></i> rstudio</a>
+            </li>
+            
+            <li><a href="../../../../../tags/set-up"><i class="fa fa-tags"></i> set-up</a>
+            </li>
+            
+            <li><a href="../../../../../tags/shiny"><i class="fa fa-tags"></i> shiny</a>
+            </li>
+            
+            <li><a href="../../../../../tags/viz"><i class="fa fa-tags"></i> viz</a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+
+
+
+
+                        
+
+                    </div>
+                    
+
+                    
+
+                </div>
+                
+
+            </div>
+            
+        </div>
+        
+
+        <footer id="footer">
+    <div class="container">
+
+        
+        <div class="col-md-4 col-sm-6">
+            <h4>About us</h4>
+
+            Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+
+            <hr class="hidden-md hidden-lg hidden-sm">
+
+        </div>
+        
+        
+
+        <div class="col-md-4 col-sm-6">
+
+             
+            <h4>Recent posts</h4>
+
+            <div class="blog-entries">
+                
+                <div class="item same-height-row clearfix">
+                    <div class="image same-height-always">
+                        <a href="../../../../../blog/2019/05/09/72_nginx_blog/">
+                          
+                            <img src="../../../../../img/banners/72_Nginx_BLOG.png" class="img-responsive" alt="Installing Nginx Server">
+                          
+                        </a>
+                    </div>
+                    <div class="name same-height-always">
+                        <h5><a href="../../../../../blog/2019/05/09/72_nginx_blog/">Installing Nginx Server</a></h5>
+                    </div>
+                </div>
+                
+                <div class="item same-height-row clearfix">
+                    <div class="image same-height-always">
+                        <a href="../../../../../blog/2019/04/27/70_vscode_blog/">
+                          
+                            <img src="../../../../../img/banners/70_vscode-ide.jpg" class="img-responsive" alt="VS-Code as a Server">
+                          
+                        </a>
+                    </div>
+                    <div class="name same-height-always">
+                        <h5><a href="../../../../../blog/2019/04/27/70_vscode_blog/">VS-Code as a Server</a></h5>
+                    </div>
+                </div>
+                
+                <div class="item same-height-row clearfix">
+                    <div class="image same-height-always">
+                        <a href="../../../../../blog/2019/04/14/63_cloud_scheduler_blog/">
+                          
+                            <img src="../../../../../img/banners/63_GoogleCloudFunctions_Title.png" class="img-responsive" alt="GCP - Cloud Scheduler">
+                          
+                        </a>
+                    </div>
+                    <div class="name same-height-always">
+                        <h5><a href="../../../../../blog/2019/04/14/63_cloud_scheduler_blog/">GCP - Cloud Scheduler</a></h5>
+                    </div>
+                </div>
+                
+            </div>
+
+            <hr class="hidden-md hidden-lg">
+             
+
+        </div>
+        
+
+        
+        <div class="col-md-4 col-sm-6">
+
+          <h4>Contact</h4>
+
+            <strong>Universal Ltd.</strong>
+        <br>13/25 New Avenue
+        <br>Newtown upon River
+        <br>45Y 73J
+        <br>England
+        <br>
+        <strong>Great Britain</strong>
+
+            <a href="../../../../../contact" class="btn btn-small btn-template-main">Go to contact page</a>
+
+            <hr class="hidden-md hidden-lg hidden-sm">
+
+        </div>
+        
+        
+
+    </div>
+    
+</footer>
+
+
+
+
+
+
+
+<div id="copyright">
+    <div class="container">
+        <div class="col-md-12">
+            
+            <p class="pull-left">Copyright (c) 2015 - 2016, YourCompany; all rights reserved.</p>
+            
+            <p class="pull-right">
+              Template by <a href="http://bootstrapious.com/free-templates">Bootstrapious</a>.
+              
+
+              Ported to Hugo by <a href="https://github.com/devcows/hugo-universal-theme">DevCows</a>
+            </p>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+    </div>
+    
+
+    
+<script src="//code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0/jquery.counterup.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-parallax/1.1.3/jquery-parallax.js"></script>
+
+<script src="//maps.googleapis.com/maps/api/js?key=AIzaSyCFhtWLJcE30xOAjcbSFi-0fnoVmQZPb1Y&v=3.exp"></script>
+
+<script src="../../../../../js/hpneo.gmaps.js"></script>
+<script src="../../../../../js/gmaps.init.js"></script>
+<script src="../../../../../js/front.js"></script>
+
+
+<script src="../../../../../js/owl.carousel.min.js"></script>
+
+
+  </body>
+</html>

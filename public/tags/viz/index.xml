@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Viz on Universal</title>
+    <link>/tags/viz/</link>
+    <description>Recent content in Viz on Universal</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 11 Jan 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/viz/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Network Analysis</title>
+      <link>/blog/2019/01/11/06_blog/</link>
+      <pubDate>Fri, 11 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/2019/01/11/06_blog/</guid>
+      <description>&lt;p&gt;Original post here: &lt;a href=&#34;https://dannyjra.github.io/06_Network_Analysis/01_blog_caret_Tut.html&#34;&gt;https://dannyjra.github.io/06_Network_Analysis/01_blog_caret_Tut.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Add summary desdcription of blog&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>MathArt with R</title>
+      <link>/blog/2018/05/22/08_matharts_blog/</link>
+      <pubDate>Tue, 22 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/2018/05/22/08_matharts_blog/</guid>
+      <description>&lt;p&gt;Add summary desdcription here&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

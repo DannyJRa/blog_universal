@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cloud on Universal</title>
+    <link>/categories/cloud/</link>
+    <description>Recent content in Cloud on Universal</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 14 Apr 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/cloud/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>GCP - Cloud Scheduler</title>
+      <link>/blog/2019/04/14/63_cloud_scheduler_blog/</link>
+      <pubDate>Sun, 14 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/2019/04/14/63_cloud_scheduler_blog/</guid>
+      <description>&lt;p&gt;Add summary desdcription here&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Docker PostGreSQL</title>
+      <link>/blog/2019/01/15/15_docker_postgresql_blog/</link>
+      <pubDate>Tue, 15 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/2019/01/15/15_docker_postgresql_blog/</guid>
+      <description>&lt;p&gt;The reticulate package provides a comprehensive set of tools for interoperability between Python and R.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>DSVM Part1</title>
+      <link>/blog/2018/06/07/07_dsvm_part1_blog/</link>
+      <pubDate>Thu, 07 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/2018/06/07/07_dsvm_part1_blog/</guid>
+      <description>&lt;p&gt;DSVM Part 1 &amp;hellip;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
