@@ -50,6 +50,15 @@ sudo apt install nginx  FIrewall (optional) After accepting the procedure, apt w
     </item>
     
     <item>
+      <title>Hugo Website with R-Blogdown</title>
+      <link>/blog/2019/02/28/73_blogdown_blog/</link>
+      <pubDate>Thu, 28 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/2019/02/28/73_blogdown_blog/</guid>
+      <description>&lt;p&gt;Using the blogdown package to create static websites in RStudio using R Markdown&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>Firebase Auth - Shiny</title>
       <link>/blog/2019/02/14/54_firebase_shiny_blog/</link>
       <pubDate>Thu, 14 Feb 2019 00:00:00 +0000</pubDate>

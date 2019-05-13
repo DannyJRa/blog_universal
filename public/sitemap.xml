@@ -101,6 +101,17 @@
   </url>
   
   <url>
+    <loc>/blog/2019/02/28/73_blogdown_blog/</loc>
+    <lastmod>2019-02-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/webdev/</loc>
+    <lastmod>2019-02-28T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/blog/2019/02/14/54_firebase_shiny_blog/</loc>
     <lastmod>2019-02-14T00:00:00+00:00</lastmod>
   </url>
