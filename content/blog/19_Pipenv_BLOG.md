@@ -29,16 +29,16 @@ always_allow_html: yes
 
 ---
 
-Pipenv to manage python virtual environments and depencies.
+Pipenv to manage python virtual environments and dependencies.
 
 <!--more-->
 
 
 
 
-<a href="https://github.com/DannyJRa/DannyJRa.github.io/tree/master/19_Pipenv/19_Docker_NiFi_BLOG.html, https://github.com/DannyJRa/DannyJRa.github.io/tree/master/19_Pipenv/"><img width="149" height="149" src="https://github.blog/wp-content/uploads/2008/12/forkme_right_red_aa0000.png?resize=149%2C149" class="attachment-full size-full" alt="Fork me on GitHub" data-recalc-dims="1"></a>
+<a href=""><img align="right" width="149" height="149" src="https://github.blog/wp-content/uploads/2008/12/forkme_right_red_aa0000.png?resize=149%2C149" class="attachment-full size-full" alt="Fork me on GitHub" data-recalc-dims="1"></a>
 
-Original post on Github: https://dannyjra.github.io/19_Pipenv/19_Docker_NiFi_BLOG.html
+
 
 
 
@@ -113,4 +113,5 @@ Execute shell command within environment
 ```
 pipenv run test.py
 ```
-
+***
+Original post on Github Pages: NA

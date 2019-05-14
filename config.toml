@@ -38,13 +38,13 @@ paginate = 10
     identifier = "contact"
     name = "Contact"
     url  = "/contact/"
-    weight = 4
+    weight = 5
     
 #Save in static folder any file, will be copied to public folder
-#[[menu.main]]
-#  name = "Test"
-#  url = "/test/"
-#  weight = 99
+[[menu.main]]
+  name = "Projects"
+  url = "/projects/"
+  weight = 4
 
 # Top bar social links menu
 
@@ -83,7 +83,7 @@ paginate = 10
     twitterImage = "img/twitter-default.png"
 
     # Google Maps API key (if not set will default to not passing a key.)
-    googleMapsApiKey = "AIzaSyCFhtWLJcE30xOAjcbSFi-0fnoVmQZPb1Y"
+    googleMapsApiKey = "AIzaSyAUNgKCDBYRR7Zos2_N1o0aQkwW3nvo9s8"
 
     # Style options: default (light-blue), blue, green, marsala, pink, red, turquoise, violet
     style = "blue"
@@ -104,25 +104,26 @@ paginate = 10
     email = "danny.rasch@outlook.com"
     contact_form_ajax = false
 
-    about_us = "<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>"
-    copyright = "Copyright (c) 2019, DannyJRa; all rights reserved."
+    about_us = "<p>dannyrasch.com was created and is maintained by me, Danny J. Rasch.</p>"
+    copyright = "Copyright (c) 2019, DannyJRa"
 
     # Format dates with Go's time formatting
     date_format = "January 2, 2006"
 
-    logo = "img/logo.png"
-    logo_small = "img/logo-small.png"
+    logo = "img/logo_signature.svg"
+    logo_small = "img/logo_signature.svg"
     address = """<p><strong>Universal Ltd.</strong>
-        <br>13/25 New Avenue
-        <br>Newtown upon River
-        <br>45Y 73J
-        <br>England
+        <br>Sihlquai 131
+        #<br>Newtown upon River
+        #<br>45Y 73J
+        <br>Zurich
         <br>
         <strong>Switzerland</strong>
       </p>
       """
-    latitude = "-12.043333"
-    longitude = "-77.028333"
+    latitude = "47.3849435"
+    longitude = "8.5314532,17"
+
 
 [Permalinks]
     blog = "/blog/:year/:month/:day/:filename/"
