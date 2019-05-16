@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <meta charset="utf-8">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pipenv</title>
+  <meta name="author" content="" />
+
+  
+  <meta name="keywords" content="dannyjra, hugo, go">	
+  
+
+  
+  <meta name="description" content="Uuuups">	
+  
+
+  <meta name="generator" content="Hugo 0.55.5" />
+
+  <link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,500,700,800' rel='stylesheet' type='text/css'>
+
+  
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  
+  <link href="../../../../../css/animate.css" rel="stylesheet">
+
+  
+  
+    <link href="../../../../../css/style.danny.css" rel="stylesheet" id="theme-stylesheet">
+  
+
+
+  
+  <link href="../../../../../css/custom.css" rel="stylesheet">
+
+  
+  
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+  <link rel="shortcut icon" href="../../../../../img/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="../../../../../img/apple-touch-icon.png" />
+  
+
+  <link href="../../../../../css/owl.carousel.css" rel="stylesheet">
+  <link href="../../../../../css/owl.theme.css" rel="stylesheet">
+
+  <link rel="alternate" href="../../../../../index.xml" type="application/rss+xml" title="Danny J. R.">
+
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@GoHugoIO">
+  <meta name="twitter:title" content="Pipenv">
+  <meta name="twitter:image" content="/img/banners/19_pipenv_BLOG.gif">
+  <meta name="twitter:description" content="Uuuups">
+
+  
+  <meta property="og:title" content="Pipenv" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="/blog/2019/01/25/58-02_django_deployment_blog//" />
+  <meta property="og:image" content="img/logo_signature.png" />
+
+</head>
+
+
+  <body>
+
+    <div id="all">
+
+        <header>
+
+          <div class="navbar-affixed-top" data-spy="affix" data-offset-top="200">
+
+    <div class="navbar navbar-default yamm" role="navigation" id="navbar">
+
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand home" href="../../../../../">
+                    <img src="../../../../../img/logo_signature.png" alt="Pipenv logo" class="hidden-xs hidden-sm">
+                    <img src="../../../../../img/logo_signature.png" alt="Pipenv logo" class="visible-xs visible-sm">
+                    <span class="sr-only">Pipenv - go to homepage</span>
+                </a>
+                <div class="navbar-buttons">
+                    <button type="button" class="navbar-toggle btn-template-main" data-toggle="collapse" data-target="#navigation">
+                      <span class="sr-only">Toggle Navigation</span>
+                        <i class="fa fa-align-justify"></i>
+                    </button>
+                </div>
+            </div>
+            
+
+            <div class="navbar-collapse collapse" id="navigation">
+                <ul class="nav navbar-nav navbar-right">
+                  
+                  
+                  
+                  <li class="dropdown">
+                    
+                    <a href="../../../../../">Home</a>
+                    
+                  </li>
+                  
+                  
+                  <li class="dropdown active">
+                    
+                    <a href="../../../../../blog/">Blog</a>
+                    
+                  </li>
+                  
+                  
+                  <li class="dropdown">
+                    
+                    <a href="../../../../../projects/">Projects</a>
+                    
+                  </li>
+                  
+                  
+                  <li class="dropdown">
+                    
+                    <a href="../../../../../contact/">Contact</a>
+                    
+                  </li>
+                  
+                </ul>
+            </div>
+            
+
+            <div class="collapse clearfix" id="search">
+
+                <form class="navbar-form" role="search">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                        <span class="input-group-btn">
+
+                    <button type="submit" class="btn btn-template-main"><i class="fa fa-search"></i></button>
+
+                </span>
+                    </div>
+                </form>
+
+            </div>
+            
+
+        </div>
+    </div>
+    
+
+</div>
+
+
+
+
+        </header>
+
+        <div id="heading-breadcrumbs">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Pipenv</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+        <div id="content">
+            <div class="container">
+
+                <div class="row">
+
+                    
+
+                    <div class="col-md-9" id="blog-post">
+
+                        <p class="text-muted text-uppercase mb-small text-right">By <a href="#">DannyJRa</a> | January 25, 2019</p>
+
+                        <div id="post-content">
+                          
+
+<h1 id="why-django">Why Django</h1>
+
+<p>Django is a lifesaver if you want to create a CRUD app with batteries included without getting sidetracked.</p>
+
+<blockquote>
+<p>Django - so much developer convenience</p>
+</blockquote>
+
+<p>The Web framework for perfectionists with deadlines</p>
+
+<p>Django makes it very easy and fun to build a certain type of web application - a CRUD (create, read, update, delete) app.
+Almost every single real-world web app can be started as a simple CRUD app.
+With Django, you won’t have to reinvent the wheel. It just works and lets you focus on your business logic and creating something users can use.
+Most things you will probably need already exist, and don’t need to be plugged together e.g. things like auth, user accounts, data migrations and the amazing admin interface.
+It brings along a lot of convenience. If you were to use a micro framework instead of Django, you’ll end up reinventing or stitching together things you “wish you had in place already” like:</p>
+
+<ul>
+<li>ORM</li>
+<li>Migrations!</li>
+<li>Forms</li>
+<li>User management</li>
+<li>An easy way to add REST</li>
+<li>Lots of choices you don’t know you need have been made for you</li>
+<li>Lots and lots of structure and boilerplate</li>
+<li>Easy access to plugins</li>
+<li>An amazing amount of dev tooling</li>
+</ul>
+
+<p>Sometimes, I’ll reach for Flask to get started with a simple prototype. But in the end, Django is my most productive tool for building classical sites which will be easy to maintain.
+However, there are things which Django just wasn’t designed for. Things you CAN use it for, but you’ll feel like you’re doing things wrong and fighting an uphill battle.</p>
+
+<p>BUT, if you really need to keep things minimalistic and want to avoid implicit choices, Django’s magic will get into your way. If you don’t want to use a relational database, you’re in for trouble. Doing lots of things in a parallelized fashion is not really straightforward. This is where Go shines!</p>
+
+<p>Aus <a href="https://vsupalov.com/go-and-django/">https://vsupalov.com/go-and-django/</a></p>
+
+<h1 id="adding-vue-js">Adding vue.js</h1>
+
+<p>One additional mention: VueJS. I LOVE it for the convenience of putting together an easy dynamic interface, no matter what backend language I work in. No REST endpoints are needed, but you can transition to them eventually. There’s almost no setup overhead - just a single .html file. If you haven’t got a convenient way to whip up a quick fancy UI for your web app projects, you should check it out!
+    Aus <a href="https://vsupalov.com/go-and-django/">https://vsupalov.com/go-and-django/</a></p>
+
+<h2 id="vue-js-in-a-django-template">Vue.js In A Django Template</h2>
+
+<p>Aus <a href="https://vsupalov.com/vue-js-in-django-template/">https://vsupalov.com/vue-js-in-django-template/</a></p>
+
+<h1 id="django-in-production">Django in Production</h1>
+
+<h2 id="gunicorn-and-nginx-in-a-nutshell">Gunicorn and Nginx in a nutshell</h2>
+
+<pre><code>Aus &lt;https://vsupalov.com/gunicorn-and-nginx/&gt;
+</code></pre>
+
+<h1 id="very-interesting-django-packages-in-2019-1">Very interesting Django Packages in 2019[^1]</h1>
+
+<p>I tried to limit this overview to packages, which will be useful for any project, and you should know about. They do one thing, do it well, and don’t require you to change your whole project to suit them.
+Debugging in Dev and Prod</p>
+
+<ul>
+<li>django-debug-toolbar - adds a toolbar on the right side of your Django page while in development. The toolbar shows lots of useful debug information!</li>
+<li>sentry - I love Sentry so much. It’s a SaaS which can notify you when your Django project crashes or errors out. It shows lots of useful details and is very pleasant to use.
+• django-extensions - a collection of custom extensions for Django. There’s a lot in there! I’ll limit myself to the most important two tools: runserver_plusgives you the possibility to look into your app at any time. shell_plus &ndash;notebook lets you open a friggin jupyter notebook and prototype in it.
+User Management
+• django-allauth - add social login to your site, and extend the way people can register. A must-have if you want to have users with social auth.
+Views and Forms
+• django-braces - helpful mixins for Django’s class-based views.
+• django-crispy-forms - control the rendering behaviour of forms with the {% crispy %} tag.
+• django-bleach - advanced input cleaning.
+• django-autocomplete-light - add autocompletion to your forms.
+• django-shapeshifeter - handle multiple forms in a single view. Useful when your CRUD app starts shifting towards workflow-focused interfaces.
+• django-extra-views - more class-based views, which can come in handy.
+Frontend &amp; APIs
+• django-webpack-loader - include bundles built with webpack into your templates. Really useful if you have non-trivial JS in your project.
+• django-pipeline - an asset packaging library for Django. No Webpack in sight, which can feel like a blessing sometimes. I myself prefer using Webpack these days, but this is a valid option as well.
+• Django REST framework (DRF) - build RESTful APIs. It’s really good!
+• graphene-django - build a GraphQL endpoint for your project. REST is fine, but frontend devs love to have a single GQL endpoint. They are very convenient.
+• django-cors-headers - handle CORS (cross origin resource sharing) by including the right headers. Useful if your backend is on another domain than your frontend.
+Data-Related Functionality
+• django-taggit - add tags to any of your models! It’s simple to use, and fits well into most projects.
+• django-filter - let users filter a list of objects themselves through a form.
+• django-tables2 - display your data in nifty tables outside of the admin interface (works with django-filter).
+• django-sql-explorer - write SQL queries on your Django-owned data and see results in a nice interface. A quick way to get going with reporting.
+• djangoql - add a more advanced query language to the admin. This can be a nice compromise before investing more into BI tools or writing custom scripts.
+• django-import-export - get data in and out of your app using CSV, JSON and other formats. Exactly what it sounds like and very handy.
+Want more?
+A good way to find cool tech, is to look at successful and popular open source projects related to Django. They know what’s good and include those techniques and packages into the code if it’s possible. You can find projects by looking at GitHub.
+You can also browse through Django Packages where you can find a complete list of all packages out there and projects written in Django! Django Sites is another cool site, listing Django pages which provide their source code.
+You can also learn a lot, from looking into popular starter templates. For example, check out cookiecutter-django and see a few of the above packages in action.</li>
+</ul>
+
+<p>Aus <a href="https://vsupalov.com/favorite-django-packages-2019/">https://vsupalov.com/favorite-django-packages-2019/</a></p>
+
+<p>[^1] From <a href="https://vsupalov.com/favorite-django-packages-2019/">https://vsupalov.com/favorite-django-packages-2019/</a></p>
+
+                        </div>
+                        
+                        
+                        <div id="comments">
+                            <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "blog-dannyrasch" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+                        </div>
+                        
+
+                    </div>
+                    
+
+                    
+
+                    
+
+                    <div class="col-md-3">
+
+                        
+
+                        
+
+<div class="panel panel-default sidebar-menu">
+
+    <div class="panel-heading">
+      <h3 class="panel-title">Search</h3>
+    </div>
+
+    <div class="panel-body">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" role="search">
+            <div class="input-group">
+                <input type="search" name="q" class="form-control" placeholder="Search">
+                <input type="hidden" name="sitesearch" value="/">
+                <span class="input-group-btn">
+                    <button type="submit" class="btn btn-template-main"><i class="fa fa-search"></i></button>
+                </span>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+
+
+
+
+<div class="panel panel-default sidebar-menu">
+
+    <div class="panel-heading">
+      <h3 class="panel-title">Categories</h3>
+    </div>
+
+    <div class="panel-body">
+        <ul class="nav nav-pills nav-stacked">
+            
+            <li><a href="../../../../../categories/cloud">cloud (3)</a>
+            </li>
+            
+            <li><a href="../../../../../categories/datascience">datascience (1)</a>
+            </li>
+            
+            <li><a href="../../../../../categories/python">python (3)</a>
+            </li>
+            
+            <li><a href="../../../../../categories/r">r (9)</a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<div class="panel sidebar-menu">
+    <div class="panel-heading">
+      <h3 class="panel-title">Tags</h3>
+    </div>
+
+    <div class="panel-body">
+        <ul class="tag-cloud">
+            
+            <li><a href="../../../../../tags/azure"><i class="fa fa-tags"></i> azure</a>
+            </li>
+            
+            <li><a href="../../../../../tags/bigdata"><i class="fa fa-tags"></i> bigdata</a>
+            </li>
+            
+            <li><a href="../../../../../tags/docker"><i class="fa fa-tags"></i> docker</a>
+            </li>
+            
+            <li><a href="../../../../../tags/engineering"><i class="fa fa-tags"></i> engineering</a>
+            </li>
+            
+            <li><a href="../../../../../tags/gcp"><i class="fa fa-tags"></i> gcp</a>
+            </li>
+            
+            <li><a href="../../../../../tags/linux"><i class="fa fa-tags"></i> linux</a>
+            </li>
+            
+            <li><a href="../../../../../tags/ml"><i class="fa fa-tags"></i> ml</a>
+            </li>
+            
+            <li><a href="../../../../../tags/r-package"><i class="fa fa-tags"></i> r-package</a>
+            </li>
+            
+            <li><a href="../../../../../tags/rstudio"><i class="fa fa-tags"></i> rstudio</a>
+            </li>
+            
+            <li><a href="../../../../../tags/set-up"><i class="fa fa-tags"></i> set-up</a>
+            </li>
+            
+            <li><a href="../../../../../tags/shiny"><i class="fa fa-tags"></i> shiny</a>
+            </li>
+            
+            <li><a href="../../../../../tags/viz"><i class="fa fa-tags"></i> viz</a>
+            </li>
+            
+            <li><a href="../../../../../tags/webdev"><i class="fa fa-tags"></i> webdev</a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+
+
+
+
+                        
+
+                    </div>
+                    
+
+                    
+
+                </div>
+                
+
+            </div>
+            
+        </div>
+        
+
+        <footer id="footer">
+    <div class="container">
+
+        
+        <div class="col-md-4 col-sm-6">
+            <h4>About us</h4>
+
+            dannyrasch.com was created and is maintained by me, Danny J. Rasch.
+
+            <hr class="hidden-md hidden-lg hidden-sm">
+
+        </div>
+        
+        
+
+        <div class="col-md-4 col-sm-6">
+
+             
+            <h4>Recent posts</h4>
+
+            <div class="blog-entries">
+                
+                <div class="item same-height-row clearfix">
+                    <div class="image same-height-always">
+                        <a href="../../../../../blog/2019/05/09/72_nginx_blog/">
+                          
+                            <img src="../../../../../img/banners/72_Nginx_BLOG.png" class="img-responsive" alt="Installing Nginx Server">
+                          
+                        </a>
+                    </div>
+                    <div class="name same-height-always">
+                        <h5><a href="../../../../../blog/2019/05/09/72_nginx_blog/">Installing Nginx Server</a></h5>
+                    </div>
+                </div>
+                
+                <div class="item same-height-row clearfix">
+                    <div class="image same-height-always">
+                        <a href="../../../../../blog/2019/04/27/70_vscode_blog/">
+                          
+                            <img src="../../../../../img/banners/70_vscode-ide.jpg" class="img-responsive" alt="VS-Code as a Server">
+                          
+                        </a>
+                    </div>
+                    <div class="name same-height-always">
+                        <h5><a href="../../../../../blog/2019/04/27/70_vscode_blog/">VS-Code as a Server</a></h5>
+                    </div>
+                </div>
+                
+                <div class="item same-height-row clearfix">
+                    <div class="image same-height-always">
+                        <a href="../../../../../blog/2019/04/14/63_cloud_scheduler_blog/">
+                          
+                            <img src="../../../../../img/banners/63_GoogleCloudFunctions_Title.png" class="img-responsive" alt="GCP - Cloud Scheduler">
+                          
+                        </a>
+                    </div>
+                    <div class="name same-height-always">
+                        <h5><a href="../../../../../blog/2019/04/14/63_cloud_scheduler_blog/">GCP - Cloud Scheduler</a></h5>
+                    </div>
+                </div>
+                
+            </div>
+
+            <hr class="hidden-md hidden-lg">
+             
+
+        </div>
+        
+
+        
+        <div class="col-md-4 col-sm-6">
+
+          <h4>Contact</h4>
+
+            <strong>Danny J. Rasch</strong>
+        <br>Sihlquai 131
+        <br>Zurich
+        <br>
+        <strong>Switzerland</strong>
+
+            <a href="../../../../../contact" class="btn btn-small btn-template-main">Go to contact page</a>
+
+            <hr class="hidden-md hidden-lg hidden-sm">
+
+        </div>
+        
+        
+
+    </div>
+    
+</footer>
+
+
+
+
+
+
+
+<div id="copyright">
+    <div class="container">
+        <div class="col-md-12">
+            
+            <p class="pull-left">Copyright (c) 2019, DannyJRa</p>
+            
+            <p class="pull-right">
+              Template by <a href="http://bootstrapious.com/free-templates">Bootstrapious</a>.
+              
+
+              Ported to Hugo by <a href="https://github.com/devcows/hugo-universal-theme">DevCows</a>
+            </p>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+    </div>
+    
+
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-140052731-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+<script src="//code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0/jquery.counterup.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-parallax/1.1.3/jquery-parallax.js"></script>
+
+<script src="//maps.googleapis.com/maps/api/js?key=AIzaSyBCT-G8KCwrp8_t_7W6TA9mX1RByDD0s2A&v=3.exp"></script>
+
+<script src="../../../../../js/hpneo.gmaps.js"></script>
+<script src="../../../../../js/gmaps.init.js"></script>
+<script src="../../../../../js/front.js"></script>
+
+
+<script src="../../../../../js/owl.carousel.min.js"></script>
+
+
+  </body>
+</html>
