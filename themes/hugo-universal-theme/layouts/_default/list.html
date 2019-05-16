@@ -19,8 +19,16 @@
             <div class="container">
                 <div class="row">
                     <!-- *** LEFT COLUMN *** -->
+<div class="col-md-3 col-md-push-9">
 
-                    <div class="col-md-9" id="blog-listing-medium">
+                        <!-- *** MENUS AND WIDGETS *** -->
+
+                        {{ partial "sidebar.html" . }}
+
+                        <!-- *** MENUS AND FILTERS END *** -->
+
+                    </div>
+                    <div class="col-md-9 col-md-pull-3" id="blog-listing-medium">
 
                         {{ $paginator := .Paginate (where .Data.Pages "Type" "blog") }}
                         {{ range $paginator.Pages }}
@@ -84,15 +92,7 @@
                     <!-- *** RIGHT COLUMN ***
        _________________________________________________________ -->
 
-                    <div class="col-md-3">
-
-                        <!-- *** MENUS AND WIDGETS *** -->
-
-                        {{ partial "sidebar.html" . }}
-
-                        <!-- *** MENUS AND FILTERS END *** -->
-
-                    </div>
+                    
                     <!-- /.col-md-3 -->
 
                     <!-- *** RIGHT COLUMN END *** -->
@@ -104,7 +104,7 @@
         </div>
         <!-- /#content -->
 
-        <!--{{ partial "footer.html" . }} -->
+       <!-- {{ partial "footer.html" . }} -->
 
     </div>
     <!-- /#all -->
