@@ -45,6 +45,13 @@ paginate = 10
   name = "Projects"
   url = "/projects/"
   weight = 4
+  
+  
+[[menu.main]]
+    identifier="latest"
+    name = "Latest"
+    url  = "/latest/"
+    weight = 6
 
 # Top bar social links menu
 
