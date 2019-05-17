@@ -38,7 +38,7 @@ always_allow_html: yes
 
 
 
-<a href="https://github.com/DannyJRa/DannyJRa.github.io/tree/master/19_Pipenv/"><img src="/img/forkme_right_orange_ff7600.svg" style="position:absolute;top:1;right:0;" alt="Fork me on GitHub"></a>
+<a href="https://github.com/DannyJRa/DannyJRa.github.io/tree/master/19_Pipenv/" target="_blank"><img src="/img/forkme_right_orange_ff7600.svg" style="position:absolute;top:1;right:0;" alt="Fork me on GitHub"></a>
 
 
 
@@ -115,4 +115,4 @@ pipenv run test.py
 ```
 
 ***
-Original post on Github Pages: https://dannyjra.github.io/19_Pipenv/19_Pipenv_BLOG.html
+Original post on Github Pages: <a href="https://dannyjra.github.io/19_Pipenv/19_Pipenv_BLOG.html" target="_blank">https://dannyjra.github.io/19_Pipenv/19_Pipenv_BLOG.html</a>
