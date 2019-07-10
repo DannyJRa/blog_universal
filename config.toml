@@ -1,4 +1,4 @@
-baseurl = "/"
+baseurl = "https://blog.raschadvisory.com/"
 title = "Danny J. R."
 theme = "hugo-universal-theme"
 languageCode = "en-us"

@@ -6,10 +6,33 @@
     <description>Recent content in Python on Danny J. R.</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 25 Jan 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 21 May 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/python/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Portainer</title>
+      <link>/blog/2019/05/21/77_1_portainer_blog/</link>
+      <pubDate>Tue, 21 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/2019/05/21/77_1_portainer_blog/</guid>
+      <description>Portainer: Managing Docker Containers Although I’m comfortable with the command line, it is nice to have a GUI to manage the containers.
+Portainer is an open-source management UI for Docker, including Docker Swarm environment. Portainer makes it easier for you to manage your Docker containers, it allows you to manage containers, images, networks, and volumes from the web-based Portainer dashboard.
+Prerequisites  Ubuntu 18 Root privielges docker  What we will do  Install and Configure Portainer Docker Environment Management  What is Portainer?</description>
+    </item>
+    
+    <item>
+      <title>Python libraries for GraphQL</title>
+      <link>/blog/2019/05/17/68_1_python_libraries_graphql_blog/</link>
+      <pubDate>Fri, 17 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/2019/05/17/68_1_python_libraries_graphql_blog/</guid>
+      <description>Python libraries for graphql GraphQL is emerging but very promising query language and execution engine tied to any backend service and was introduced by Facebook as an alternative to REST and it&amp;rsquo;s popular of flexibility on handling complex systems.
+Ariadne Ariadne is a Python library for implementing GraphQL servers using schema-first approach.
+Ariadne is a Python library for implementing GraphQL servers.
+ Schema-first: Ariadne enables Python developers to use schema-first approach to the API implementation.</description>
+    </item>
     
     <item>
       <title>Pipenv</title>

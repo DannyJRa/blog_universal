@@ -4,20 +4,54 @@
   
   <url>
     <loc>/blog/</loc>
-    <lastmod>2019-05-09T00:00:00+00:00</lastmod>
+    <lastmod>2019-05-21T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/</loc>
-    <lastmod>2019-05-09T00:00:00+00:00</lastmod>
+    <lastmod>2019-05-21T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/</loc>
-    <lastmod>2019-05-09T00:00:00+00:00</lastmod>
+    <lastmod>2019-05-21T00:00:00+00:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/engineering/</loc>
+    <lastmod>2019-05-21T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/blog/2019/05/21/77_1_portainer_blog/</loc>
+    <lastmod>2019-05-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/python/</loc>
+    <lastmod>2019-05-21T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2019-05-21T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/api/</loc>
+    <lastmod>2019-05-17T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/blog/2019/05/17/68_1_python_libraries_graphql_blog/</loc>
+    <lastmod>2019-05-17T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -50,19 +84,7 @@
   </url>
   
   <url>
-    <loc>/tags/</loc>
-    <lastmod>2019-05-09T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>/categories/datascience/</loc>
-    <lastmod>2019-04-27T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/engineering/</loc>
     <lastmod>2019-04-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -116,12 +138,6 @@
   </url>
   
   <url>
-    <loc>/categories/python/</loc>
-    <lastmod>2019-01-25T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>/tags/docker/</loc>
     <lastmod>2019-01-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -136,6 +152,11 @@
     <loc>/tags/ml/</loc>
     <lastmod>2019-01-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/blog/2019/01/11/01_blog_caret_tut_blog-workstation/</loc>
+    <lastmod>2019-01-11T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -208,7 +229,17 @@
   </url>
   
   <url>
+    <loc>/blog/1/01/01/68_1_python_libraries_for_graphql_blog/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/blog/1/01/01/69_python_r_blog/</loc>
+  </url>
+  
+  <url>
+    <loc>/blog/1/01/01/portainer_blog/</loc>
+    <priority>0</priority>
   </url>
   
   <url>

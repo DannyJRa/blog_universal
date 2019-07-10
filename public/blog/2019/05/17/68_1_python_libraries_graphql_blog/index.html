@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <meta charset="utf-8">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Python libraries for GraphQL</title>
+  <meta name="author" content="" />
+
+  
+  <meta name="keywords" content="dannyjra, hugo, go">	
+  
+
+  
+  <meta name="description" content="Uuuups">	
+  
+
+  <meta name="generator" content="Hugo 0.55.5" />
+
+  <link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,500,700,800' rel='stylesheet' type='text/css'>
+
+  
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  
+  <link href="../../../../../css/animate.css" rel="stylesheet">
+
+  
+  
+    <link href="../../../../../css/style.danny.css" rel="stylesheet" id="theme-stylesheet">
+  
+
+
+  
+  <link href="../../../../../css/custom.css" rel="stylesheet">
+
+  
+  
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+  <link rel="shortcut icon" href="../../../../../img/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="../../../../../img/apple-touch-icon.png" />
+  
+
+  <link href="../../../../../css/owl.carousel.css" rel="stylesheet">
+  <link href="../../../../../css/owl.theme.css" rel="stylesheet">
+
+  <link rel="alternate" href="../../../../../index.xml" type="application/rss+xml" title="Danny J. R.">
+
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@GoHugoIO">
+  <meta name="twitter:title" content="Python libraries for GraphQL">
+  <meta name="twitter:image" content="/img/banners/graphql_BLOG.png">
+  <meta name="twitter:description" content="Uuuups">
+
+  
+  <meta property="og:title" content="Python libraries for GraphQL" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="/blog/2019/05/17/68_1_python_libraries_graphql_blog//" />
+  <meta property="og:image" content="img/logo_signature.png" />
+
+</head>
+
+
+  <body>
+
+    <div id="all">
+
+       
+
+        
+
+       
+
+       
+
+        <div id="content">
+            <div class="container">
+
+                <div class="row">
+
+                    
+
+                    <div class="col-md-9" id="blog-post">
+
+                        <p class="text-muted text-uppercase mb-small text-right">By <a href="#">DannyJRa</a> | May 17, 2019</p>
+
+                        <div id="post-content">
+                          
+
+<p><a href="https://github.com/DannyJRa/DannyJRa.github.io/tree/master/68_GraphQL/68_1_python_libraries_for_graphql_BLOG.html, https://github.com/DannyJRa/DannyJRa.github.io/tree/master/68_GraphQL/" target="_blank"><img src="../../../../../img/forkme_right_orange_ff7600.svg" style="position:absolute;top:1;right:0;" alt="Fork me on GitHub"></a></p>
+
+<h1 id="python-libraries-for-graphql">Python libraries for graphql</h1>
+
+<p>GraphQL is emerging but very promising query language and execution engine tied to any backend service and was introduced by Facebook as an alternative to REST and it&rsquo;s popular of flexibility on handling complex systems.</p>
+
+<h2 id="ariadne">Ariadne</h2>
+
+<p>Ariadne is a Python library for implementing GraphQL servers using schema-first approach.</p>
+
+<p>Ariadne is a Python library for implementing GraphQL servers.</p>
+
+<ul>
+<li>Schema-first: Ariadne enables Python developers to use schema-first approach to the API implementation. This is the leading approach used by the GraphQL community and supported by dozens of frontend and backend developer tools, examples, and learning resources. Ariadne makes all of this immediately available to your and other members of your team.</li>
+<li>Simple: Ariadne offers small, consistent and easy to memorize API that lets developers focus on business problems, not the boilerplate.</li>
+<li>Open: Ariadne was designed to be modular and open for customization. If you are missing or unhappy with something, extend or easily swap with your own.
+Documentation is available here.</li>
+</ul>
+
+<h3 id="features">Features</h3>
+
+<ul>
+<li>Simple, quick to learn and easy to memorize API.</li>
+<li>Compatibility with GraphQL.js version 14.2.1.</li>
+<li>Queries, mutations and input types.</li>
+<li>Asynchronous resolvers and query execution.</li>
+<li>Subscriptions.</li>
+<li>Unions and interfaces.</li>
+<li>Defining schema using SDL…</li>
+<li>Loading schema from .graphql files.</li>
+<li>==WSGI== middleware for implementing GraphQL in existing sites.</li>
+<li>Opt-in automatic resolvers mapping between camelCase and snake_case.</li>
+<li>Build-in simple synchronous dev server for quick GraphQL experimentation and GraphQL Playground.</li>
+
+<li><p>Support for Apollo GraphQL extension for Visual Studio Code.
+GraphQL syntax validation via gql() helper function. Also provides colorization if Apollo GraphQL extension is installed.</p>
+
+<h3 id="installation">Installation</h3>
+
+<pre><code>pip install ariadne
+
+</code></pre></li>
+</ul>
+
+<h3 id="quickstart">Quickstart</h3>
+
+<p>The following example creates an API defining Person type and single query field people returning a list of two persons. It also starts a local dev server with GraphQL Playground available on the <a href="http://127.0.0.1:8000">http://127.0.0.1:8000</a> address. Start by installing uvicorn, an ASGI server we will use to serve the API:</p>
+
+<p>Start by installing uvicorn, an ASGI server we will use to serve the API:</p>
+
+<pre><code>pip install uvicorn
+
+</code></pre>
+
+<p>Then create an example.py file for your example application:</p>
+
+<pre><code>from ariadne import ObjectType, QueryType, gql, make_executable_schema
+from ariadne.asgi import GraphQL
+
+
+# Define types using Schema Definition Language (https://graphql.org/learn/schema/)
+# Wrapping string in gql function provides validation and better error traceback
+type_defs = gql(&quot;&quot;&quot;
+    type Query {
+        people: [Person!]!
+    }
+
+    type Person {
+        firstName: String
+        lastName: String
+        age: Int
+        fullName: String
+    }
+&quot;&quot;&quot;)
+
+# Map resolver functions to Query fields using QueryType
+query = QueryType()
+
+# Resolvers are simple python functions
+@query.field(&quot;people&quot;)
+def resolve_people(*_):
+    return [
+        {&quot;firstName&quot;: &quot;John&quot;, &quot;lastName&quot;: &quot;Doe&quot;, &quot;age&quot;: 21},
+        {&quot;firstName&quot;: &quot;Bob&quot;, &quot;lastName&quot;: &quot;Boberson&quot;, &quot;age&quot;: 24},
+    ]
+
+
+# Map resolver functions to custom type fields using ObjectType
+person = ObjectType(&quot;Person&quot;)
+
+@person.field(&quot;fullName&quot;)
+def resolve_person_fullname(person, *_):
+    return &quot;%s %s&quot; % (person[&quot;firstName&quot;], person[&quot;lastName&quot;])
+
+# Create executable GraphQL schema
+schema = make_executable_schema(type_defs, [query, person])
+
+# Create an ASGI app using the schema, running in debug mode
+app = GraphQL(schema, debug=True)
+
+</code></pre>
+
+<h1 id="strawberry">Strawberry</h1>
+
+<p>A new GraphQL library for Python 🍓</p>
+
+<h3 id="installation-1">Installation</h3>
+
+<p>pip install strawberry-graphql</p>
+
+<h3 id="getting-started">Getting Started</h3>
+
+<p>Create a file called app.py with the following code:</p>
+
+<pre><code>import strawberry
+@strawberry.type
+class User
+    name: str
+    age: int
+@strawberry.type
+class Query:
+    @strawberry.field
+    def user(self, info) -&gt; User:
+        return User(name=&quot;Patrick&quot;, age=100)
+
+
+schema = strawberry.Schema(query=Query)
+
+</code></pre>
+
+<p>This will create a GraphQL schema defining a User type and a single query field user that will return a hard coded user.</p>
+
+<p>To run the debug server run the following command:</p>
+
+<pre><code>strawberry run server app
+
+</code></pre>
+
+<p>Open the debug server by clicking on the follwing link: <a href="http://0.0.0.0:8000/graphql">http://0.0.0.0:8000/graphql</a></p>
+
+<p>This will open a GraphQL playground where you can test the API.</p>
+
+<h1 id="graphene">Graphene</h1>
+
+<h2 id="introduction">Introduction</h2>
+
+<p>Graphene is a Python library for building GraphQL schemas/types fast and easily.</p>
+
+<ul>
+<li>Easy to use: Graphene helps you use GraphQL in Python without effort.</li>
+<li>Data agnostic: Graphene supports any kind of data source: SQL (Django, SQLAlchemy), NoSQL, custom Python objects, etc. We believe that by providing a complete API you could plug Graphene anywhere your data lives and make your data available through GraphQL.</li>
+</ul>
+
+<h3 id="integrations">Integrations</h3>
+
+<p>Graphene has multiple integrations with different frameworks:</p>
+
+<ul>
+<li>Django - graphene-django</li>
+<li>SQLAlchemy - graphene-sqlalchemy</li>
+<li>Google App Engine - graphene-gae</li>
+</ul>
+
+<p>Also, Graphene is fully compatible with the GraphQL spec, working seamlessly with all GraphQL clients, such as Relay, Apollo and gql.</p>
+
+<h3 id="installation-2">Installation</h3>
+
+<p>For instaling graphene, just run this command in your shell</p>
+
+<pre><code>pip install &quot;graphene&gt;=2.0&quot;
+
+</code></pre>
+
+<h3 id="examples">Examples</h3>
+
+<p>Here is one example for you to get started:</p>
+
+<pre><code>class Query(graphene.ObjectType):
+    hello = graphene.String(description='A typical hello world')
+
+    def resolve_hello(self, info):
+        return 'World'
+
+schema = graphene.Schema(query=Query)
+</code></pre>
+
+<p>Then Querying graphene.Schema is as simple as:</p>
+
+<pre><code>query = '''
+    query SayHello {
+      hello
+    }
+'''
+result = schema.execute(query)
+</code></pre>
+
+<hr />
+
+<p>Original post on Github Pages: <a href="https://dannyjra.github.io/68_GraphQL/68_1_python_libraries_for_graphql_BLOG.html, https://dannyjra.github.io/68_GraphQL/68_1_python_libraries_graphql_BLOG.html" target="_blank"><a href="https://dannyjra.github.io/68_GraphQL/68_1_python_libraries_for_graphql_BLOG.html">https://dannyjra.github.io/68_GraphQL/68_1_python_libraries_for_graphql_BLOG.html</a>, <a href="https://dannyjra.github.io/68_GraphQL/68_1_python_libraries_graphql_BLOG.html">https://dannyjra.github.io/68_GraphQL/68_1_python_libraries_graphql_BLOG.html</a></a></p>
+
+                        </div>
+                        
+                        
+                        <div id="comments">
+                            <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "blog-dannyrasch" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+                        </div>
+                        
+
+                    </div>
+                    
+
+                    
+
+                    
+
+                    <div class="col-md-3">
+
+                        
+
+                        
+
+
+
+
+<div class="panel panel-default sidebar-menu">
+
+    <div class="panel-heading">
+      <h3 class="panel-title">Categories</h3>
+    </div>
+
+    <div class="panel-body">
+        <ul class="nav nav-pills nav-stacked">
+            
+            <li><a href="../../../../../categories/cloud">cloud (3)</a>
+            </li>
+            
+            <li><a href="../../../../../categories/datascience">datascience (1)</a>
+            </li>
+            
+            <li><a href="../../../../../categories/python">python (5)</a>
+            </li>
+            
+            <li><a href="../../../../../categories/r">r (10)</a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<div class="panel sidebar-menu">
+    <div class="panel-heading">
+      <h3 class="panel-title">Tags</h3>
+    </div>
+
+    <div class="panel-body">
+        <ul class="tag-cloud">
+            
+            <li><a href="../../../../../tags/api"><i class="fa fa-tags"></i> api</a>
+            </li>
+            
+            <li><a href="../../../../../tags/azure"><i class="fa fa-tags"></i> azure</a>
+            </li>
+            
+            <li><a href="../../../../../tags/bigdata"><i class="fa fa-tags"></i> bigdata</a>
+            </li>
+            
+            <li><a href="../../../../../tags/docker"><i class="fa fa-tags"></i> docker</a>
+            </li>
+            
+            <li><a href="../../../../../tags/engineering"><i class="fa fa-tags"></i> engineering</a>
+            </li>
+            
+            <li><a href="../../../../../tags/gcp"><i class="fa fa-tags"></i> gcp</a>
+            </li>
+            
+            <li><a href="../../../../../tags/linux"><i class="fa fa-tags"></i> linux</a>
+            </li>
+            
+            <li><a href="../../../../../tags/ml"><i class="fa fa-tags"></i> ml</a>
+            </li>
+            
+            <li><a href="../../../../../tags/r-package"><i class="fa fa-tags"></i> r-package</a>
+            </li>
+            
+            <li><a href="../../../../../tags/rstudio"><i class="fa fa-tags"></i> rstudio</a>
+            </li>
+            
+            <li><a href="../../../../../tags/set-up"><i class="fa fa-tags"></i> set-up</a>
+            </li>
+            
+            <li><a href="../../../../../tags/shiny"><i class="fa fa-tags"></i> shiny</a>
+            </li>
+            
+            <li><a href="../../../../../tags/viz"><i class="fa fa-tags"></i> viz</a>
+            </li>
+            
+            <li><a href="../../../../../tags/webdev"><i class="fa fa-tags"></i> webdev</a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+
+
+
+
+                        
+
+                    </div>
+                    
+
+                    
+
+                </div>
+                
+
+            </div>
+            
+        </div>
+        
+
+      
+
+    </div>
+    
+
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-140052731-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+<script src="//code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0/jquery.counterup.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-parallax/1.1.3/jquery-parallax.js"></script>
+
+<script src="//maps.googleapis.com/maps/api/js?key=AIzaSyBCT-G8KCwrp8_t_7W6TA9mX1RByDD0s2A&v=3.exp"></script>
+
+<script src="../../../../../js/hpneo.gmaps.js"></script>
+<script src="../../../../../js/gmaps.init.js"></script>
+<script src="../../../../../js/front.js"></script>
+
+
+<script src="../../../../../js/owl.carousel.min.js"></script>
+
+
+  </body>
+</html>
