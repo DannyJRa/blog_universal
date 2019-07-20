@@ -8,7 +8,7 @@ categories:
 tags:
   - GCP
 hidden: false
-banner: "img/banners/63_GoogleCloudFunctions_Title.png"
+banner: "img/banners/63_cloud_scheduler_BLOG.png"
 share: false
 output:
   html_document:
