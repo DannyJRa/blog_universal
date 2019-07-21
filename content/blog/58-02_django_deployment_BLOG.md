@@ -8,7 +8,7 @@ categories:
 tags:
   - Django
 hidden: false
-banner: "img/banners/19_pipenv_BLOG.gif"
+banner: "img/banners/phyton-django_BLOG.jpg"
 share: false
 output:
   html_document:
