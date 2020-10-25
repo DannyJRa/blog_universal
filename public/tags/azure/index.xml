@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Azure on Danny J. R.</title>
@@ -27,7 +27,6 @@
       
       <guid>/blog/2018/06/05/05_blog/</guid>
       <description>&lt;p&gt;Original post here: &lt;a href=&#34;https://dannyjra.github.io/05_Blog_BigData_Spark/01_blog_caret_Tut.html&#34;&gt;https://dannyjra.github.io/05_Blog_BigData_Spark/01_blog_caret_Tut.html&lt;/a&gt;&lt;/p&gt;
-
 &lt;p&gt;Add summary desdcription of blog&lt;/p&gt;</description>
     </item>
     

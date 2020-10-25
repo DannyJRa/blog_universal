@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Rstudio on Danny J. R.</title>
@@ -19,7 +19,7 @@
       <guid>/blog/2019/05/09/72_nginx_blog/</guid>
       <description>Installing Nginx Server How To Install Nginx on Ubuntu 18.04[^1] Introduction Nginx is one of the most popular web servers in the world and is responsible for hosting some of the largest and highest-traffic sites on the internet. It is more resource-friendly than Apache in most cases and can be used as a web server or reverse proxy.
 Installing Nginx Install on Ubuntu 18.04 with &amp;hellip;
-sudo apt install nginx  FIrewall (optional) After accepting the procedure, apt will install Nginx and any required dependencies to your server.</description>
+sudo apt install nginx FIrewall (optional) After accepting the procedure, apt will install Nginx and any required dependencies to your server.</description>
     </item>
     
   </channel>

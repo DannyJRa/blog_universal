@@ -17,7 +17,7 @@
   <meta name="description" content="Uuuups">	
   
 
-  <meta name="generator" content="Hugo 0.55.5" />
+  <meta name="generator" content="Hugo 0.68.0" />
 
   <link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,500,700,800' rel='stylesheet' type='text/css'>
 
@@ -96,60 +96,48 @@
 
                         <div id="post-content">
                           <p>Add summary desdcription here</p>
-
 <h1 id="creating-art-with-r">Creating Art with R</h1>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e">#install.packages(c(&#34;devtools&#34;, &#34;mapproj&#34;, &#34;tidyverse&#34;, &#34;ggforce&#34;))</span>
+devtools<span style="color:#f92672">::</span><span style="color:#a6e22e">install_github</span>(<span style="color:#e6db74">&#34;marcusvolz/mathart&#34;</span>)
+devtools<span style="color:#f92672">::</span><span style="color:#a6e22e">install_github</span>(<span style="color:#e6db74">&#34;marcusvolz/ggart&#34;</span>)
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#a6e22e">library</span>(mathart)
+<span style="color:#a6e22e">library</span>(ggart)
+<span style="color:#a6e22e">library</span>(ggforce)
+<span style="color:#a6e22e">library</span>(tidyverse)
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">df1 <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">harmonograph</span>(A1 <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>, A2 <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>, A3 <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>, A4 <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>,
+                    d1 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.004</span>, d2 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.0065</span>, d3 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.008</span>, d4 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.019</span>,
+                    f1 <span style="color:#f92672">=</span> <span style="color:#ae81ff">3.001</span>, f2 <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>, f3 <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>, f4 <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>,
+                    p1 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>, p2 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>, p3 <span style="color:#f92672">=</span> <span style="color:#66d9ef">pi</span><span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>, p4 <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span><span style="color:#f92672">*</span><span style="color:#66d9ef">pi</span><span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>) <span style="color:#f92672">%&gt;%</span> <span style="color:#a6e22e">mutate</span>(id <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>)
 
-<pre><code class="language-r">#install.packages(c(&quot;devtools&quot;, &quot;mapproj&quot;, &quot;tidyverse&quot;, &quot;ggforce&quot;))
-devtools::install_github(&quot;marcusvolz/mathart&quot;)
-devtools::install_github(&quot;marcusvolz/ggart&quot;)
-</code></pre>
+df2 <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">harmonograph</span>(A1 <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>, A2 <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>, A3 <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>, A4 <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>,
+                    d1 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.0085</span>, d2 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>, d3 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.065</span>, d4 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>,
+                    f1 <span style="color:#f92672">=</span> <span style="color:#ae81ff">2.01</span>, f2 <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>, f3 <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>, f4 <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>,
+                    p1 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>, p2 <span style="color:#f92672">=</span> <span style="color:#ae81ff">7</span><span style="color:#f92672">*</span><span style="color:#66d9ef">pi</span><span style="color:#f92672">/</span><span style="color:#ae81ff">16</span>, p3 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>, p4 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>) <span style="color:#f92672">%&gt;%</span> <span style="color:#a6e22e">mutate</span>(id <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>)
 
-<pre><code class="language-r">library(mathart)
-library(ggart)
-library(ggforce)
-library(tidyverse)
-</code></pre>
+df3 <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">harmonograph</span>(A1 <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>, A2 <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>, A3 <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>, A4 <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>,
+                    d1 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.039</span>, d2 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.006</span>, d3 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>, d4 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.0045</span>,
+                    f1 <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>, f2 <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>, f3 <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>, f4 <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>,
+                    p1 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>, p2 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>, p3 <span style="color:#f92672">=</span> <span style="color:#66d9ef">pi</span><span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>, p4 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>) <span style="color:#f92672">%&gt;%</span> <span style="color:#a6e22e">mutate</span>(id <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>)
 
-<pre><code class="language-r">df1 &lt;- harmonograph(A1 = 1, A2 = 1, A3 = 1, A4 = 1,
-                    d1 = 0.004, d2 = 0.0065, d3 = 0.008, d4 = 0.019,
-                    f1 = 3.001, f2 = 2, f3 = 3, f4 = 2,
-                    p1 = 0, p2 = 0, p3 = pi/2, p4 = 3*pi/2) %&gt;% mutate(id = 1)
+df4 <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">harmonograph</span>(A1 <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>, A2 <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>, A3 <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>, A4 <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>,
+                    d1 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.02</span>, d2 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.0315</span>, d3 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.02</span>, d4 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.02</span>,
+                    f1 <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>, f2 <span style="color:#f92672">=</span> <span style="color:#ae81ff">6</span>, f3 <span style="color:#f92672">=</span> <span style="color:#ae81ff">1.002</span>, f4 <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>,
+                    p1 <span style="color:#f92672">=</span> <span style="color:#66d9ef">pi</span><span style="color:#f92672">/</span><span style="color:#ae81ff">16</span>, p2 <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span><span style="color:#f92672">*</span><span style="color:#66d9ef">pi</span><span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>, p3 <span style="color:#f92672">=</span> <span style="color:#ae81ff">13</span><span style="color:#f92672">*</span><span style="color:#66d9ef">pi</span><span style="color:#f92672">/</span><span style="color:#ae81ff">16</span>, p4 <span style="color:#f92672">=</span> <span style="color:#66d9ef">pi</span>) <span style="color:#f92672">%&gt;%</span> <span style="color:#a6e22e">mutate</span>(id <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>)
 
-df2 &lt;- harmonograph(A1 = 1, A2 = 1, A3 = 1, A4 = 1,
-                    d1 = 0.0085, d2 = 0, d3 = 0.065, d4 = 0,
-                    f1 = 2.01, f2 = 3, f3 = 3, f4 = 2,
-                    p1 = 0, p2 = 7*pi/16, p3 = 0, p4 = 0) %&gt;% mutate(id = 2)
+df <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">rbind</span>(df1, df2, df3, df4)
 
-df3 &lt;- harmonograph(A1 = 1, A2 = 1, A3 = 1, A4 = 1,
-                    d1 = 0.039, d2 = 0.006, d3 = 0, d4 = 0.0045,
-                    f1 = 10, f2 = 3, f3 = 1, f4 = 2,
-                    p1 = 0, p2 = 0, p3 = pi/2, p4 = 0) %&gt;% mutate(id = 3)
+p <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">ggplot</span>() <span style="color:#f92672">+</span>
+  <span style="color:#a6e22e">geom_path</span>(<span style="color:#a6e22e">aes</span>(x, y), df, alpha <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.25</span>, size <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.5</span>) <span style="color:#f92672">+</span>
+  <span style="color:#a6e22e">coord_equal</span>() <span style="color:#f92672">+</span>
+  <span style="color:#a6e22e">facet_wrap</span>(<span style="color:#f92672">~</span>id, nrow <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>) <span style="color:#f92672">+</span>
+  <span style="color:#a6e22e">theme_blankcanvas</span>(margin_cm <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>)
 
-df4 &lt;- harmonograph(A1 = 1, A2 = 1, A3 = 1, A4 = 1,
-                    d1 = 0.02, d2 = 0.0315, d3 = 0.02, d4 = 0.02,
-                    f1 = 2, f2 = 6, f3 = 1.002, f4 = 3,
-                    p1 = pi/16, p2 = 3*pi/2, p3 = 13*pi/16, p4 = pi) %&gt;% mutate(id = 4)
-
-df &lt;- rbind(df1, df2, df3, df4)
-
-p &lt;- ggplot() +
-  geom_path(aes(x, y), df, alpha = 0.25, size = 0.5) +
-  coord_equal() +
-  facet_wrap(~id, nrow = 2) +
-  theme_blankcanvas(margin_cm = 0)
-
-ggsave(&quot;harmonograph01.png&quot;, p, width = 20, height = 20, units = &quot;cm&quot;)
-</code></pre>
-
-<h2 id="and-here-are-the-results">And here are the results</h2>
-
+<span style="color:#a6e22e">ggsave</span>(<span style="color:#e6db74">&#34;harmonograph01.png&#34;</span>, p, width <span style="color:#f92672">=</span> <span style="color:#ae81ff">20</span>, height <span style="color:#f92672">=</span> <span style="color:#ae81ff">20</span>, units <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;cm&#34;</span>)
+</code></pre></div><h2 id="and-here-are-the-results">And here are the results</h2>
 <h3 id="example-1">Example 1</h3>
-
-<p><img src="../../../../../img/harmonograph01.png" alt="Art 1" /></p>
-
+<p><img src="../../../../../img/harmonograph01.png" alt="Art 1"></p>
 <h3 id="example-2">Example 2</h3>
-
-<p><img src="../../../../../img/lissajous001.png" alt="Art 2" /></p>
+<p><img src="../../../../../img/lissajous001.png" alt="Art 2"></p>
                         </div>
                         
                         
@@ -202,16 +190,13 @@ ggsave(&quot;harmonograph01.png&quot;, p, width = 20, height = 20, units = &quot
     <div class="panel-body">
         <ul class="nav nav-pills nav-stacked">
             
-            <li><a href="../../../../../categories/cloud">cloud (3)</a>
+            <li><a href="../../../../../categories/cloud">cloud (5)</a>
             </li>
             
-            <li><a href="../../../../../categories/datascience">datascience (1)</a>
+            <li><a href="../../../../../categories/python">python (7)</a>
             </li>
             
-            <li><a href="../../../../../categories/python">python (5)</a>
-            </li>
-            
-            <li><a href="../../../../../categories/r">r (10)</a>
+            <li><a href="../../../../../categories/r">r (9)</a>
             </li>
             
         </ul>
@@ -242,10 +227,16 @@ ggsave(&quot;harmonograph01.png&quot;, p, width = 20, height = 20, units = &quot
             <li><a href="../../../../../tags/bigdata"><i class="fa fa-tags"></i> bigdata</a>
             </li>
             
+            <li><a href="../../../../../tags/django"><i class="fa fa-tags"></i> django</a>
+            </li>
+            
             <li><a href="../../../../../tags/docker"><i class="fa fa-tags"></i> docker</a>
             </li>
             
             <li><a href="../../../../../tags/engineering"><i class="fa fa-tags"></i> engineering</a>
+            </li>
+            
+            <li><a href="../../../../../tags/flask"><i class="fa fa-tags"></i> flask</a>
             </li>
             
             <li><a href="../../../../../tags/gcp"><i class="fa fa-tags"></i> gcp</a>
@@ -255,6 +246,9 @@ ggsave(&quot;harmonograph01.png&quot;, p, width = 20, height = 20, units = &quot
             </li>
             
             <li><a href="../../../../../tags/ml"><i class="fa fa-tags"></i> ml</a>
+            </li>
+            
+            <li><a href="../../../../../tags/ops"><i class="fa fa-tags"></i> ops</a>
             </li>
             
             <li><a href="../../../../../tags/r-package"><i class="fa fa-tags"></i> r-package</a>

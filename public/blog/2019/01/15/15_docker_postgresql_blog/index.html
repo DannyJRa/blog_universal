@@ -17,7 +17,7 @@
   <meta name="description" content="Uuuups">	
   
 
-  <meta name="generator" content="Hugo 0.55.5" />
+  <meta name="generator" content="Hugo 0.68.0" />
 
   <link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,500,700,800' rel='stylesheet' type='text/css'>
 
@@ -96,100 +96,72 @@
 
                         <div id="post-content">
                           <p>The reticulate package provides a comprehensive set of tools for interoperability between Python and R.</p>
-
 <h1 id="docker-postgresql-10-and-pgadmin-4">Docker: PostgreSQL 10 and pgAdmin 4</h1>
-
 <h2 id="run-docker-with-postgresql-container">Run Docker with PostgreSQL container</h2>
-
 <p>Make persistent volume to store config files and database files:</p>
-
 <blockquote>
 <p>mkdir -p $HOME/docker/volumes/postgres</p>
 </blockquote>
-
 <p>Rund docker command to create postgresql database with User: postgres and POSTGRES_PASSWORD=docker:</p>
-
 <h1 id="exucute-postgresql">Exucute postgresql</h1>
-
 <blockquote>
 <p>docker run &ndash;rm   &ndash;name pg-docker -e POSTGRES_PASSWORD=docker -d -p 5434:5432 -v $HOME/docker/volumes/postgres:/var/lib/postgresql/data  postgres</p>
 </blockquote>
-
 <h2 id="connect-to-postgres">Connect to Postgres</h2>
-
-<p>Once the container is up an running, connecting to it from an application is no different than connecting to a Postgres instance running outside a docker container. For example, to connect using psql we can execute<sup class="footnote-ref" id="fnref:1"><a href="#fn:1">1</a></sup></p>
-
+<p>Once the container is up an running, connecting to it from an application is no different than connecting to a Postgres instance running outside a docker container. For example, to connect using psql we can execute<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
 <blockquote>
 <p>psql -h localhost -U postgres -d postgres</p>
 </blockquote>
-
-<h3 id="access-postgresql-conf-file">Access postgresql.conf file</h3>
-
-<p>Switch to root
-&gt;sudo su</p>
-
+<h3 id="access-postgresqlconf-file">Access postgresql.conf file</h3>
+<p>Switch to root</p>
+<blockquote>
+<p>sudo su</p>
+</blockquote>
 <p>And access the conf file to manage e.g. remote access to the database:</p>
-
 <blockquote>
 <p>/home/danny/docker/volumes/postgres# sudo nano postgresql.conf</p>
 </blockquote>
-
 <h3 id="open-port">Open port</h3>
-
 <p>If you work on the google cloud, you can open the port=5434 for all instances in the current workind directory with:</p>
-
 <blockquote>
-<p>gcloud compute firewall-rules create postgresdocker &ndash;allow tcp:5434 <br />
-      &ndash;description &ldquo;Allow incoming traffic on TCP port 5434&rdquo; <br />
-      &ndash;direction INGRESS</p>
+<p>gcloud compute firewall-rules create postgresdocker &ndash;allow tcp:5434<br>
+&ndash;description &ldquo;Allow incoming traffic on TCP port 5434&rdquo;<br>
+&ndash;direction INGRESS</p>
 </blockquote>
-
 <h2 id="run-docker-with-pgadmin-4-container">Run Docker with pgAdmin 4 container</h2>
-
 <p>Pull and start the pgAdmin container:</p>
-
-<pre><code class="language-bash">docker run -p 5051:5051 \
-        -e &quot;PGADMIN_DEFAULT_EMAIL=${S_email}&quot; \
-        -e &quot;PGADMIN_DEFAULT_PASSWORD=${S_pwd_pgadmin}&quot; \
-        -e &quot;PGADMIN_LISTEN_PORT=5051&quot; \
-        -d dpage/pgadmin4
-</code></pre>
-
-<p>Problem: Not yet solved the issue that the volume will not be shared currently:</p>
-
-<pre><code class="language-bash">&gt;docker run -p 5050:5050 \
-        -e &quot;PGADMIN_DEFAULT_EMAIL=xxxoutlook.com&quot; \
-        -e &quot;PGADMIN_DEFAULT_PASSWORD=secretpassword&quot; \
-        -e &quot;PGADMIN_LISTEN_PORT=5050&quot; \
-        -d dpage/pgadmin4 \
-        -v &quot;/home/danny/docker/volumes/pgadmin:/var/lib/pgadmin/shared&quot;
-</code></pre>
-
-<h3 id="open-port-5050-on-gcp">Open port 5050 on GCP</h3>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker run -p 5051:5051 <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>        -e <span style="color:#e6db74">&#34;PGADMIN_DEFAULT_EMAIL=</span><span style="color:#e6db74">${</span>S_email<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>        -e <span style="color:#e6db74">&#34;PGADMIN_DEFAULT_PASSWORD=</span><span style="color:#e6db74">${</span>S_pwd_pgadmin<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>        -e <span style="color:#e6db74">&#34;PGADMIN_LISTEN_PORT=5051&#34;</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>        -d dpage/pgadmin4
+</code></pre></div><p>Problem: Not yet solved the issue that the volume will not be shared currently:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">&gt;docker run -p 5050:5050 <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>        -e <span style="color:#e6db74">&#34;PGADMIN_DEFAULT_EMAIL=xxxoutlook.com&#34;</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>        -e <span style="color:#e6db74">&#34;PGADMIN_DEFAULT_PASSWORD=secretpassword&#34;</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>        -e <span style="color:#e6db74">&#34;PGADMIN_LISTEN_PORT=5050&#34;</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>        -d dpage/pgadmin4 <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>        -v <span style="color:#e6db74">&#34;/home/danny/docker/volumes/pgadmin:/var/lib/pgadmin/shared&#34;</span>
+</code></pre></div><h3 id="open-port-5050-on-gcp">Open port 5050 on GCP</h3>
 <blockquote>
-<p>gcloud compute firewall-rules create streamset &ndash;allow tcp:18630 <br />
-      &ndash;description &ldquo;Allow incoming traffic on TCP port 18630&rdquo; <br />
-      &ndash;direction INGRESS</p>
+<p>gcloud compute firewall-rules create streamset &ndash;allow tcp:18630<br>
+&ndash;description &ldquo;Allow incoming traffic on TCP port 18630&rdquo;<br>
+&ndash;direction INGRESS</p>
 </blockquote>
-
 <p>List all firewall rules:</p>
-
 <blockquote>
 <p>gcloud compute firewall-rules list</p>
 </blockquote>
-
 <p>Then login with your set credentials at port 5050 (in this case):
-<img src="../../../../../img/pgAdmin_login.png" alt="Login" /></p>
-<div class="footnotes">
-
-<hr />
-
+<img src="../../../../../img/pgAdmin_login.png" alt="Login"></p>
+<section class="footnotes" role="doc-endnotes">
+<hr>
 <ol>
-<li id="fn:1">Adopted from <a href="https://hackernoon.com/dont-install-postgres-docker-pull-postgres-bee20e200198">https://hackernoon.com/dont-install-postgres-docker-pull-postgres-bee20e200198</a>
- <a class="footnote-return" href="#fnref:1"><sup>[return]</sup></a></li>
+<li id="fn:1" role="doc-endnote">
+<p>Adopted from <a href="https://hackernoon.com/dont-install-postgres-docker-pull-postgres-bee20e200198">https://hackernoon.com/dont-install-postgres-docker-pull-postgres-bee20e200198</a> <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
 </ol>
-</div>
+</section>
                         </div>
                         
                         
@@ -242,16 +214,13 @@
     <div class="panel-body">
         <ul class="nav nav-pills nav-stacked">
             
-            <li><a href="../../../../../categories/cloud">cloud (3)</a>
+            <li><a href="../../../../../categories/cloud">cloud (5)</a>
             </li>
             
-            <li><a href="../../../../../categories/datascience">datascience (1)</a>
+            <li><a href="../../../../../categories/python">python (7)</a>
             </li>
             
-            <li><a href="../../../../../categories/python">python (5)</a>
-            </li>
-            
-            <li><a href="../../../../../categories/r">r (10)</a>
+            <li><a href="../../../../../categories/r">r (9)</a>
             </li>
             
         </ul>
@@ -282,10 +251,16 @@
             <li><a href="../../../../../tags/bigdata"><i class="fa fa-tags"></i> bigdata</a>
             </li>
             
+            <li><a href="../../../../../tags/django"><i class="fa fa-tags"></i> django</a>
+            </li>
+            
             <li><a href="../../../../../tags/docker"><i class="fa fa-tags"></i> docker</a>
             </li>
             
             <li><a href="../../../../../tags/engineering"><i class="fa fa-tags"></i> engineering</a>
+            </li>
+            
+            <li><a href="../../../../../tags/flask"><i class="fa fa-tags"></i> flask</a>
             </li>
             
             <li><a href="../../../../../tags/gcp"><i class="fa fa-tags"></i> gcp</a>
@@ -295,6 +270,9 @@
             </li>
             
             <li><a href="../../../../../tags/ml"><i class="fa fa-tags"></i> ml</a>
+            </li>
+            
+            <li><a href="../../../../../tags/ops"><i class="fa fa-tags"></i> ops</a>
             </li>
             
             <li><a href="../../../../../tags/r-package"><i class="fa fa-tags"></i> r-package</a>

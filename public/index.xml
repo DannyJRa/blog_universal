@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Danny J. R.</title>
@@ -6,20 +6,38 @@
     <description>Recent content on Danny J. R.</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 21 May 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 18 Aug 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Portainer</title>
-      <link>/blog/2019/05/21/77_1_portainer_blog/</link>
-      <pubDate>Tue, 21 May 2019 00:00:00 +0000</pubDate>
+      <title>Zeppelin Notebook</title>
+      <link>/blog/2019/08/18/95_zeppelin_blog/</link>
+      <pubDate>Sun, 18 Aug 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/2019/05/21/77_1_portainer_blog/</guid>
+      <guid>/blog/2019/08/18/95_zeppelin_blog/</guid>
+      <description>&lt;p&gt;The Notebook is the place for all your needs, i.e.Data Ingestion, Data Discovery, Data Analytics, Data Visualization &amp;amp; Collaboration&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Portainer</title>
+      <link>/blog/2019/07/21/77_1_portainer_blog/</link>
+      <pubDate>Sun, 21 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/2019/07/21/77_1_portainer_blog/</guid>
       <description>Portainer: Managing Docker Containers Although I’m comfortable with the command line, it is nice to have a GUI to manage the containers.
 Portainer is an open-source management UI for Docker, including Docker Swarm environment. Portainer makes it easier for you to manage your Docker containers, it allows you to manage containers, images, networks, and volumes from the web-based Portainer dashboard.
 Prerequisites  Ubuntu 18 Root privielges docker  What we will do  Install and Configure Portainer Docker Environment Management  What is Portainer?</description>
+    </item>
+    
+    <item>
+      <title>Flask with Connexion</title>
+      <link>/blog/2019/06/22/81_flask_connexion1_blog/</link>
+      <pubDate>Sat, 22 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/2019/06/22/81_flask_connexion1_blog/</guid>
+      <description>&lt;p&gt;Connexion is a framework that automagically handles HTTP requests based on OpenAPI Specification (formerly known as Swagger Spec) of your API described in YAML format. Connexion allows you to write an OpenAPI specification, then maps the endpoints to your Python functions; this makes it unique, as many tools generate the specification based on your Python code. You can describe your REST API in as much detail as you want; then Connexion guarantees that it will work as you specified.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -42,7 +60,7 @@ Ariadne is a Python library for implementing GraphQL servers.
       <guid>/blog/2019/05/09/72_nginx_blog/</guid>
       <description>Installing Nginx Server How To Install Nginx on Ubuntu 18.04[^1] Introduction Nginx is one of the most popular web servers in the world and is responsible for hosting some of the largest and highest-traffic sites on the internet. It is more resource-friendly than Apache in most cases and can be used as a web server or reverse proxy.
 Installing Nginx Install on Ubuntu 18.04 with &amp;hellip;
-sudo apt install nginx  FIrewall (optional) After accepting the procedure, apt will install Nginx and any required dependencies to your server.</description>
+sudo apt install nginx FIrewall (optional) After accepting the procedure, apt will install Nginx and any required dependencies to your server.</description>
     </item>
     
     <item>
@@ -82,6 +100,18 @@ sudo apt install nginx  FIrewall (optional) After accepting the procedure, apt w
     </item>
     
     <item>
+      <title>Django Deployment</title>
+      <link>/blog/2019/01/27/58-02_django_deployment_blog/</link>
+      <pubDate>Sun, 27 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/2019/01/27/58-02_django_deployment_blog/</guid>
+      <description>Why Django Django is a lifesaver if you want to create a CRUD app with batteries included without getting sidetracked.
+ Django - so much developer convenience
+ The Web framework for perfectionists with deadlines
+Django makes it very easy and fun to build a certain type of web application - a CRUD (create, read, update, delete) app. Almost every single real-world web app can be started as a simple CRUD app.</description>
+    </item>
+    
+    <item>
       <title>Pipenv</title>
       <link>/blog/2019/01/25/19_pipenv_blog/</link>
       <pubDate>Fri, 25 Jan 2019 00:00:00 +0000</pubDate>
@@ -92,33 +122,12 @@ Pipenv ships with package management and virtual environment support, so you can
     </item>
     
     <item>
-      <title>Pipenv</title>
-      <link>/blog/2019/01/25/58-02_django_deployment_blog/</link>
-      <pubDate>Fri, 25 Jan 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/blog/2019/01/25/58-02_django_deployment_blog/</guid>
-      <description>Why Django Django is a lifesaver if you want to create a CRUD app with batteries included without getting sidetracked.
- Django - so much developer convenience
- The Web framework for perfectionists with deadlines
-Django makes it very easy and fun to build a certain type of web application - a CRUD (create, read, update, delete) app. Almost every single real-world web app can be started as a simple CRUD app.</description>
-    </item>
-    
-    <item>
       <title>Docker PostGreSQL</title>
       <link>/blog/2019/01/15/15_docker_postgresql_blog/</link>
       <pubDate>Tue, 15 Jan 2019 00:00:00 +0000</pubDate>
       
       <guid>/blog/2019/01/15/15_docker_postgresql_blog/</guid>
       <description>&lt;p&gt;The reticulate package provides a comprehensive set of tools for interoperability between Python and R.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>ML with Caret</title>
-      <link>/blog/2019/01/11/01_blog_caret_tut_blog-workstation/</link>
-      <pubDate>Fri, 11 Jan 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/blog/2019/01/11/01_blog_caret_tut_blog-workstation/</guid>
-      <description>&lt;p&gt;Add summary desdcription of blog&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -137,7 +146,6 @@ Django makes it very easy and fun to build a certain type of web application - a
       
       <guid>/blog/2019/01/11/06_blog/</guid>
       <description>&lt;p&gt;Original post here: &lt;a href=&#34;https://dannyjra.github.io/06_Network_Analysis/01_blog_caret_Tut.html&#34;&gt;https://dannyjra.github.io/06_Network_Analysis/01_blog_caret_Tut.html&lt;/a&gt;&lt;/p&gt;
-
 &lt;p&gt;Add summary desdcription of blog&lt;/p&gt;</description>
     </item>
     
@@ -156,8 +164,7 @@ Django makes it very easy and fun to build a certain type of web application - a
       <pubDate>Fri, 15 Jun 2018 00:00:00 +0000</pubDate>
       
       <guid>/blog/2018/06/15/04_r_packages_blog/</guid>
-      <description>&lt;p&gt;Original post here: &lt;a href=&#34;https://dannyjra.github.io/04_R_Packages/01_blog_caret_Tut.html&#34;&gt;https://dannyjra.github.io/04_R_Packages/01_blog_caret_Tut.html&lt;/a&gt;&lt;/p&gt;
-
+      <description>&lt;p&gt;Original post here: /home/danny/OneDrive/DataScience/41_DannyJRa.github.io/04_R_Packages/01_blog_caret_Tut.html&lt;/p&gt;
 &lt;p&gt;Add summary desdcription of blog&lt;/p&gt;</description>
     </item>
     
@@ -177,7 +184,6 @@ Django makes it very easy and fun to build a certain type of web application - a
       
       <guid>/blog/2018/06/05/05_blog/</guid>
       <description>&lt;p&gt;Original post here: &lt;a href=&#34;https://dannyjra.github.io/05_Blog_BigData_Spark/01_blog_caret_Tut.html&#34;&gt;https://dannyjra.github.io/05_Blog_BigData_Spark/01_blog_caret_Tut.html&lt;/a&gt;&lt;/p&gt;
-
 &lt;p&gt;Add summary desdcription of blog&lt;/p&gt;</description>
     </item>
     
@@ -191,11 +197,11 @@ Django makes it very easy and fun to build a certain type of web application - a
     </item>
     
     <item>
-      <title></title>
-      <link>/blog/1/01/01/58_django_basics_blog/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <title>Django basics</title>
+      <link>/blog/2018/03/20/58_django_basics_blog/</link>
+      <pubDate>Tue, 20 Mar 2018 00:00:00 +0000</pubDate>
       
-      <guid>/blog/1/01/01/58_django_basics_blog/</guid>
+      <guid>/blog/2018/03/20/58_django_basics_blog/</guid>
       <description>Getting started with Django Why Django Django is a Web framework written in Python. A Web framework is a software that supports the development of dynamic Web sites, applications, and services. It provides a set of tools and functionalities that solves many common problems associated with Web development, such as security features, database access, sessions, template processing, URL routing, internationalization, localization, and much more.
 Using a Web framework, such as Django, enables us to develop secure and reliable Web applications very quickly in a standardized way, without having to reinvent the wheel.</description>
     </item>
@@ -224,6 +230,29 @@ The R code is:&lt;/p&gt;</description>
     
     <item>
       <title></title>
+      <link>/blog/1/01/01/ai-platform_blog/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/1/01/01/ai-platform_blog/</guid>
+      <description>#AI Platform Samples https://github.com/GoogleCloudPlatform/ai-platform-samples
+ai-platform-samples/notebooks/notebooks-ci-showcase APIs aktivieren e.g. BigQuery https://console.cloud.google.com/flows/enableapi?apiid=bigquery&amp;amp;hl=de&amp;amp;_ga=2.12295284.-1331973218.1565080239
+cd /home/danny/OneDrive/DataScience/41_DannyJRa.github.io/90_Tensorflow/ai-platform-samples/notebooks/notebooks-ci-showcase/
+bash run_test.sh
+worked with CPU
+Copy result notebobook ucket to folder test gsutil cp -r gs://dl-platform-temp3/notebook-ci-showcase test
+Limitations So far no artefacts
+GCP Authorization https://cloud.google.com/sdk/docs/authorizing?hl=de
+bq show &amp;ndash;encryption_service_account
+Using service account Blog_Telegram_Picture https://www.freecodecamp.org/news/how-to-build-a-bot-to-automate-your-mindless-tasks-using-python-and-google-bigquery-a34faf7fb74/
+via Json file
+export GOOGLE_APPLICATION_CREDENTIALS=&amp;rsquo;[/home/danny/OneDrive/DataScience/02_CloudComputing/00_Secrets/kubeflowtest-bigquery.json]&amp;rsquo;
+export GOOGLE_APPLICATION_CREDENTIALS=&amp;rdquo;/home/danny/OneDrive/DataScience/02_CloudComputing/00_Secrets/kubeflowtest-bigquery.json&amp;rdquo; echo $GOOGLE_APPLICATION_CREDENTIALS
+Manually setting the context credentials:
+from google.cloud.bigquery import magics from google.oauth2 import service_account credentials = (service_account.Credentials.from_service_account_file(&#39;/home/danny/OneDrive/DataScience/02_CloudComputing/00_Secrets/kubeflowtest-bigquery.json&amp;rsquo;)) magics.</description>
+    </item>
+    
+    <item>
+      <title></title>
       <link>/blog/1/01/01/portainer_blog/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -240,7 +269,7 @@ Prerequisites  Ubuntu 18 Root privielges docker  What we will do  Install and Co
       
       <guid>/contact/</guid>
       <description>We are here to help you Are you curious about something? Do you have some kind of problem with our products? As am hastily invited settled at limited civilly fortune me. Really spring in extent an by. Judge but built gay party world. Of so am he remember although required. Bachelor unpacked be advanced at. Confined in declared marianne is vicinity.
-Please feel free to contact us, our customer service center is working for you 24&amp;frasl;7.</description>
+Please feel free to contact us, our customer service center is working for you 24/7.</description>
     </item>
     
     <item>

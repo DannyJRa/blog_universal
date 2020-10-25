@@ -17,7 +17,7 @@
   <meta name="description" content="Uuuups">	
   
 
-  <meta name="generator" content="Hugo 0.55.5" />
+  <meta name="generator" content="Hugo 0.68.0" />
 
   <link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,500,700,800' rel='stylesheet' type='text/css'>
 
@@ -95,27 +95,18 @@
                         <p class="text-muted text-uppercase mb-small text-right">January 1, 0001</p>
 
                         <div id="post-content">
-                          
-
-<h1 id="python-libraries-for-graphql">Python libraries for graphql</h1>
-
+                          <h1 id="python-libraries-for-graphql">Python libraries for graphql</h1>
 <p>GraphQL is emerging but very promising query language and execution engine tied to any backend service and was introduced by Facebook as an alternative to REST and it&rsquo;s popular of flexibility on handling complex systems.</p>
-
 <h2 id="ariadne">Ariadne</h2>
-
 <p>Ariadne is a Python library for implementing GraphQL servers using schema-first approach.</p>
-
 <p>Ariadne is a Python library for implementing GraphQL servers.</p>
-
 <ul>
 <li>Schema-first: Ariadne enables Python developers to use schema-first approach to the API implementation. This is the leading approach used by the GraphQL community and supported by dozens of frontend and backend developer tools, examples, and learning resources. Ariadne makes all of this immediately available to your and other members of your team.</li>
 <li>Simple: Ariadne offers small, consistent and easy to memorize API that lets developers focus on business problems, not the boilerplate.</li>
 <li>Open: Ariadne was designed to be modular and open for customization. If you are missing or unhappy with something, extend or easily swap with your own.
 Documentation is available here.</li>
 </ul>
-
 <h3 id="features">Features</h3>
-
 <ul>
 <li>Simple, quick to learn and easy to memorize API.</li>
 <li>Compatibility with GraphQL.js version 14.2.1.</li>
@@ -128,29 +119,18 @@ Documentation is available here.</li>
 <li>==WSGI== middleware for implementing GraphQL in existing sites.</li>
 <li>Opt-in automatic resolvers mapping between camelCase and snake_case.</li>
 <li>Build-in simple synchronous dev server for quick GraphQL experimentation and GraphQL Playground.</li>
-
-<li><p>Support for Apollo GraphQL extension for Visual Studio Code.
-GraphQL syntax validation via gql() helper function. Also provides colorization if Apollo GraphQL extension is installed.</p>
-
+<li>Support for Apollo GraphQL extension for Visual Studio Code.
+GraphQL syntax validation via gql() helper function. Also provides colorization if Apollo GraphQL extension is installed.</li>
+</ul>
 <h3 id="installation">Installation</h3>
-
 <pre><code>pip install ariadne
 
-</code></pre></li>
-</ul>
-
-<h3 id="quickstart">Quickstart</h3>
-
-<p>The following example creates an API defining Person type and single query field people returning a list of two persons. It also starts a local dev server with GraphQL Playground available on the <a href="http://127.0.0.1:8000">http://127.0.0.1:8000</a> address. Start by installing uvicorn, an ASGI server we will use to serve the API:</p>
-
+</code></pre><h3 id="quickstart">Quickstart</h3>
+<p>The following example creates an API defining Person type and single query field people returning a list of two persons. It also starts a local dev server with GraphQL Playground available on the http://127.0.0.1:8000 address. Start by installing uvicorn, an ASGI server we will use to serve the API:</p>
 <p>Start by installing uvicorn, an ASGI server we will use to serve the API:</p>
-
 <pre><code>pip install uvicorn
 
-</code></pre>
-
-<p>Then create an example.py file for your example application:</p>
-
+</code></pre><p>Then create an example.py file for your example application:</p>
 <pre><code>from ariadne import ObjectType, QueryType, gql, make_executable_schema
 from ariadne.asgi import GraphQL
 
@@ -195,20 +175,12 @@ schema = make_executable_schema(type_defs, [query, person])
 # Create an ASGI app using the schema, running in debug mode
 app = GraphQL(schema, debug=True)
 
-</code></pre>
-
-<h1 id="strawberry">Strawberry</h1>
-
+</code></pre><h1 id="strawberry">Strawberry</h1>
 <p>A new GraphQL library for Python 🍓</p>
-
 <h3 id="installation-1">Installation</h3>
-
 <p>pip install strawberry-graphql</p>
-
 <h3 id="getting-started">Getting Started</h3>
-
 <p>Create a file called app.py with the following code:</p>
-
 <pre><code>import strawberry
 @strawberry.type
 class User
@@ -223,55 +195,33 @@ class Query:
 
 schema = strawberry.Schema(query=Query)
 
-</code></pre>
-
-<p>This will create a GraphQL schema defining a User type and a single query field user that will return a hard coded user.</p>
-
+</code></pre><p>This will create a GraphQL schema defining a User type and a single query field user that will return a hard coded user.</p>
 <p>To run the debug server run the following command:</p>
-
 <pre><code>strawberry run server app
 
-</code></pre>
-
-<p>Open the debug server by clicking on the follwing link: <a href="http://0.0.0.0:8000/graphql">http://0.0.0.0:8000/graphql</a></p>
-
+</code></pre><p>Open the debug server by clicking on the follwing link: http://0.0.0.0:8000/graphql</p>
 <p>This will open a GraphQL playground where you can test the API.</p>
-
 <h1 id="graphene">Graphene</h1>
-
 <h2 id="introduction">Introduction</h2>
-
 <p>Graphene is a Python library for building GraphQL schemas/types fast and easily.</p>
-
 <ul>
 <li>Easy to use: Graphene helps you use GraphQL in Python without effort.</li>
 <li>Data agnostic: Graphene supports any kind of data source: SQL (Django, SQLAlchemy), NoSQL, custom Python objects, etc. We believe that by providing a complete API you could plug Graphene anywhere your data lives and make your data available through GraphQL.</li>
 </ul>
-
 <h3 id="integrations">Integrations</h3>
-
 <p>Graphene has multiple integrations with different frameworks:</p>
-
 <ul>
 <li>Django - graphene-django</li>
 <li>SQLAlchemy - graphene-sqlalchemy</li>
 <li>Google App Engine - graphene-gae</li>
 </ul>
-
 <p>Also, Graphene is fully compatible with the GraphQL spec, working seamlessly with all GraphQL clients, such as Relay, Apollo and gql.</p>
-
 <h3 id="installation-2">Installation</h3>
-
 <p>For instaling graphene, just run this command in your shell</p>
-
 <pre><code>pip install &quot;graphene&gt;=2.0&quot;
 
-</code></pre>
-
-<h3 id="examples">Examples</h3>
-
+</code></pre><h3 id="examples">Examples</h3>
 <p>Here is one example for you to get started:</p>
-
 <pre><code>class Query(graphene.ObjectType):
     hello = graphene.String(description='A typical hello world')
 
@@ -279,10 +229,7 @@ schema = strawberry.Schema(query=Query)
         return 'World'
 
 schema = graphene.Schema(query=Query)
-</code></pre>
-
-<p>Then Querying graphene.Schema is as simple as:</p>
-
+</code></pre><p>Then Querying graphene.Schema is as simple as:</p>
 <pre><code>query = '''
     query SayHello {
       hello
@@ -290,7 +237,6 @@ schema = graphene.Schema(query=Query)
 '''
 result = schema.execute(query)
 </code></pre>
-
                         </div>
                         
                         
@@ -343,16 +289,13 @@ result = schema.execute(query)
     <div class="panel-body">
         <ul class="nav nav-pills nav-stacked">
             
-            <li><a href="../../../../../categories/cloud">cloud (3)</a>
+            <li><a href="../../../../../categories/cloud">cloud (5)</a>
             </li>
             
-            <li><a href="../../../../../categories/datascience">datascience (1)</a>
+            <li><a href="../../../../../categories/python">python (7)</a>
             </li>
             
-            <li><a href="../../../../../categories/python">python (5)</a>
-            </li>
-            
-            <li><a href="../../../../../categories/r">r (10)</a>
+            <li><a href="../../../../../categories/r">r (9)</a>
             </li>
             
         </ul>
@@ -383,10 +326,16 @@ result = schema.execute(query)
             <li><a href="../../../../../tags/bigdata"><i class="fa fa-tags"></i> bigdata</a>
             </li>
             
+            <li><a href="../../../../../tags/django"><i class="fa fa-tags"></i> django</a>
+            </li>
+            
             <li><a href="../../../../../tags/docker"><i class="fa fa-tags"></i> docker</a>
             </li>
             
             <li><a href="../../../../../tags/engineering"><i class="fa fa-tags"></i> engineering</a>
+            </li>
+            
+            <li><a href="../../../../../tags/flask"><i class="fa fa-tags"></i> flask</a>
             </li>
             
             <li><a href="../../../../../tags/gcp"><i class="fa fa-tags"></i> gcp</a>
@@ -396,6 +345,9 @@ result = schema.execute(query)
             </li>
             
             <li><a href="../../../../../tags/ml"><i class="fa fa-tags"></i> ml</a>
+            </li>
+            
+            <li><a href="../../../../../tags/ops"><i class="fa fa-tags"></i> ops</a>
             </li>
             
             <li><a href="../../../../../tags/r-package"><i class="fa fa-tags"></i> r-package</a>

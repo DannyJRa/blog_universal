@@ -17,7 +17,7 @@
   <meta name="description" content="Uuuups">	
   
 
-  <meta name="generator" content="Hugo 0.55.5" />
+  <meta name="generator" content="Hugo 0.68.0" />
 
   <link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,500,700,800' rel='stylesheet' type='text/css'>
 
@@ -96,107 +96,69 @@
 
                         <div id="post-content">
                           <p>Using the blogdown package to create static websites in RStudio using R Markdown</p>
-
 <h1 id="hugo-website-with-r-blogdown">Hugo Website with R-Blogdown</h1>
-
 <h2 id="why-use-rstudio-to-make-static-websites">Why use RStudio to make static websites?</h2>
-
 <p>It’s easy
 It’s free
 It’s a simple way to share your code and analyses
 What is blogdown?
 blogdown is a package that leverages R Markdown and Hugo to create static websites.</p>
-
 <h2 id="what-is-hugo">What is Hugo?</h2>
-
 <p>Hugo is a static website generator. Static websites are collections of HTML files and the external dependencies referenced within them. More on Hugo here.</p>
-
 <h1 id="learn-the-basics">Learn the basics</h1>
-
 <p>Install blogdown and hugo</p>
-
-<pre><code class="language-r">if (!require(blogdown)) {
-  install.packages(&quot;blogdown&quot;)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#a6e22e">if </span>(<span style="color:#f92672">!</span><span style="color:#a6e22e">require</span>(blogdown)) {
+  <span style="color:#a6e22e">install.packages</span>(<span style="color:#e6db74">&#34;blogdown&#34;</span>)
 }
-blogdown::install_hugo()
-</code></pre>
-
-<h2 id="update-hugo-if-necessary">Update hugo if necessary</h2>
-
-<pre><code class="language-r">blogdown::hugo_version() 
-blogdown::update_hugo()
-</code></pre>
-
-<h2 id="create-a-website-using-the-default-lithium-template">Create a website using the default lithium template</h2>
-
+blogdown<span style="color:#f92672">::</span><span style="color:#a6e22e">install_hugo</span>()
+</code></pre></div><h2 id="update-hugo-if-necessary">Update hugo if necessary</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">blogdown<span style="color:#f92672">::</span><span style="color:#a6e22e">hugo_version</span>() 
+blogdown<span style="color:#f92672">::</span><span style="color:#a6e22e">update_hugo</span>()
+</code></pre></div><h2 id="create-a-website-using-the-default-lithium-template">Create a website using the default lithium template</h2>
 <p>There are a number of ways to create a new website project. You can create it using the IDE by clicking  File &gt; New Project &gt; New Directory &gt; Website Using Blogdown or by simply specifying the path to the new website as a argument in the blogdown::new_site() function. Make sure that you specify the new directory (e.g. the name of the folder you would like to create) in the path.</p>
-
 <p>Here we’ll create the website one level above our current working directory. The reason for doing this is that our current working directory is a git repository and if we try to publish this later, it will cause problems (it’s not straight forward to have a repo inside of a repo).</p>
-
-<pre><code class="language-r">blogdown::new_site(&quot;../default-site&quot;)
-</code></pre>
-
-<p>You can also specify a theme when creating your new site. The default is the lithium theme, but there are a variety of other Hugo themes available. We’ll use the hugo-academic theme later in the tutorial.</p>
-
-<pre><code class="language-r">blogdown::new_site(theme = 'yihui/hugo-lithium')
-blogdown::new_site(theme = 'devcows/hugo-universal-theme')
-blogdown::new_site(theme = 'gcushen/hugo-academic')
-</code></pre>
-
-<p>Render the site
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">blogdown<span style="color:#f92672">::</span><span style="color:#a6e22e">new_site</span>(<span style="color:#e6db74">&#34;../default-site&#34;</span>)
+</code></pre></div><p>You can also specify a theme when creating your new site. The default is the lithium theme, but there are a variety of other Hugo themes available. We’ll use the hugo-academic theme later in the tutorial.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">blogdown<span style="color:#f92672">::</span><span style="color:#a6e22e">new_site</span>(theme <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;yihui/hugo-lithium&#39;</span>)
+blogdown<span style="color:#f92672">::</span><span style="color:#a6e22e">new_site</span>(theme <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;devcows/hugo-universal-theme&#39;</span>)
+blogdown<span style="color:#f92672">::</span><span style="color:#a6e22e">new_site</span>(theme <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;gcushen/hugo-academic&#39;</span>)
+</code></pre></div><p>Render the site
 Anytime you want to render the site, you can do so by either clicking Addins &gt; Serve Site or executing the  blogdown::serve_site() function. This function should be executed from the site directory, so if you are not currently in that directory, make sure to change you current working directory to the site directory.</p>
-
-<pre><code class="language-r">setwd(&quot;../default-site/&quot;)
-blogdown::serve_site()
-</code></pre>
-
-<p>Where does the content live?
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#a6e22e">setwd</span>(<span style="color:#e6db74">&#34;../default-site/&#34;</span>)
+blogdown<span style="color:#f92672">::</span><span style="color:#a6e22e">serve_site</span>()
+</code></pre></div><p>Where does the content live?
 Take a look at what’s in the site directory.</p>
-
-<p>Key components:
-* config.toml = configuration file that the user edits to customize their site
-* /content/ = where the actual content (e.g. pages, posts live)
-* /public/ = the directory containing the website for online deployment
-* /layouts/ = where you’ll place code to override the original template design
-* /static/ = where content such as images and CSS code are stored
-* /theme/ = where the theme template is stored</p>
-
+<p>Key components:</p>
+<ul>
+<li>config.toml = configuration file that the user edits to customize their site</li>
+<li>/content/ = where the actual content (e.g. pages, posts live)</li>
+<li>/public/ = the directory containing the website for online deployment</li>
+<li>/layouts/ = where you’ll place code to override the original template design</li>
+<li>/static/ = where content such as images and CSS code are stored</li>
+<li>/theme/ = where the theme template is stored</li>
+</ul>
 <p>config.toml file
 The configuration file is where global variables and settings are defined. More about configuration files and the variables specified within it here. More information on TOML syntax here.</p>
-
 <p>Edit config.toml
 Change the site name</p>
-
 <pre><code>title = &quot;Dani Cosme, M.S.&quot;
 Enable emojis
 
 enableEmoji = true
-</code></pre>
-
-<h2 id="navigation-bar">Navigation bar</h2>
-
+</code></pre><h2 id="navigation-bar">Navigation bar</h2>
 <p>More on menu management here. [[menu.main]] = Pages and links in the menu bar</p>
-
 <p>Can be external links (e.g. Twitter page) or internal links (e.g. /posts/)
 Default arrangement is alphabetical order
 To manually specify the order, add weight as a field
 Add the following text to your config.toml page and see what happens:</p>
-
 <pre><code>[[menu.main]]
     name = &quot;UO Data Science Club&quot;
     url = &quot;https://github.com/uodatascience&quot;
     weight = 1
-</code></pre>
-
-<h2 id="homepage">Homepage</h2>
-
+</code></pre><h2 id="homepage">Homepage</h2>
 <p>Create a file called index.html in the layouts/ directory.</p>
-
 <pre><code>touch ../default-site/layouts/index.html
-</code></pre>
-
-<p>Copy the following text into layouts/index.html. I borrowed this code from Alison Hill’s awesome blogdown tutorial, but you could write your own html code to create the layout for your homepage.</p>
-
+</code></pre><p>Copy the following text into layouts/index.html. I borrowed this code from Alison Hill’s awesome blogdown tutorial, but you could write your own html code to create the layout for your homepage.</p>
 <pre><code>{{ partial &quot;header&quot; . }}
 
 &lt;div class=&quot;intro&quot;&gt;
@@ -210,30 +172,18 @@ Add the following text to your config.toml page and see what happens:</p>
 
 
 {{ partial &quot;footer&quot; . }}
-</code></pre>
-
-<p>We referenced a field.Site.Params.img, but it currently doesn’t exist. Let’s add it to config.toml and also update the site description.</p>
-
+</code></pre><p>We referenced a field.Site.Params.img, but it currently doesn’t exist. Let’s add it to config.toml and also update the site description.</p>
 <pre><code>[params]
     description = &quot;Welcome to my website!&lt;br&gt;Here is a bunch of text about me.&lt;br&gt;Yada yada yada.&quot;
     img = &quot;https://avatars1.githubusercontent.com/u/11858670?s=460&amp;v=4&quot;
-</code></pre>
-
-<p>Since the posts are no longer on linked from the landing page, let’s add the Posts page to the navigation bar by adding it as a field in config.toml:</p>
-
+</code></pre><p>Since the posts are no longer on linked from the landing page, let’s add the Posts page to the navigation bar by adding it as a field in config.toml:</p>
 <pre><code>[[menu.main]]
     name = &quot;Posts&quot;
     url = &quot;/post/&quot;
-</code></pre>
-
-<h2 id="about-page">About page</h2>
-
+</code></pre><h2 id="about-page">About page</h2>
 <p>Open /content/about.md and check it out. Add the following text to the about.md file and look at the difference.</p>
-
 <p>Because we enabled emojis in <code>config.toml</code>, we can use them here. I :heart: emojis!</p>
-
 <p>Posts are written in plain markdown. Here is some useful syntax. More on plain markdown in the default post <a href="../2016/12/30/a-plain-markdown-post/">A Plain Markdown Post</a>. There&rsquo;s also lots more information in the digital book <a href="https://bookdown.org/yihui/blogdown/output-format.html"><em>blogdown: Creating Websites with R Markdown</em></a>.</p>
-
 <pre><code>## h2 header
 ## h3 header
 ### h4 header
@@ -242,29 +192,18 @@ Add the following text to your config.toml page and see what happens:</p>
 **bold**&lt;br&gt;
 *italics*&lt;br&gt;
 ~~strikethrough~~
-</code></pre>
-
-<p>Also check out <a href="https://github.com/uodatascience/markdown">Cory&rsquo;s awesome markdown tutorial</a> for more markdown magic.</p>
-
+</code></pre><p>Also check out <a href="https://github.com/uodatascience/markdown">Cory&rsquo;s awesome markdown tutorial</a> for more markdown magic.</p>
 <p>Note: you can write in html.</p>
-
 <pre><code>&lt;h4&gt; Embed a gif &lt;br&gt;
 &lt;img src=&quot;https://media.giphy.com/media/l0Nwvo3slpo6nS0PC/giphy.gif&quot; alt=&quot;neato&quot;&gt;
 
 &lt;h4&gt; Embed a calendar &lt;br&gt;
 &lt;iframe src=&quot;https://calendar.google.com/calendar/embed?src=beo4lsbjns0kqovh8nktjou8l4%40group.calendar.google.com&amp;ctz=America%2FLos_Angeles&quot; style=&quot;border: 0&quot; width=&quot;800&quot; height=&quot;600&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot;&gt;&lt;/iframe&gt;
-</code></pre>
-
-<h2 id="pages">Pages</h2>
-
+</code></pre><h2 id="pages">Pages</h2>
 <p>Create a new page called CV in the content folder.</p>
-
 <pre><code>setwd(&quot;../default-site/&quot;)
 blogdown::new_content(&quot;content/cv&quot;)
-</code></pre>
-
-<p>Copy the following text into the document:</p>
-
+</code></pre><p>Copy the following text into the document:</p>
 <pre><code>---
 title: ''
 date: '2018-06-03 23:25:08 GMT'
@@ -287,32 +226,19 @@ Add the page to the navigation bar by adding the following text to config.toml. 
 [[menu.main]]
     name = &quot;CV&quot;
     url = &quot;/cv/&quot;
-</code></pre>
-
-<p>This is the start of a super basic markdown CV, but there are a number of more advanced templates out there, such as this one.</p>
-
+</code></pre><p>This is the start of a super basic markdown CV, but there are a number of more advanced templates out there, such as this one.</p>
 <h2 id="posts">Posts</h2>
-
 <p>Open content/post and look around.</p>
-
 <p>Create a new post
 Using the IDE: Addins &gt; New Post</p>
-
 <p>In the console, the new_post() function will automatically create a new post and append the date to the front of the file name that you specify as an input.</p>
-
 <p>Markdown post
 Let’s create a plain markdown post and add some content.</p>
-
 <pre><code>setwd(&quot;../default-site/&quot;)
 blogdown::new_post(&quot;newmd&quot;, ext = '.md')
-</code></pre>
-
-<p>Add the following text to the new .md file:</p>
-
+</code></pre><p>Add the following text to the new .md file:</p>
 <p>Here is some text. Lots of text. So much text.</p>
-
 <p><strong>Gee this is fun!</strong></p>
-
 <pre><code>Let's add a table, just for kicks.
 
 | hours of sun | happiness |
@@ -321,35 +247,22 @@ blogdown::new_post(&quot;newmd&quot;, ext = '.md')
 | 3 | 4 |
 | 5 | 7 |
 | 7 | 10 |
-</code></pre>
-
-<p>Add the following r code chunks (removing eval=FALSE) and view the file in the browser:</p>
-
+</code></pre><p>Add the following r code chunks (removing eval=FALSE) and view the file in the browser:</p>
 <pre><code>mean(iris$Sepal.Length)
 require(ggplot2)
 ggplot(iris, aes(Sepal.Length, Sepal.Width, color = Species)) +
   geom_point() +
   geom_smooth(method = &quot;lm&quot;) + 
   scale_color_manual(values = c(&quot;#3B9AB2&quot;, &quot;#E4B80E&quot;, &quot;#F21A00&quot;))
-</code></pre>
-
-<h2 id="rmarkdown-post">Rmarkdown post</h2>
-
+</code></pre><h2 id="rmarkdown-post">Rmarkdown post</h2>
 <p>Now let’s create a plain markdown post and see how it differs from the plain markdown file.</p>
-
 <pre><code>setwd(&quot;../default-site/&quot;)
 blogdown::new_post(&quot;newrmd&quot;, ext = '.Rmd')
-</code></pre>
-
-<p>Add the same text as above to your .Rmd file and view it in the browser. We can see that the text looks similar in both files, but only in the R Markdown file are we able to execute code chunks.</p>
-
+</code></pre><p>Add the same text as above to your .Rmd file and view it in the browser. We can see that the text looks similar in both files, but only in the R Markdown file are we able to execute code chunks.</p>
 <p>This feature makes R Mardown posts ideal for sharing code via your website.</p>
-
 <p>Adding HTML files directly
 Rather than creating a markdown post, you may simply want to an HTML file that you’ve already created (e.g. your data science tutorial). To do this, you would simply copy the file into /content/ or an alternative location.</p>
-
 <p>To compare the output of adding an HTML file versus adding an Rmd file, we’ll create a folder called “data-visualization” and copy two test files into it.</p>
-
 <pre><code># make the directory
 mkdir ../default-site/content/data-visualization
 
@@ -393,21 +306,15 @@ return &quot; &quot;;
 &lt;input type=&quot;button&quot; value=&quot;Enter Protected Area&quot; onClick=&quot;passWord()&quot;&gt;
 &lt;/FORM&gt;
 &lt;/CENTER&gt;
-</code></pre>
-
-<h2 id="shiny-apps">Shiny apps</h2>
-
+</code></pre><h2 id="shiny-apps">Shiny apps</h2>
 <p>The Structure of a Shiny App
 Shiny apps are contained in a single, integrated script called app.R.</p>
-
 <p>This script has at least three components:</p>
-
 <p>a user interface object (can be a call to a separate ui.R script)
 a server function (can be a call to a separate server.R script)
 a call to the shinyApp function
 optional: extra stuff in your global environment (can be a call to a separate global.R script)
 If you want to host your shiny app, save this script as app.R and put it in it’s own folder. The name for that folder will be the name of your shiny app.</p>
-
 <pre><code># If you choose to host this app online, you'll need to copy everything in this code chunk and save it to app.R in it's own folder.  Then, set your working directory to the saved folder.  Finally, use the command 'rsconnect::deployApp()' to host your app.
 
 # Here's a user interface (ui) component
@@ -473,12 +380,8 @@ server &lt;- function(input, output) {
 # When you've made both components, you're ready to call shinyApp
 
 shinyApp(ui = ui, server = server)
-</code></pre>
-
-<h2 id="layout">Layout</h2>
-
+</code></pre><h2 id="layout">Layout</h2>
 <p>The layout of a shiny app is specified within the user interface with the function fluidPage() using the panel options.</p>
-
 <p>Specify a title with titlePanel(“my title”)
 Parition your layout into sidebar &amp; main panels
 Change the position of a panel
@@ -486,7 +389,6 @@ You can use some HTML5 tags without the &lt;&gt; brackets too
 Use ‘align’ to change text justification
 Use p() to create paragraphs
 And so much more…</p>
-
 <pre><code>ui &lt;- fluidPage(
   titlePanel(em(&quot;my italicized title&quot;, align = &quot;center&quot;)),
   
@@ -511,34 +413,27 @@ And so much more…</p>
 server &lt;- function(input, output) {
 }
 shinyApp(ui, server)
-</code></pre>
-
-<h2 id="control-widgets">Control Widgets</h2>
-
+</code></pre><h2 id="control-widgets">Control Widgets</h2>
 <p>Widgets are the interactive parts of a web application. When we include widgets in our shiny app, the user can manipulate features of the UI. Later, we’ll learn how to make the output of our app reflect these changes dynamically.</p>
-
 <p>Shiny has some built-in widgets. Below, we’ve listed their names and corresponding functions.
-Function    Widget
-actionButton    Action Button
-checkboxGroupInput  A group of check boxes
-checkboxInput   A single check box
-dateInput   A calendar to aid date selection
-dateRangeInput  A pair of calendars for selecting a date range
-fileInput   A file upload control wizard
-helpText    Help text that can be added to an input form
-numericInput    A field to enter numbers
-radioButtons    A set of radio buttons
-selectInput A box with choices to select from
-sliderInput A slider bar
-submitButton    A submit button
-textInput   A field to enter text
+Function	Widget
+actionButton	Action Button
+checkboxGroupInput	A group of check boxes
+checkboxInput	A single check box
+dateInput	A calendar to aid date selection
+dateRangeInput	A pair of calendars for selecting a date range
+fileInput	A file upload control wizard
+helpText	Help text that can be added to an input form
+numericInput	A field to enter numbers
+radioButtons	A set of radio buttons
+selectInput	A box with choices to select from
+sliderInput	A slider bar
+submitButton	A submit button
+textInput	A field to enter text
 Note: If that’s not enough for you, install the shinyWidgets package for more!</p>
-
 <p>To add control widgets to your app, put one of the widget functions in the sidebarPanel or mainPanel of your UI. Every widget needs these ingredients:</p>
-
 <p>a name (charcter string that you call later)
 label (character string that the app user will see)</p>
-
 <pre><code>#install.packages(&quot;shinyWidgets&quot;)
 library(shinyWidgets)
 
@@ -683,27 +578,21 @@ server &lt;- function(input, output) {
 shinyApp(ui = ui, server = server)
 
 
-</code></pre>
-
-<p>Displaying Reactive Output
+</code></pre><p>Displaying Reactive Output
 Reactive output displays automatically when a user interacts with your shiny app using one (or more) of the control widgets we just made.</p>
-
 <p>We can make reactive output in two steps:</p>
-
 <p>Add an R object in your UI function. Shiny has built-in functions to turn your R objects into UI-compatible output. Here’s a table with those built-in output functions and what they do.
-Output Function Object It Makes
-dataTableOutput DataTable
-htmlOutput  raw HTML
-imageOutput image
-plotOutput  plot
-tableOutput table
-textOutput  text
-uiOutput    raw HTML
-verbatimTextOutput  text
+Output Function	Object It Makes
+dataTableOutput	DataTable
+htmlOutput	raw HTML
+imageOutput	image
+plotOutput	plot
+tableOutput	table
+textOutput	text
+uiOutput	raw HTML
+verbatimTextOutput	text
 Put your output function in the your UI, in either the sidebarPanel or mainPanel.</p>
-
 <p>Your output function will take a character string, in quotes, as an argument. This character string corresponds to the name of a control widget in your UI.</p>
-
 <pre><code># Here's an example based on one of the widgets we made earlier.
 
 ui &lt;- fluidPage(
@@ -722,17 +611,11 @@ ui &lt;- fluidPage(
     )
   )
 )
-</code></pre>
-
-<p>Tell R how to build the object in your server function
+</code></pre><p>Tell R how to build the object in your server function
 The server function makes on object called ‘output’ that contains a list of all the things we need to make a shiny app.</p>
-
 <p>Each output object that you make from step 1 needs to have it’s own entry/element in the server function.</p>
-
 <p>You need to name this element the same thing as you named your control widget.</p>
-
 <p>Finally, we need to call a widget value to make the output display reactively when a user manipulates the widget. (Hint: Sometimes (especially when you use button widgets), you need to add an observeEvent() command, like the one below.)</p>
-
 <pre><code># Here's an example server function to go with the ui function above.
 
 server &lt;- function(input, output) {
@@ -747,41 +630,30 @@ server &lt;- function(input, output) {
   }, deleteFile = F)
   })
 }
-</code></pre>
-
-<p>Each output element should contain a render function.</p>
-
+</code></pre><p>Each output element should contain a render function.</p>
 <p>Each render function will only takes only one argument, which always take the form of an R expression in culy braces like these {}.</p>
-
 <p>Here’s a table describing the render functions that are built into shiny.</p>
-
-<p>Render Function Object It Makes
-renderDataTable DataTable
-renderImage images (saved as a link to a source file)
-renderPlot  plots
-renderPrint any printed output
-renderTable data frame, matrix, other table like structures
-renderText  character strings
-renderUI    a Shiny tag object or HTML
+<p>Render Function	Object It Makes
+renderDataTable	DataTable
+renderImage	images (saved as a link to a source file)
+renderPlot	plots
+renderPrint	any printed output
+renderTable	data frame, matrix, other table like structures
+renderText	character strings
+renderUI	a Shiny tag object or HTML
 We’ve finished building our shiny app. To launch it in Rstudio, just run the the UI and server code chunks above and then run:</p>
-
 <p>shinyApp(ui = ui, server = server)
 Share Your Shiny App
 Step 1: Create an account on shinyapps.io (<a href="https://www.shinyapps.io/admin/#/signup">https://www.shinyapps.io/admin/#/signup</a>)</p>
-
 <p>Create an account name and then hit enter/return.
 Step 2: Configure your account.</p>
-
 <h2 id="install-rsconnect-package-in-r">Install rsconnect package in R</h2>
-
 <p>Click the “show secret” button in step 2 of shinyapps.io
 Click the “copy to clipboard” button in step 2 of shinyapps.io
 Copy the info in the popup and paste it into R &amp; run
 Load rsconnect library
 Step 3: After you’ve created an awesome, original shiny app IN ITS OWN FOLDER</p>
-
 <p>Set your working directory to your shiny app folder</p>
-
 <pre><code>Deploy your shiny app with rsconnect::deployApp()
 install.packages('rsconnect')
 
@@ -796,113 +668,69 @@ When deployApp() has finished running, a shinyapps.io website should pop up with
 
 &lt;iframe src=&quot;https://schavez.shinyapps.io/world/&quot; style=&quot;border: none; width: 800px; height: 500px&quot;&gt;&lt;/iframe&gt;
 And here it is, in all it’s glory.
-</code></pre>
-
-<p>##More Resources
+</code></pre><p>##More Resources
 Begin with Lesson 5 to pick up where we left off. This site will teach you how to load data into shiny and use r scripts and packages within shiny.
 <a href="https://shiny.rstudio.com/tutorial/written-tutorial/lesson1/">https://shiny.rstudio.com/tutorial/written-tutorial/lesson1/</a>
 <a href="https://github.com/grabear/awesome-rshiny">https://github.com/grabear/awesome-rshiny</a>
 <a href="https://blog.rstudio.com/categories/shiny/">https://blog.rstudio.com/categories/shiny/</a></p>
-
 <p>Explore the hugo-academic template
 Now that we’ve gotten our bearings with the default template, let’s check out a popular template for making personal academic website created by George Cushen.</p>
-
-<p>Here are a few examples of how people have modified this template:
-* Alison Hill
-* Flip Tandeo
-* Amlan Kar
-* Yu Cheng</p>
-
+<p>Here are a few examples of how people have modified this template:</p>
+<ul>
+<li>Alison Hill</li>
+<li>Flip Tandeo</li>
+<li>Amlan Kar</li>
+<li>Yu Cheng</li>
+</ul>
 <p>We’ll call our new website academic-site and it will be saved to the rstudio-websites directory.</p>
-
-<p>blogdown::new_site(&ldquo;../academic-site&rdquo;, theme = &ldquo;gcushen/hugo-academic&rdquo;)
+<p>blogdown::new_site(&quot;../academic-site&rdquo;, theme = &ldquo;gcushen/hugo-academic&rdquo;)
 Render the site, if necessary.</p>
-
-<p>setwd(&ldquo;../academic-site/&rdquo;)
+<p>setwd(&quot;../academic-site/&quot;)
 blogdown::serve_site()
 Click around the rendered website. What features seem useful? What features would you want in a personal website?</p>
-
 <p>Now, let’s check out the file structure and take a look at what’s in the following files/directories: * config.toml * content</p>
-
 <p>Publish your website
 To create your website for publishing, execute blogdown::hugo_build(). This will create/update the public/ directory in your site’s root directory.</p>
-
 <p>Before we build and deploy our site, we need to do a couple of things:</p>
-
 <p>Create a repo for your website on GitHub. Make sure that you do not initialize it with a README (you could, but then the following directions will not work properly).</p>
-
 <p>If you’re site will be hosted in a subdirectory (e.g. username.github.io/repo-name), you’ll need to set relativeurls = true in config.toml. More info on this here.</p>
-
 <p>relativeurls = true
 Build the site. Executing this command will update the /public/ folder with all of your new content.</p>
-
 <pre><code>setwd(&quot;../default-site/&quot;)
 blogdown::hugo_build()
-</code></pre>
-
-<p>There are several ways to publish your website. Today, we’re going to go over how to deploy your sit using git from the command line. There are other options though, e.g. the authors of blogdown: Creating Websites with R Markdown recommend using Netlify to serve your site. Lots more on publishing your site in the book.</p>
-
+</code></pre><p>There are several ways to publish your website. Today, we’re going to go over how to deploy your sit using git from the command line. There are other options though, e.g. the authors of blogdown: Creating Websites with R Markdown recommend using Netlify to serve your site. Lots more on publishing your site in the book.</p>
 <p>In the command line, navigate to the public folder in your site</p>
-
 <pre><code>cd ~/Documents/Courses/PSY607_DataScience/default-site/public
-</code></pre>
-
-<p>Inialize git</p>
-
+</code></pre><p>Inialize git</p>
 <p>It’s important that the public folder is not currenly living in a git repository. To check whether git is initialized type  git status.</p>
-
 <pre><code>git init
-</code></pre>
-
-<p>Add remote repository</p>
-
+</code></pre><p>Add remote repository</p>
 <pre><code>git remote add origin https://github.com/dcosme/test-site.git
-</code></pre>
-
-<p>Add and commit all the files</p>
-
+</code></pre><p>Add and commit all the files</p>
 <pre><code>git add .
 git commit -m &quot;initial commit&quot;
-</code></pre>
-
-<p>Push local changes to remote repository</p>
-
+</code></pre><p>Push local changes to remote repository</p>
 <pre><code>git push origin master
-</code></pre>
-
-<p>In Github, enable GitHub Pages Your repo &gt; Settings &gt; GitHub Page &gt; Source = master branch &gt; Save</p>
-
+</code></pre><p>In Github, enable GitHub Pages Your repo &gt; Settings &gt; GitHub Page &gt; Source = master branch &gt; Save</p>
 <p>If this has worked, there should now be a link highlighted in blue with the address to your website.</p>
-
 <p>Go to your website and bask in the glory 🎉</p>
-
 <h1 id="workflow">Workflow</h1>
-
 <p>Here is the suggested workflow from the main developer of blogdown, Yihui Xie:</p>
-
 <p>Open your website project, click the “Serve Site” addin
 Revise old pages/posts, or click the “New Post” addin
 Write and save (take a look at the automatic preview)
 Push everything to Github, or upload the public/ directory to Netlify directly
 More on the recommended workflow here.</p>
-
 <p>Mini (mega? ulimate?) hack
 You final hack in this class if to create a personal website and post it to GitHub. You can use any template you want or make it from scratch using the rmarkdown package (tutorial here).</p>
-
 <p>Here are the components you should include:</p>
-
 <p>Homepage with a brief description about your research interests
 A CV (either written in markdown or simply uploaded as a PDF)
 A “Resources” tab with at least one of your ‘contributions to science’ from this class.</p>
-
 <p>Note: You decide how fancyyou want to be for #3. You may simply uploading your .html tutorial presentation. You can include the documentation and github link for the package you created last week. You can host a useful (or less useful) shiny app. You are limited only by your creativity (and your time).</p>
-
 <p>Change colors, futz with custom CSS, make a shiny app and link to it – feel free to add anything else you’d like!</p>
-
 <p>Or just do the bare minimum because it’s the last week of the term 😄</p>
-
 <h1 id="helpful-resources">Helpful resources</h1>
-
 <ul>
 <li><a href="https://bookdown.org/yihui/blogdown/">https://bookdown.org/yihui/blogdown/</a></li>
 <li><a href="https://apreshill.github.io/data-vis-labs-2018/slides/06-slides_blogdown.html#1">https://apreshill.github.io/data-vis-labs-2018/slides/06-slides_blogdown.html#1</a></li>
@@ -964,16 +792,13 @@ A “Resources” tab with at least one of your ‘contributions to science’ f
     <div class="panel-body">
         <ul class="nav nav-pills nav-stacked">
             
-            <li><a href="../../../../../categories/cloud">cloud (3)</a>
+            <li><a href="../../../../../categories/cloud">cloud (5)</a>
             </li>
             
-            <li><a href="../../../../../categories/datascience">datascience (1)</a>
+            <li><a href="../../../../../categories/python">python (7)</a>
             </li>
             
-            <li><a href="../../../../../categories/python">python (5)</a>
-            </li>
-            
-            <li><a href="../../../../../categories/r">r (10)</a>
+            <li><a href="../../../../../categories/r">r (9)</a>
             </li>
             
         </ul>
@@ -1004,10 +829,16 @@ A “Resources” tab with at least one of your ‘contributions to science’ f
             <li><a href="../../../../../tags/bigdata"><i class="fa fa-tags"></i> bigdata</a>
             </li>
             
+            <li><a href="../../../../../tags/django"><i class="fa fa-tags"></i> django</a>
+            </li>
+            
             <li><a href="../../../../../tags/docker"><i class="fa fa-tags"></i> docker</a>
             </li>
             
             <li><a href="../../../../../tags/engineering"><i class="fa fa-tags"></i> engineering</a>
+            </li>
+            
+            <li><a href="../../../../../tags/flask"><i class="fa fa-tags"></i> flask</a>
             </li>
             
             <li><a href="../../../../../tags/gcp"><i class="fa fa-tags"></i> gcp</a>
@@ -1017,6 +848,9 @@ A “Resources” tab with at least one of your ‘contributions to science’ f
             </li>
             
             <li><a href="../../../../../tags/ml"><i class="fa fa-tags"></i> ml</a>
+            </li>
+            
+            <li><a href="../../../../../tags/ops"><i class="fa fa-tags"></i> ops</a>
             </li>
             
             <li><a href="../../../../../tags/r-package"><i class="fa fa-tags"></i> r-package</a>

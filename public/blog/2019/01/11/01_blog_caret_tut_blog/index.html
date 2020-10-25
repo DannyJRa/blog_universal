@@ -17,7 +17,7 @@
   <meta name="description" content="Uuuups">	
   
 
-  <meta name="generator" content="Hugo 0.55.5" />
+  <meta name="generator" content="Hugo 0.68.0" />
 
   <link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,500,700,800' rel='stylesheet' type='text/css'>
 
@@ -59,7 +59,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@GoHugoIO">
   <meta name="twitter:title" content="ML with Caret">
-  <meta name="twitter:image" content="/img/banners/01_blog_cover.jpg">
+  <meta name="twitter:image" content="/img/banners/01_blog_cover_BLOG.jpg">
   <meta name="twitter:description" content="Uuuups">
 
   
@@ -96,39 +96,24 @@
 
                         <div id="post-content">
                           <p>Add summary desdcription of blog</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#a6e22e">library</span>(tictoc)
 
-<pre><code class="language-r">library(tictoc)
+<span style="color:#a6e22e">tic.log</span>(format <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>)
+</code></pre></div><pre><code>## list()
+</code></pre><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#a6e22e">tic</span>(<span style="color:#e6db74">&#34;complete&#34;</span>)
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#a6e22e">tic</span>(<span style="color:#e6db74">&#34;libraries&#34;</span>)
+<span style="color:#75715e"># install.packages(c(&#39;caret&#39;, &#39;skimr&#39;, &#39;RANN&#39;, &#39;randomForest&#39;, &#39;fastAdaboost&#39;, &#39;gbm&#39;, &#39;xgboost&#39;, &#39;caretEnsemble&#39;, &#39;C50&#39;, &#39;earth&#39;))</span>
 
-tic.log(format = TRUE)
-</code></pre>
+<span style="color:#75715e"># Load the caret package</span>
+<span style="color:#a6e22e">library</span>(caret)
+</code></pre></div><pre><code>## Loading required package: lattice
+</code></pre><pre><code>## Loading required package: ggplot2
+</code></pre><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e"># Import dataset</span>
+orange <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">read.csv</span>(<span style="color:#e6db74">&#39;https://raw.githubusercontent.com/selva86/datasets/master/orange_juice_withmissing.csv&#39;</span>)
 
-<pre><code>## list()
-</code></pre>
-
-<pre><code class="language-r">tic(&quot;complete&quot;)
-</code></pre>
-
-<pre><code class="language-r">tic(&quot;libraries&quot;)
-# install.packages(c('caret', 'skimr', 'RANN', 'randomForest', 'fastAdaboost', 'gbm', 'xgboost', 'caretEnsemble', 'C50', 'earth'))
-
-# Load the caret package
-library(caret)
-</code></pre>
-
-<pre><code>## Loading required package: lattice
-</code></pre>
-
-<pre><code>## Loading required package: ggplot2
-</code></pre>
-
-<pre><code class="language-r"># Import dataset
-orange &lt;- read.csv('https://raw.githubusercontent.com/selva86/datasets/master/orange_juice_withmissing.csv')
-
-# Structure of the dataframe
-str(orange)
-</code></pre>
-
-<pre><code>## 'data.frame':	1070 obs. of  18 variables:
+<span style="color:#75715e"># Structure of the dataframe</span>
+<span style="color:#a6e22e">str</span>(orange)
+</code></pre></div><pre><code>## 'data.frame':	1070 obs. of  18 variables:
 ##  $ Purchase      : Factor w/ 2 levels &quot;CH&quot;,&quot;MM&quot;: 1 1 1 2 1 1 1 1 1 1 ...
 ##  $ WeekofPurchase: int  237 239 245 227 228 230 232 234 235 238 ...
 ##  $ StoreID       : int  1 1 1 1 7 7 7 7 7 7 ...
@@ -147,13 +132,9 @@ str(orange)
 ##  $ PctDiscCH     : num  0 0 0.0914 0 0 ...
 ##  $ ListPriceDiff : num  0.24 0.24 0.23 0 0 0.3 0.3 0.24 0.24 0.24 ...
 ##  $ STORE         : int  1 1 1 1 0 0 0 0 0 0 ...
-</code></pre>
-
-<pre><code class="language-r"># See top 6 rows and 10 columns
-head(orange[, 1:10])
-</code></pre>
-
-<pre><code>##   Purchase WeekofPurchase StoreID PriceCH PriceMM DiscCH DiscMM SpecialCH
+</code></pre><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e"># See top 6 rows and 10 columns</span>
+<span style="color:#a6e22e">head</span>(orange[, <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">10</span>])
+</code></pre></div><pre><code>##   Purchase WeekofPurchase StoreID PriceCH PriceMM DiscCH DiscMM SpecialCH
 ## 1       CH            237       1    1.75    1.99   0.00    0.0         0
 ## 2       CH            239       1    1.75    1.99   0.00    0.3         0
 ## 3       CH            245       1    1.86    2.09   0.17    0.0         0
@@ -167,54 +148,37 @@ head(orange[, 1:10])
 ## 4         0 0.400000
 ## 5         0 0.956535
 ## 6         1 0.965228
-</code></pre>
-
-<pre><code class="language-r">toc(log = TRUE, quiet = TRUE)
-</code></pre>
-
-<ol>
+</code></pre><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#a6e22e">toc</span>(log <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>, quiet <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>)
+</code></pre></div><ol start="3">
 <li>Data Preparation and Preprocessing
 3.1. How to split the dataset into training and validation?</li>
 </ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e"># Create the training and test datasets</span>
+<span style="color:#a6e22e">set.seed</span>(<span style="color:#ae81ff">100</span>)
 
-<pre><code class="language-r"># Create the training and test datasets
-set.seed(100)
+<span style="color:#75715e"># Step 1: Get row numbers for the training data</span>
+trainRowNumbers <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">createDataPartition</span>(orange<span style="color:#f92672">$</span>Purchase, p<span style="color:#f92672">=</span><span style="color:#ae81ff">0.8</span>, list<span style="color:#f92672">=</span><span style="color:#66d9ef">FALSE</span>)
 
-# Step 1: Get row numbers for the training data
-trainRowNumbers &lt;- createDataPartition(orange$Purchase, p=0.8, list=FALSE)
+<span style="color:#75715e"># Step 2: Create the training  dataset</span>
+trainData <span style="color:#f92672">&lt;-</span> orange[trainRowNumbers,]
 
-# Step 2: Create the training  dataset
-trainData &lt;- orange[trainRowNumbers,]
+<span style="color:#75715e"># Step 3: Create the test dataset</span>
+testData <span style="color:#f92672">&lt;-</span> orange[<span style="color:#f92672">-</span>trainRowNumbers,]
 
-# Step 3: Create the test dataset
-testData &lt;- orange[-trainRowNumbers,]
-
-# Store X and Y for later use.
-x = trainData[, 2:18]
-y = trainData$Purchase
-</code></pre>
-
-<p>createDataPartition() takes as input the Y variable in the source dataset and the percentage data that should go into training as the p argument. It returns the rownumbers that should form the training dataset.</p>
-
+<span style="color:#75715e"># Store X and Y for later use.</span>
+x <span style="color:#f92672">=</span> trainData[, <span style="color:#ae81ff">2</span><span style="color:#f92672">:</span><span style="color:#ae81ff">18</span>]
+y <span style="color:#f92672">=</span> trainData<span style="color:#f92672">$</span>Purchase
+</code></pre></div><p>createDataPartition() takes as input the Y variable in the source dataset and the percentage data that should go into training as the p argument. It returns the rownumbers that should form the training dataset.</p>
 <p>Plus, you need to set list=F, to prevent returning the result as a list.</p>
-
-<pre><code class="language-r">library(skimr)
-</code></pre>
-
-<pre><code>## 
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#a6e22e">library</span>(skimr)
+</code></pre></div><pre><code>## 
 ## Attaching package: 'skimr'
-</code></pre>
-
-<pre><code>## The following object is masked from 'package:stats':
+</code></pre><pre><code>## The following object is masked from 'package:stats':
 ## 
 ##     filter
-</code></pre>
-
-<pre><code class="language-r">skimmed &lt;- skim_to_wide(trainData)
-skimmed[, c(1:5, 9:11, 13, 15:16)] 
-</code></pre>
-
-<pre><code>## # A tibble: 18 x 11
+</code></pre><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">skimmed <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">skim_to_wide</span>(trainData)
+skimmed[, <span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">9</span><span style="color:#f92672">:</span><span style="color:#ae81ff">11</span>, <span style="color:#ae81ff">13</span>, <span style="color:#ae81ff">15</span><span style="color:#f92672">:</span><span style="color:#ae81ff">16</span>)] 
+</code></pre></div><pre><code>## # A tibble: 18 x 11
 ##    type  variable missing complete n     mean  sd    p0    p50   p100 
 ##    &lt;chr&gt; &lt;chr&gt;    &lt;chr&gt;   &lt;chr&gt;    &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;
 ##  1 fact… Purchase 0       857      857   &lt;NA&gt;  &lt;NA&gt;  &lt;NA&gt;  &lt;NA&gt;  &lt;NA&gt; 
@@ -236,75 +200,48 @@ skimmed[, c(1:5, 9:11, 13, 15:16)]
 ## 17 nume… SalePri… 1       856      857   &quot;1.8… &quot;0.1… &quot; 1.… 1.86  2.09 
 ## 18 nume… SalePri… 3       854      857   &quot;1.9… &quot;0.2… &quot; 1.… 2.09  2.29 
 ## # … with 1 more variable: hist &lt;chr&gt;
-</code></pre>
-
-<p>3.3. How to impute missing values using preProcess()?</p>
-
-<pre><code class="language-r"># Create the knn imputation model on the training data
-preProcess_missingdata_model &lt;- preProcess(trainData, method='knnImpute')
+</code></pre><p>3.3. How to impute missing values using preProcess()?</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e"># Create the knn imputation model on the training data</span>
+preProcess_missingdata_model <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">preProcess</span>(trainData, method<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;knnImpute&#39;</span>)
 preProcess_missingdata_model
-</code></pre>
-
-<pre><code>## Created from 828 samples and 18 variables
+</code></pre></div><pre><code>## Created from 828 samples and 18 variables
 ## 
 ## Pre-processing:
 ##   - centered (16)
 ##   - ignored (2)
 ##   - 5 nearest neighbor imputation (16)
 ##   - scaled (16)
-</code></pre>
-
-<p>The above output shows the various preprocessing steps done in the process of knn imputation.</p>
-
+</code></pre><p>The above output shows the various preprocessing steps done in the process of knn imputation.</p>
 <p>That is, it has centered (subtract by mean) 16 variables, ignored 2, used k=5 (considered 5 nearest neighbors) to predict the missing values and finally scaled (divide by standard deviation) 16 variables.</p>
-
 <p>Let’s now use this model to predict the missing values in trainData.</p>
-
-<pre><code class="language-r"># Use the imputation model to predict the values of missing data points
-library(RANN)  # required for knnInpute
-trainData &lt;- predict(preProcess_missingdata_model, newdata = trainData)
-anyNA(trainData)
-</code></pre>
-
-<pre><code>## [1] FALSE
-</code></pre>
-
-<p>3.4. How to create One-Hot Encoding (dummy variables)?
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e"># Use the imputation model to predict the values of missing data points</span>
+<span style="color:#a6e22e">library</span>(RANN)  <span style="color:#75715e"># required for knnInpute</span>
+trainData <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">predict</span>(preProcess_missingdata_model, newdata <span style="color:#f92672">=</span> trainData)
+<span style="color:#a6e22e">anyNA</span>(trainData)
+</code></pre></div><pre><code>## [1] FALSE
+</code></pre><p>3.4. How to create One-Hot Encoding (dummy variables)?
 Let me first explain what is one-hot encoding and why it is required.</p>
-
 <p>Suppose if you have a categorical column as one of the features, it needs to be converted to numeric in order for it to be used by the machine learning algorithms.</p>
-
 <p>Just replacing the categories with a number may not be meaningful especially if there is no intrinsic ordering amongst the categories.</p>
-
 <p>So what you can do instead is to convert the categorical variable with as many binary (1 or 0) variables as there are categories.</p>
-
 <p>An important aspect you should be careful about here is, in real-world environments, you might get new values of categorical variables in the new scoring data. So, you should ensure the dummyVars model is built on the training data alone and that model is in turn used to create the dummy vars on the test data.</p>
-
 <p>One Hot Encoding
 ONE HOT ENCODING</p>
-
 <p>In caret, one-hot-encodings can be created using dummyVars(). Just pass in all the features to dummyVars() as the training data and all the factor columns will automatically be converted to one-hot-encodings.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e"># One-Hot Encoding</span>
+<span style="color:#75715e"># Creating dummy variables is converting a categorical variable to as many binary variables as here are categories.</span>
+dummies_model <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">dummyVars</span>(Purchase <span style="color:#f92672">~</span> ., data<span style="color:#f92672">=</span>trainData)
 
-<pre><code class="language-r"># One-Hot Encoding
-# Creating dummy variables is converting a categorical variable to as many binary variables as here are categories.
-dummies_model &lt;- dummyVars(Purchase ~ ., data=trainData)
-
-# Create the dummy variables using predict. The Y variable (Purchase) will not be present in trainData_mat.
-trainData_mat &lt;- predict(dummies_model, newdata = trainData)
-</code></pre>
-
-<pre><code>## Warning in model.frame.default(Terms, newdata, na.action = na.action, xlev
+<span style="color:#75715e"># Create the dummy variables using predict. The Y variable (Purchase) will not be present in trainData_mat.</span>
+trainData_mat <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">predict</span>(dummies_model, newdata <span style="color:#f92672">=</span> trainData)
+</code></pre></div><pre><code>## Warning in model.frame.default(Terms, newdata, na.action = na.action, xlev
 ## = object$lvls): variable 'Purchase' is not a factor
-</code></pre>
+</code></pre><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e"># # Convert to dataframe</span>
+trainData <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">data.frame</span>(trainData_mat)
 
-<pre><code class="language-r"># # Convert to dataframe
-trainData &lt;- data.frame(trainData_mat)
-
-# # See the structure of the new dataset
-str(trainData)
-</code></pre>
-
-<pre><code>## 'data.frame':	857 obs. of  18 variables:
+<span style="color:#75715e"># # See the structure of the new dataset</span>
+<span style="color:#a6e22e">str</span>(trainData)
+</code></pre></div><pre><code>## 'data.frame':	857 obs. of  18 variables:
 ##  $ WeekofPurchase: num  -1.1 -1.74 -1.68 -1.29 -1.04 ...
 ##  $ StoreID       : num  -1.29 -1.29 1.33 1.33 1.33 ...
 ##  $ PriceCH       : num  -1.14 -1.73 -1.73 -1.14 -1.14 ...
@@ -323,15 +260,10 @@ str(trainData)
 ##  $ PctDiscCH     : num  -0.448 -0.448 -0.448 -0.448 -0.448 ...
 ##  $ ListPriceDiff : num  0.211 -1.988 -1.988 0.211 0.211 ...
 ##  $ STORE         : num  -0.457 -0.457 -1.15 -1.15 -1.15 ...
-</code></pre>
-
-<p>In above case, we had one categorical variable, Store7 with 2 categories. It was one-hot-encoded to produce two new columns – Store7.No and Store7.Yes.</p>
-
+</code></pre><p>In above case, we had one categorical variable, Store7 with 2 categories. It was one-hot-encoded to produce two new columns – Store7.No and Store7.Yes.</p>
 <p>3.5. How to preprocess to transform the data?
 With the missing values handled and the factors one-hot-encoded, our training dataset is now ready to undergo variable transformations if required.</p>
-
 <p>So what type of preprocessing are available in caret?</p>
-
 <p>range: Normalize values so it ranges between 0 and 1
 center: Subtract Mean
 scale: Divide by standard deviation
@@ -342,149 +274,93 @@ pca: Replace with principal components
 ica: Replace with independent components
 spatialSign: Project the data to a unit circle
 For our problem, let’s convert all the numeric variables to range between 0 and 1, by setting method=range in preProcess().</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">preProcess_range_model <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">preProcess</span>(trainData, method<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;range&#39;</span>)
+trainData <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">predict</span>(preProcess_range_model, newdata <span style="color:#f92672">=</span> trainData)
 
-<pre><code class="language-r">preProcess_range_model &lt;- preProcess(trainData, method='range')
-trainData &lt;- predict(preProcess_range_model, newdata = trainData)
+<span style="color:#75715e"># Append the Y variable</span>
+trainData<span style="color:#f92672">$</span>Purchase <span style="color:#f92672">&lt;-</span> y
 
-# Append the Y variable
-trainData$Purchase &lt;- y
-
-apply(trainData[, 1:10], 2, FUN=function(x){c('min'=min(x), 'max'=max(x))})
-</code></pre>
-
-<pre><code>##     WeekofPurchase StoreID PriceCH PriceMM DiscCH DiscMM SpecialCH
+<span style="color:#a6e22e">apply</span>(trainData[, <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">10</span>], <span style="color:#ae81ff">2</span>, FUN<span style="color:#f92672">=</span><span style="color:#a6e22e">function</span>(x){<span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#39;min&#39;</span><span style="color:#f92672">=</span><span style="color:#a6e22e">min</span>(x), <span style="color:#e6db74">&#39;max&#39;</span><span style="color:#f92672">=</span><span style="color:#a6e22e">max</span>(x))})
+</code></pre></div><pre><code>##     WeekofPurchase StoreID PriceCH PriceMM DiscCH DiscMM SpecialCH
 ## min              0       0       0       0      0      0         0
 ## max              1       1       1       1      1      1         1
 ##     SpecialMM LoyalCH SalePriceMM
 ## min         0       0           0
 ## max         1       1           1
-</code></pre>
-
-<ol>
+</code></pre><ol start="4">
 <li>How to visualize the importance of variables using featurePlot()
 Now that the preprocessing is complete, let’s visually examine how the predictors influence the Y (Purchase).</li>
 </ol>
-
 <p>In this problem, the X variables are numeric whereas the Y is categorical.</p>
-
 <p>So how to gauge if a given X is an important predictor of Y?</p>
-
 <p>A simple common sense approach is, if you group the X variable by the categories of Y, a significant mean shift amongst the X’s groups is a strong indicator (if not the only indicator) that X will have a significant role to help predict Y.</p>
-
 <p>It is possible to watch this shift visually using box plots and density plots.</p>
-
 <p>In fact, caret’s featurePlot() function makes it so convenient.</p>
-
-<p>Simply set the X and Y parameters and set plot=&lsquo;box&rsquo;. You can additionally adjust the label font size (using strip) and the scales to be free as I have done in the below plot.</p>
-
-<pre><code class="language-r">featurePlot(x = trainData[, 1:18], 
-            y = trainData$Purchase, 
-            plot = &quot;box&quot;,
-            strip=strip.custom(par.strip.text=list(cex=.7)),
-            scales = list(x = list(relation=&quot;free&quot;), 
-                          y = list(relation=&quot;free&quot;)))
-</code></pre>
-
-<p><img src="01_blog_caret_Tut_files/figure-html/unnamed-chunk-10-1.png" alt="" /><!-- -->
+<p>Simply set the X and Y parameters and set plot='box&rsquo;. You can additionally adjust the label font size (using strip) and the scales to be free as I have done in the below plot.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#a6e22e">featurePlot</span>(x <span style="color:#f92672">=</span> trainData[, <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">18</span>], 
+            y <span style="color:#f92672">=</span> trainData<span style="color:#f92672">$</span>Purchase, 
+            plot <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;box&#34;</span>,
+            strip<span style="color:#f92672">=</span><span style="color:#a6e22e">strip.custom</span>(par.strip.text<span style="color:#f92672">=</span><span style="color:#a6e22e">list</span>(cex<span style="color:#f92672">=</span><span style="color:#ae81ff">.7</span>)),
+            scales <span style="color:#f92672">=</span> <span style="color:#a6e22e">list</span>(x <span style="color:#f92672">=</span> <span style="color:#a6e22e">list</span>(relation<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;free&#34;</span>), 
+                          y <span style="color:#f92672">=</span> <span style="color:#a6e22e">list</span>(relation<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;free&#34;</span>)))
+</code></pre></div><p><img src="01_blog_caret_Tut_files/figure-html/unnamed-chunk-10-1.png" alt=""><!-- raw HTML omitted -->
 Let me quickly refresh how to interpret a boxplot.</p>
-
 <p>Each subplot in the above figure has two boxplots (in blue) inside it, one each for each of the Y categories, CH and MM. The top of the box represents the 25th %ile and the bottom of the box represents the 75th %ile. The black dot inside the box is the mean.</p>
-
 <p>The blue box represents the region where most of the regular data point lie.</p>
-
 <p>The subplots also show many blue dots lying outside the top and bottom dashed lines called whiskers. These dots are formally considered as extreme values.</p>
-
 <p>So, What did you observe in the above figure?</p>
-
 <p>Consider for example, LoyalCHs subplot, which measures the loyalty score of the customer to the CH brand. The mean and the placement of the two boxes are glaringly different.</p>
-
 <p>Just by seeing that, I am pretty sure, LoyalCH is going to be a significant predictor of Y.</p>
-
 <p>What other predictors do you notice have significant mean differences?</p>
-
 <p>Let’s do a similar exercise with density plots.</p>
-
 <p>In this case, For a variable to be important, I would expect the density curves to be significantly different for the 2 classes, both in terms of the height (kurtosis) and placement (skewness).</p>
-
 <p>Take a look at the density curves of the two categories for ‘LoyalCH’, ‘STORE’, ‘StoreID’, ‘WeekofPurchase’. Are they different?</p>
-
-<pre><code class="language-r">featurePlot(x = trainData[, 1:18], 
-            y = trainData$Purchase, 
-            plot = &quot;density&quot;,
-            strip=strip.custom(par.strip.text=list(cex=.7)),
-            scales = list(x = list(relation=&quot;free&quot;), 
-                          y = list(relation=&quot;free&quot;)))
-</code></pre>
-
-<p><img src="01_blog_caret_Tut_files/figure-html/unnamed-chunk-11-1.png" alt="" /><!-- --></p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#a6e22e">featurePlot</span>(x <span style="color:#f92672">=</span> trainData[, <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">18</span>], 
+            y <span style="color:#f92672">=</span> trainData<span style="color:#f92672">$</span>Purchase, 
+            plot <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;density&#34;</span>,
+            strip<span style="color:#f92672">=</span><span style="color:#a6e22e">strip.custom</span>(par.strip.text<span style="color:#f92672">=</span><span style="color:#a6e22e">list</span>(cex<span style="color:#f92672">=</span><span style="color:#ae81ff">.7</span>)),
+            scales <span style="color:#f92672">=</span> <span style="color:#a6e22e">list</span>(x <span style="color:#f92672">=</span> <span style="color:#a6e22e">list</span>(relation<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;free&#34;</span>), 
+                          y <span style="color:#f92672">=</span> <span style="color:#a6e22e">list</span>(relation<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;free&#34;</span>)))
+</code></pre></div><p><img src="01_blog_caret_Tut_files/figure-html/unnamed-chunk-11-1.png" alt=""><!-- raw HTML omitted --></p>
 <p>Having visualised the relationships between X and Y, We can only say which variables are likely to be important to predict Y. It may not be wise to conclude which variables are NOT important.</p>
-
 <p>Because sometimes, variables with uninteresting pattern can help explain certain aspects of Y that the visually important variables may not.</p>
-
 <p>So to be safe, let’s not arrive at conclusions about excluding variables prematurely.</p>
-
 <h1 id="5-how-to-do-feature-selection-using-recursive-feature-elimination-rfe">5. How to do feature selection using recursive feature elimination (rfe)?</h1>
-
 <p>Most machine learning algorithms are able to determine what features are important to predict the Y. But in some scenarios, you might be need to be careful to include only variables that may be significantly important and makes strong business sense.</p>
-
 <p>This is quite common in banking, economics and financial institutions.</p>
-
 <p>Or you might just be doing an exploratory analysis to determine important predictors and report it as a metric in your analytics dashboard.</p>
-
 <p>Or if you are using a traditional algorithm like like linear or logistic regression, determining what variable to feed to the model is in the hands of the practitioner.</p>
-
 <p>Given such requirements, you might need a rigorous way to determine the important variables first before feeding them to the ML algorithm.</p>
-
 <p>A good choice of selecting the important features is the recursive feature elimination (RFE).</p>
-
 <p>So how does recursive feature elimination work?</p>
-
 <p>RFE works in 3 broad steps:</p>
-
 <p>Step 1: Build a ML model on a training dataset and estimate the feature importances on the test dataset.</p>
-
 <p>Step 2: Keeping priority to the most important variables, iterate through by building models of given sizes. Ranking of the predictors is recalculated in each iteration.</p>
-
 <p>Step 3: The model performances are compared across different subset sizes to arrive at the optimal number and list of final predictors.</p>
-
 <p>It can be implemented using the rfe() function and you have the flexibility to control what algorithm rfe uses and how it cross validates by defining the rfeControl().</p>
-
-<pre><code class="language-r">library(randomForest)
-</code></pre>
-
-<pre><code>## randomForest 4.6-14
-</code></pre>
-
-<pre><code>## Type rfNews() to see new features/changes/bug fixes.
-</code></pre>
-
-<pre><code>## 
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#a6e22e">library</span>(randomForest)
+</code></pre></div><pre><code>## randomForest 4.6-14
+</code></pre><pre><code>## Type rfNews() to see new features/changes/bug fixes.
+</code></pre><pre><code>## 
 ## Attaching package: 'randomForest'
-</code></pre>
-
-<pre><code>## The following object is masked from 'package:ggplot2':
+</code></pre><pre><code>## The following object is masked from 'package:ggplot2':
 ## 
 ##     margin
-</code></pre>
+</code></pre><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#a6e22e">set.seed</span>(<span style="color:#ae81ff">100</span>)
+<span style="color:#a6e22e">options</span>(warn<span style="color:#f92672">=</span><span style="color:#ae81ff">-1</span>)
 
-<pre><code class="language-r">set.seed(100)
-options(warn=-1)
+subsets <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">15</span>, <span style="color:#ae81ff">18</span>)
 
-subsets &lt;- c(1:5, 10, 15, 18)
+ctrl <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">rfeControl</span>(functions <span style="color:#f92672">=</span> rfFuncs,
+                   method <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;repeatedcv&#34;</span>,
+                   repeats <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>,
+                   verbose <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>)
 
-ctrl &lt;- rfeControl(functions = rfFuncs,
-                   method = &quot;repeatedcv&quot;,
-                   repeats = 5,
-                   verbose = FALSE)
-
-lmProfile &lt;- rfe(x=trainData[, 1:18], y=trainData$Purchase,
-                 sizes = subsets,
-                 rfeControl = ctrl)
+lmProfile <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">rfe</span>(x<span style="color:#f92672">=</span>trainData[, <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">18</span>], y<span style="color:#f92672">=</span>trainData<span style="color:#f92672">$</span>Purchase,
+                 sizes <span style="color:#f92672">=</span> subsets,
+                 rfeControl <span style="color:#f92672">=</span> ctrl)
 lmProfile
-</code></pre>
-
-<pre><code>## 
+</code></pre></div><pre><code>## 
 ## Recursive feature selection
 ## 
 ## Outer resampling method: Cross-Validated (10 fold, repeated 5 times) 
@@ -503,115 +379,64 @@ lmProfile
 ## 
 ## The top 3 variables (out of 3):
 ##    LoyalCH, PriceDiff, StoreID
-</code></pre>
-
-<p>The top 3 variables (out of 3):
-   LoyalCH, PriceDiff, StoreID
+</code></pre><p>The top 3 variables (out of 3):
+LoyalCH, PriceDiff, StoreID
 In the above code, we call the rfe() which implements the recursive feature elimination.</p>
-
 <p>Apart from the x and y datasets, RFE also takes two important parameters.</p>
-
 <p>sizes
 rfeControl
 The sizes determines what all model sizes (the number of most important features) the rfe should consider. In above case, it iterates models of size 1 to 5, 10, 15 and 18.</p>
-
 <p>The rfeControl parameter on the other hand receives the output of the rfeControl() as values. If you look at the call to rfeControl() we set what type of algorithm and what cross validation method should be used.</p>
-
 <p>In above case, the cross validation method is repeatedcv which implements k-Fold cross validation repeated 5 times, which is rigorous enough for our case.</p>
-
 <p>Once rfe() is run, the output shows the accuracy and kappa (and their standard deviation) for the different model sizes we provided. The final selected model subset size is marked with a * in the rightmost Selected column.</p>
-
 <p>From the above output, a model size of 3 with LoyalCH, PriceDiff and StoreID seems to achieve the optimal accuracy.</p>
-
 <p>That means, out of 18 other features, a model with just 3 features outperformed many other larger model. Interesting isn’t it! Can you explain why?</p>
-
 <p>However, it is not a mandate that only including these 3 variables will always give high accuracy over larger sized models.</p>
-
 <p>Thats because, the rfe() we just implemented is particular to random forest based rfFuncs</p>
-
 <p>Since ML algorithms have their own way of learning the relationship between the x and y, it is not wise to neglect the other predictors, especially when there is evidence that there is information contained in rest of the variables to explain the relationship between x and y.</p>
-
 <p>Plus also, since the training dataset isn’t large enough, the other predictors may not have had the chance to show its worth.</p>
-
 <p>In the next step, we will build the actual randomForest model on trainData.</p>
-
-<ol>
+<ol start="6">
 <li>Training and Tuning the model
 6.1. How to train() the model and interpret the results?
 Now comes the important stage where you actually build the machine learning model.</li>
 </ol>
-
 <p>To know what models caret supports, run the following:</p>
-
-<pre><code class="language-r"># See available algorithms in caret
-modelnames &lt;- paste(names(getModelInfo()), collapse=',  ')
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e"># See available algorithms in caret</span>
+modelnames <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">paste</span>(<span style="color:#a6e22e">names</span>(<span style="color:#a6e22e">getModelInfo</span>()), collapse<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;,  &#39;</span>)
 modelnames
-</code></pre>
-
-<pre><code>## [1] &quot;ada,  AdaBag,  AdaBoost.M1,  adaboost,  amdai,  ANFIS,  avNNet,  awnb,  awtan,  bag,  bagEarth,  bagEarthGCV,  bagFDA,  bagFDAGCV,  bam,  bartMachine,  bayesglm,  binda,  blackboost,  blasso,  blassoAveraged,  bridge,  brnn,  BstLm,  bstSm,  bstTree,  C5.0,  C5.0Cost,  C5.0Rules,  C5.0Tree,  cforest,  chaid,  CSimca,  ctree,  ctree2,  cubist,  dda,  deepboost,  DENFIS,  dnn,  dwdLinear,  dwdPoly,  dwdRadial,  earth,  elm,  enet,  evtree,  extraTrees,  fda,  FH.GBML,  FIR.DM,  foba,  FRBCS.CHI,  FRBCS.W,  FS.HGD,  gam,  gamboost,  gamLoess,  gamSpline,  gaussprLinear,  gaussprPoly,  gaussprRadial,  gbm_h2o,  gbm,  gcvEarth,  GFS.FR.MOGUL,  GFS.LT.RS,  GFS.THRIFT,  glm.nb,  glm,  glmboost,  glmnet_h2o,  glmnet,  glmStepAIC,  gpls,  hda,  hdda,  hdrda,  HYFIS,  icr,  J48,  JRip,  kernelpls,  kknn,  knn,  krlsPoly,  krlsRadial,  lars,  lars2,  lasso,  lda,  lda2,  leapBackward,  leapForward,  leapSeq,  Linda,  lm,  lmStepAIC,  LMT,  loclda,  logicBag,  LogitBoost,  logreg,  lssvmLinear,  lssvmPoly,  lssvmRadial,  lvq,  M5,  M5Rules,  manb,  mda,  Mlda,  mlp,  mlpKerasDecay,  mlpKerasDecayCost,  mlpKerasDropout,  mlpKerasDropoutCost,  mlpML,  mlpSGD,  mlpWeightDecay,  mlpWeightDecayML,  monmlp,  msaenet,  multinom,  mxnet,  mxnetAdam,  naive_bayes,  nb,  nbDiscrete,  nbSearch,  neuralnet,  nnet,  nnls,  nodeHarvest,  null,  OneR,  ordinalNet,  ordinalRF,  ORFlog,  ORFpls,  ORFridge,  ORFsvm,  ownn,  pam,  parRF,  PART,  partDSA,  pcaNNet,  pcr,  pda,  pda2,  penalized,  PenalizedLDA,  plr,  pls,  plsRglm,  polr,  ppr,  PRIM,  protoclass,  qda,  QdaCov,  qrf,  qrnn,  randomGLM,  ranger,  rbf,  rbfDDA,  Rborist,  rda,  regLogistic,  relaxo,  rf,  rFerns,  RFlda,  rfRules,  ridge,  rlda,  rlm,  rmda,  rocc,  rotationForest,  rotationForestCp,  rpart,  rpart1SE,  rpart2,  rpartCost,  rpartScore,  rqlasso,  rqnc,  RRF,  RRFglobal,  rrlda,  RSimca,  rvmLinear,  rvmPoly,  rvmRadial,  SBC,  sda,  sdwd,  simpls,  SLAVE,  slda,  smda,  snn,  sparseLDA,  spikeslab,  spls,  stepLDA,  stepQDA,  superpc,  svmBoundrangeString,  svmExpoString,  svmLinear,  svmLinear2,  svmLinear3,  svmLinearWeights,  svmLinearWeights2,  svmPoly,  svmRadial,  svmRadialCost,  svmRadialSigma,  svmRadialWeights,  svmSpectrumString,  tan,  tanSearch,  treebag,  vbmpRadial,  vglmAdjCat,  vglmContRatio,  vglmCumulative,  widekernelpls,  WM,  wsrf,  xgbDART,  xgbLinear,  xgbTree,  xyf&quot;
-</code></pre>
-
-<p>Each of those is a machine learning algorithm caret supports.</p>
-
+</code></pre></div><pre><code>## [1] &quot;ada,  AdaBag,  AdaBoost.M1,  adaboost,  amdai,  ANFIS,  avNNet,  awnb,  awtan,  bag,  bagEarth,  bagEarthGCV,  bagFDA,  bagFDAGCV,  bam,  bartMachine,  bayesglm,  binda,  blackboost,  blasso,  blassoAveraged,  bridge,  brnn,  BstLm,  bstSm,  bstTree,  C5.0,  C5.0Cost,  C5.0Rules,  C5.0Tree,  cforest,  chaid,  CSimca,  ctree,  ctree2,  cubist,  dda,  deepboost,  DENFIS,  dnn,  dwdLinear,  dwdPoly,  dwdRadial,  earth,  elm,  enet,  evtree,  extraTrees,  fda,  FH.GBML,  FIR.DM,  foba,  FRBCS.CHI,  FRBCS.W,  FS.HGD,  gam,  gamboost,  gamLoess,  gamSpline,  gaussprLinear,  gaussprPoly,  gaussprRadial,  gbm_h2o,  gbm,  gcvEarth,  GFS.FR.MOGUL,  GFS.LT.RS,  GFS.THRIFT,  glm.nb,  glm,  glmboost,  glmnet_h2o,  glmnet,  glmStepAIC,  gpls,  hda,  hdda,  hdrda,  HYFIS,  icr,  J48,  JRip,  kernelpls,  kknn,  knn,  krlsPoly,  krlsRadial,  lars,  lars2,  lasso,  lda,  lda2,  leapBackward,  leapForward,  leapSeq,  Linda,  lm,  lmStepAIC,  LMT,  loclda,  logicBag,  LogitBoost,  logreg,  lssvmLinear,  lssvmPoly,  lssvmRadial,  lvq,  M5,  M5Rules,  manb,  mda,  Mlda,  mlp,  mlpKerasDecay,  mlpKerasDecayCost,  mlpKerasDropout,  mlpKerasDropoutCost,  mlpML,  mlpSGD,  mlpWeightDecay,  mlpWeightDecayML,  monmlp,  msaenet,  multinom,  mxnet,  mxnetAdam,  naive_bayes,  nb,  nbDiscrete,  nbSearch,  neuralnet,  nnet,  nnls,  nodeHarvest,  null,  OneR,  ordinalNet,  ordinalRF,  ORFlog,  ORFpls,  ORFridge,  ORFsvm,  ownn,  pam,  parRF,  PART,  partDSA,  pcaNNet,  pcr,  pda,  pda2,  penalized,  PenalizedLDA,  plr,  pls,  plsRglm,  polr,  ppr,  PRIM,  protoclass,  qda,  QdaCov,  qrf,  qrnn,  randomGLM,  ranger,  rbf,  rbfDDA,  Rborist,  rda,  regLogistic,  relaxo,  rf,  rFerns,  RFlda,  rfRules,  ridge,  rlda,  rlm,  rmda,  rocc,  rotationForest,  rotationForestCp,  rpart,  rpart1SE,  rpart2,  rpartCost,  rpartScore,  rqlasso,  rqnc,  RRF,  RRFglobal,  rrlda,  RSimca,  rvmLinear,  rvmPoly,  rvmRadial,  SBC,  sda,  sdwd,  simpls,  SLAVE,  slda,  smda,  snn,  sparseLDA,  spikeslab,  spls,  stepLDA,  stepQDA,  superpc,  svmBoundrangeString,  svmExpoString,  svmLinear,  svmLinear2,  svmLinear3,  svmLinearWeights,  svmLinearWeights2,  svmPoly,  svmRadial,  svmRadialCost,  svmRadialSigma,  svmRadialWeights,  svmSpectrumString,  tan,  tanSearch,  treebag,  vbmpRadial,  vglmAdjCat,  vglmContRatio,  vglmCumulative,  widekernelpls,  WM,  wsrf,  xgbDART,  xgbLinear,  xgbTree,  xyf&quot;
+</code></pre><p>Each of those is a machine learning algorithm caret supports.</p>
 <p>Yes, it’s a huge list!</p>
-
 <p>And if you want to know more details like the hyperparameters and if it can be used of regression or classification problem, then do a modelLookup(algo).</p>
-
 <p>Once you have chosen an algorithm, building the model is fairly easy using the train() function.</p>
-
-<p>Let’s train a Multivariate Adaptive Regression Splines (MARS) model by setting the method=&lsquo;earth&rsquo;.</p>
-
+<p>Let’s train a Multivariate Adaptive Regression Splines (MARS) model by setting the method='earth&rsquo;.</p>
 <p>The MARS algorithm was named as ‘earth’ in R because of a possible trademark conflict with Salford Systems. May be a rumor. Or not.</p>
-
-<pre><code class="language-r">modelLookup('earth')
-</code></pre>
-
-<pre><code>##   model parameter          label forReg forClass probModel
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#a6e22e">modelLookup</span>(<span style="color:#e6db74">&#39;earth&#39;</span>)
+</code></pre></div><pre><code>##   model parameter          label forReg forClass probModel
 ## 1 earth    nprune         #Terms   TRUE     TRUE      TRUE
 ## 2 earth    degree Product Degree   TRUE     TRUE      TRUE
-</code></pre>
+</code></pre><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e"># Set the seed for reproducibility</span>
+<span style="color:#a6e22e">set.seed</span>(<span style="color:#ae81ff">100</span>)
 
-<pre><code class="language-r"># Set the seed for reproducibility
-set.seed(100)
-
-# Train the model using randomForest and predict on the training data itself.
-model_mars = train(Purchase ~ ., data=trainData, method='earth')
-</code></pre>
-
-<pre><code>## Loading required package: earth
-</code></pre>
-
-<pre><code>## Loading required package: Formula
-</code></pre>
-
-<pre><code>## Loading required package: plotmo
-</code></pre>
-
-<pre><code>## Loading required package: plotrix
-</code></pre>
-
-<pre><code>## Loading required package: TeachingDemos
-</code></pre>
-
-<pre><code class="language-r">fitted &lt;- predict(model_mars)
-</code></pre>
-
-<p>But you may ask how is using train() different from using the algorithm’s function directly?</p>
-
+<span style="color:#75715e"># Train the model using randomForest and predict on the training data itself.</span>
+model_mars <span style="color:#f92672">=</span> <span style="color:#a6e22e">train</span>(Purchase <span style="color:#f92672">~</span> ., data<span style="color:#f92672">=</span>trainData, method<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;earth&#39;</span>)
+</code></pre></div><pre><code>## Loading required package: earth
+</code></pre><pre><code>## Loading required package: Formula
+</code></pre><pre><code>## Loading required package: plotmo
+</code></pre><pre><code>## Loading required package: plotrix
+</code></pre><pre><code>## Loading required package: TeachingDemos
+</code></pre><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">fitted <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">predict</span>(model_mars)
+</code></pre></div><p>But you may ask how is using train() different from using the algorithm’s function directly?</p>
 <p>The difference is, besides building the model train() does multiple other things like:</p>
-
 <p>Cross validating the model
 Tune the hyper parameters for optimal model performance
 Choose the optimal model based on a given evaluation metric
 Preprocess the predictors (what we did so far using preProcess())
 The train function also accepts the arguments used by the algorithm specified in the method argument.</p>
-
 <p>Now let’s see what the train() has generated.</p>
-
-<pre><code class="language-r">model_mars
-</code></pre>
-
-<pre><code>## Multivariate Adaptive Regression Spline 
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">model_mars
+</code></pre></div><pre><code>## Multivariate Adaptive Regression Spline 
 ## 
 ## 857 samples
 ##  18 predictor
@@ -630,68 +455,42 @@ The train function also accepts the arguments used by the algorithm specified in
 ## Tuning parameter 'degree' was held constant at a value of 1
 ## Accuracy was used to select the optimal model using the largest value.
 ## The final values used for the model were nprune = 19 and degree = 1.
-</code></pre>
-
-<p>Tuning parameter &lsquo;degree&rsquo; was held constant at a value of 1
+</code></pre><p>Tuning parameter &lsquo;degree&rsquo; was held constant at a value of 1
 Accuracy was used to select the optimal model using the largest value.
 The final values used for the model were nprune = 19 and degree = 1.
 You can see what is the Accuracy and Kappa for various combinations of the hyper parameters – interaction.depth and n.trees. And it says ‘Resampling: Bootstrapped (25 reps)’ with a summary of sample sizes.</p>
-
 <p>Looks like train() has already done a basic cross validation and hyper parameter tuning. And that is the default behaviour.</p>
-
 <p>The chosen model and its parameters is reported in the last 2 lines of the output.</p>
-
 <p>When we used model_mars to predict the Y, this final model was automatically used by predict() to compute the predictions.</p>
-
 <p>Plotting the model shows how the various iterations of hyperparameter search performed.</p>
-
-<pre><code class="language-r">plot(model_mars, main=&quot;Model Accuracies with MARS&quot;)
-</code></pre>
-
-<p><img src="01_blog_caret_Tut_files/figure-html/unnamed-chunk-17-1.png" alt="" /><!-- --></p>
-
-<h2 id="6-2-how-to-compute-variable-importance">6.2 How to compute variable importance?</h2>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#a6e22e">plot</span>(model_mars, main<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Model Accuracies with MARS&#34;</span>)
+</code></pre></div><p><img src="01_blog_caret_Tut_files/figure-html/unnamed-chunk-17-1.png" alt=""><!-- raw HTML omitted --></p>
+<h2 id="62-how-to-compute-variable-importance">6.2 How to compute variable importance?</h2>
 <p>Excellent, since MARS supports computing variable importances, let’s extract the variable importances using varImp() to understand which variables came out to be useful.</p>
-
-<pre><code class="language-r">varimp_mars &lt;- varImp(model_mars)
-plot(varimp_mars, main=&quot;Variable Importance with MARS&quot;)
-</code></pre>
-
-<p><img src="01_blog_caret_Tut_files/figure-html/unnamed-chunk-18-1.png" alt="" /><!-- --></p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">varimp_mars <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">varImp</span>(model_mars)
+<span style="color:#a6e22e">plot</span>(varimp_mars, main<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Variable Importance with MARS&#34;</span>)
+</code></pre></div><p><img src="01_blog_caret_Tut_files/figure-html/unnamed-chunk-18-1.png" alt=""><!-- raw HTML omitted --></p>
 <p>As suspected, LoyalCH was the most used variable, followed by PriceDiff and StoreID.</p>
-
-<h2 id="6-3-prepare-the-test-dataset-and-predict">6.3. Prepare the test dataset and predict</h2>
-
+<h2 id="63-prepare-the-test-dataset-and-predict">6.3. Prepare the test dataset and predict</h2>
 <p>A default MARS model has been selected.</p>
-
 <p>Now in order to use the model to predict on new data, the data has to be preprocessed and transformed just the way we did on the training data.</p>
-
 <p>Thanks to caret, all the information required for pre-processing is stored in the respective preProcess model and dummyVar model.</p>
-
 <p>If you recall, we did the pre-processing in the following sequence:</p>
-
 <p>Missing Value imputation –&gt; One-Hot Encoding –&gt; Range Normalization</p>
-
 <p>You need to pass the testData through these models in the same sequence:</p>
-
 <p>preProcess_missingdata_model –&gt; dummies_model –&gt; preProcess_range_model</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e"># Step 1: Impute missing values </span>
+testData2 <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">predict</span>(preProcess_missingdata_model, testData)  
 
-<pre><code class="language-r"># Step 1: Impute missing values 
-testData2 &lt;- predict(preProcess_missingdata_model, testData)  
+<span style="color:#75715e"># Step 2: Create one-hot encodings (dummy variables)</span>
+testData3 <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">predict</span>(dummies_model, testData2)
 
-# Step 2: Create one-hot encodings (dummy variables)
-testData3 &lt;- predict(dummies_model, testData2)
+<span style="color:#75715e"># Step 3: Transform the features to range between 0 and 1</span>
+testData4 <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">predict</span>(preProcess_range_model, testData3)
 
-# Step 3: Transform the features to range between 0 and 1
-testData4 &lt;- predict(preProcess_range_model, testData3)
-
-# View
-head(testData4[, 1:10])
-</code></pre>
-
-<pre><code>##    WeekofPurchase StoreID PriceCH   PriceMM DiscCH DiscMM SpecialCH
+<span style="color:#75715e"># View</span>
+<span style="color:#a6e22e">head</span>(testData4[, <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">10</span>])
+</code></pre></div><pre><code>##    WeekofPurchase StoreID PriceCH   PriceMM DiscCH DiscMM SpecialCH
 ## 2      0.23529412       0   0.150 0.5000000   0.00  0.375         0
 ## 3      0.35294118       0   0.425 0.6666667   0.34  0.000         0
 ## 6      0.05882353       1   0.000 0.5000000   0.00  0.000         0
@@ -705,30 +504,18 @@ head(testData4[, 1:10])
 ## 7          1 0.9722459   0.3636364
 ## 9          0 0.9822616   0.3636364
 ## 13         1 0.9927734   0.3636364
-</code></pre>
-
-<h2 id="6-4-predict-on-testdata">6.4. Predict on testData</h2>
-
+</code></pre><h2 id="64-predict-on-testdata">6.4. Predict on testData</h2>
 <p>The test dataset is prepared. Let’s predict the Y.</p>
-
-<pre><code class="language-r"># Predict on testData
-predicted &lt;- predict(model_mars, testData4)
-head(predicted)
-</code></pre>
-
-<pre><code>## [1] CH CH CH CH CH MM
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e"># Predict on testData</span>
+predicted <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">predict</span>(model_mars, testData4)
+<span style="color:#a6e22e">head</span>(predicted)
+</code></pre></div><pre><code>## [1] CH CH CH CH CH MM
 ## Levels: CH MM
-</code></pre>
-
-<h2 id="6-5-confusion-matrix">6.5. Confusion Matrix</h2>
-
-<p>The confusion matrix is a tabular representation to compare the predictions (data) vs the actuals (reference). By setting mode=&lsquo;everything&rsquo; pretty much most classification evaluation metrics are computed.</p>
-
-<pre><code class="language-r"># Compute the confusion matrix
-confusionMatrix(reference = testData$Purchase, data = predicted, mode='everything', positive='MM')
-</code></pre>
-
-<pre><code>## Confusion Matrix and Statistics
+</code></pre><h2 id="65-confusion-matrix">6.5. Confusion Matrix</h2>
+<p>The confusion matrix is a tabular representation to compare the predictions (data) vs the actuals (reference). By setting mode='everything&rsquo; pretty much most classification evaluation metrics are computed.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e"># Compute the confusion matrix</span>
+<span style="color:#a6e22e">confusionMatrix</span>(reference <span style="color:#f92672">=</span> testData<span style="color:#f92672">$</span>Purchase, data <span style="color:#f92672">=</span> predicted, mode<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;everything&#39;</span>, positive<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;MM&#39;</span>)
+</code></pre></div><pre><code>## Confusion Matrix and Statistics
 ## 
 ##           Reference
 ## Prediction  CH  MM
@@ -757,34 +544,21 @@ confusionMatrix(reference = testData$Purchase, data = predicted, mode='everythin
 ##                                           
 ##        'Positive' Class : MM              
 ## 
-</code></pre>
-
-<p>You have an overall accuracy of 80.28%.</p>
-
+</code></pre><p>You have an overall accuracy of 80.28%.</p>
 <h1 id="7-how-to-do-hyperparameter-tuning-to-optimize-the-model-for-better-performance">7. How to do hyperparameter tuning to optimize the model for better performance?</h1>
-
 <p>There are two main ways to do hyper parameter tuning using the train():</p>
-
 <p>Set the tuneLength
 Define and set the tuneGrid
 tuneLength corresponds to the number of unique values for the tuning parameters caret will consider while forming the hyper parameter combinations.</p>
-
 <p>Caret will automatically determine the values each parameter should take.</p>
-
 <p>Alternately, if you want to explicitly control what values should be considered for each parameter, then, you can define the tuneGrid and pass it to train().</p>
-
 <p>Let’s see an example of both these approaches but first let’s setup the trainControl().</p>
-
-<h1 id="7-1-setting-up-the-traincontrol">7.1. Setting up the trainControl()</h1>
-
+<h1 id="71-setting-up-the-traincontrol">7.1. Setting up the trainControl()</h1>
 <p>The train() function takes a trControl argument that accepts the output of trainControl().</p>
-
 <p>Inside trainControl() you can control how the train() will:</p>
-
 <p>Cross validation method to use.
 How the results should be summarised using a summary function
 Cross validation method can be one amongst:</p>
-
 <p>‘boot’: Bootstrap sampling
 ‘boot632’: Bootstrap sampling with 63.2% bias correction applied
 ‘optimism_boot’: The optimism bootstrap estimator
@@ -795,29 +569,22 @@ Cross validation method can be one amongst:</p>
 ‘LOOCV’: Leave one out cross validation
 ‘LGOCV’: Leave group out cross validation
 The summaryFunction can be twoClassSummary if Y is binary class or multiClassSummary if the Y has more than 2 categories.</p>
-
 <p>By settiung the classProbs=T the probability scores are generated instead of directly predicting the class based on a predetermined cutoff of 0.5.</p>
-
-<pre><code class="language-r"># Define the training control
-fitControl &lt;- trainControl(
-    method = 'cv',                   # k-fold cross validation
-    number = 5,                      # number of folds
-    savePredictions = 'final',       # saves predictions for optimal tuning parameter
-    classProbs = T,                  # should class probabilities be returned
-    summaryFunction=twoClassSummary  # results summary function
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e"># Define the training control</span>
+fitControl <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">trainControl</span>(
+    method <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;cv&#39;</span>,                   <span style="color:#75715e"># k-fold cross validation</span>
+    number <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>,                      <span style="color:#75715e"># number of folds</span>
+    savePredictions <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;final&#39;</span>,       <span style="color:#75715e"># saves predictions for optimal tuning parameter</span>
+    classProbs <span style="color:#f92672">=</span> T,                  <span style="color:#75715e"># should class probabilities be returned</span>
+    summaryFunction<span style="color:#f92672">=</span>twoClassSummary  <span style="color:#75715e"># results summary function</span>
 ) 
-</code></pre>
-
-<p>##7.2 Hyper Parameter Tuning using tuneLength
+</code></pre></div><p>##7.2 Hyper Parameter Tuning using tuneLength
 Let’s take the train() function we used before, plus, additionally set the tuneLength, trControl and metric.</p>
-
-<pre><code class="language-r"># Step 1: Tune hyper parameters by setting tuneLength
-set.seed(100)
-model_mars2 = train(Purchase ~ ., data=trainData, method='earth', tuneLength = 5, metric='ROC', trControl = fitControl)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e"># Step 1: Tune hyper parameters by setting tuneLength</span>
+<span style="color:#a6e22e">set.seed</span>(<span style="color:#ae81ff">100</span>)
+model_mars2 <span style="color:#f92672">=</span> <span style="color:#a6e22e">train</span>(Purchase <span style="color:#f92672">~</span> ., data<span style="color:#f92672">=</span>trainData, method<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;earth&#39;</span>, tuneLength <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>, metric<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;ROC&#39;</span>, trControl <span style="color:#f92672">=</span> fitControl)
 model_mars2
-</code></pre>
-
-<pre><code>## Multivariate Adaptive Regression Spline 
+</code></pre></div><pre><code>## Multivariate Adaptive Regression Spline 
 ## 
 ## 857 samples
 ##  18 predictor
@@ -838,14 +605,10 @@ model_mars2
 ## Tuning parameter 'degree' was held constant at a value of 1
 ## ROC was used to select the optimal model using the largest value.
 ## The final values used for the model were nprune = 6 and degree = 1.
-</code></pre>
-
-<pre><code class="language-r"># Step 2: Predict on testData and Compute the confusion matrix
-predicted2 &lt;- predict(model_mars2, testData4)
-confusionMatrix(reference = testData$Purchase, data = predicted2, mode='everything', positive='MM')
-</code></pre>
-
-<pre><code>## Confusion Matrix and Statistics
+</code></pre><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e"># Step 2: Predict on testData and Compute the confusion matrix</span>
+predicted2 <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">predict</span>(model_mars2, testData4)
+<span style="color:#a6e22e">confusionMatrix</span>(reference <span style="color:#f92672">=</span> testData<span style="color:#f92672">$</span>Purchase, data <span style="color:#f92672">=</span> predicted2, mode<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;everything&#39;</span>, positive<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;MM&#39;</span>)
+</code></pre></div><pre><code>## Confusion Matrix and Statistics
 ## 
 ##           Reference
 ## Prediction  CH  MM
@@ -874,23 +637,17 @@ confusionMatrix(reference = testData$Purchase, data = predicted2, mode='everythi
 ##                                           
 ##        'Positive' Class : MM              
 ## 
-</code></pre>
-
-<h2 id="7-3-hyper-parameter-tuning-using-tunegrid">7.3. Hyper Parameter Tuning using tuneGrid</h2>
-
+</code></pre><h2 id="73-hyper-parameter-tuning-using-tunegrid">7.3. Hyper Parameter Tuning using tuneGrid</h2>
 <p>Alternately, you can set the tuneGrid instead of tuneLength.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e"># Step 1: Define the tuneGrid</span>
+marsGrid <span style="color:#f92672">&lt;-</span>  <span style="color:#a6e22e">expand.grid</span>(nprune <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">6</span>, <span style="color:#ae81ff">8</span>, <span style="color:#ae81ff">10</span>), 
+                        degree <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>))
 
-<pre><code class="language-r"># Step 1: Define the tuneGrid
-marsGrid &lt;-  expand.grid(nprune = c(2, 4, 6, 8, 10), 
-                        degree = c(1, 2, 3))
-
-# Step 2: Tune hyper parameters by setting tuneGrid
-set.seed(100)
-model_mars3 = train(Purchase ~ ., data=trainData, method='earth', metric='ROC', tuneGrid = marsGrid, trControl = fitControl)
+<span style="color:#75715e"># Step 2: Tune hyper parameters by setting tuneGrid</span>
+<span style="color:#a6e22e">set.seed</span>(<span style="color:#ae81ff">100</span>)
+model_mars3 <span style="color:#f92672">=</span> <span style="color:#a6e22e">train</span>(Purchase <span style="color:#f92672">~</span> ., data<span style="color:#f92672">=</span>trainData, method<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;earth&#39;</span>, metric<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;ROC&#39;</span>, tuneGrid <span style="color:#f92672">=</span> marsGrid, trControl <span style="color:#f92672">=</span> fitControl)
 model_mars3
-</code></pre>
-
-<pre><code>## Multivariate Adaptive Regression Spline 
+</code></pre></div><pre><code>## Multivariate Adaptive Regression Spline 
 ## 
 ## 857 samples
 ##  18 predictor
@@ -920,14 +677,10 @@ model_mars3
 ## 
 ## ROC was used to select the optimal model using the largest value.
 ## The final values used for the model were nprune = 10 and degree = 2.
-</code></pre>
-
-<pre><code class="language-r"># Step 3: Predict on testData and Compute the confusion matrix
-predicted3 &lt;- predict(model_mars3, testData4)
-confusionMatrix(reference = testData$Purchase, data = predicted3, mode='everything', positive='MM')
-</code></pre>
-
-<pre><code>## Confusion Matrix and Statistics
+</code></pre><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e"># Step 3: Predict on testData and Compute the confusion matrix</span>
+predicted3 <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">predict</span>(model_mars3, testData4)
+<span style="color:#a6e22e">confusionMatrix</span>(reference <span style="color:#f92672">=</span> testData<span style="color:#f92672">$</span>Purchase, data <span style="color:#f92672">=</span> predicted3, mode<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;everything&#39;</span>, positive<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;MM&#39;</span>)
+</code></pre></div><pre><code>## Confusion Matrix and Statistics
 ## 
 ##           Reference
 ## Prediction  CH  MM
@@ -956,56 +709,36 @@ confusionMatrix(reference = testData$Purchase, data = predicted3, mode='everythi
 ##                                           
 ##        'Positive' Class : MM              
 ## 
-</code></pre>
-
-<h1 id="8-how-to-evaluate-performance-of-multiple-machine-learning-algorithms">8. How to evaluate performance of multiple machine learning algorithms?</h1>
-
+</code></pre><h1 id="8-how-to-evaluate-performance-of-multiple-machine-learning-algorithms">8. How to evaluate performance of multiple machine learning algorithms?</h1>
 <p>Caret provides the resamples() function where you can provide multiple machine learning models and collectively evaluate them.</p>
-
 <p>Let’s first train some more algorithms.</p>
-
 <p>##8.1. Training Adaboost</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#a6e22e">set.seed</span>(<span style="color:#ae81ff">100</span>)
 
-<pre><code class="language-r">set.seed(100)
+<span style="color:#75715e"># Train the model using adaboost</span>
+model_adaboost <span style="color:#f92672">=</span> <span style="color:#a6e22e">train</span>(Purchase <span style="color:#f92672">~</span> ., data<span style="color:#f92672">=</span>trainData, method<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;adaboost&#39;</span>, tuneLength<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>, trControl <span style="color:#f92672">=</span> fitControl)
+</code></pre></div><p>##8.2. Training Random Forest</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#a6e22e">set.seed</span>(<span style="color:#ae81ff">100</span>)
 
-# Train the model using adaboost
-model_adaboost = train(Purchase ~ ., data=trainData, method='adaboost', tuneLength=2, trControl = fitControl)
-</code></pre>
+<span style="color:#75715e"># Train the model using rf</span>
+model_rf <span style="color:#f92672">=</span> <span style="color:#a6e22e">train</span>(Purchase <span style="color:#f92672">~</span> ., data<span style="color:#f92672">=</span>trainData, method<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;rf&#39;</span>, tuneLength<span style="color:#f92672">=</span><span style="color:#ae81ff">5</span>, trControl <span style="color:#f92672">=</span> fitControl)
+</code></pre></div><p>8.3. Training xgBoost Dart</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#a6e22e">set.seed</span>(<span style="color:#ae81ff">100</span>)
 
-<p>##8.2. Training Random Forest</p>
+<span style="color:#75715e"># Train the model using MARS</span>
+model_xgbDART <span style="color:#f92672">=</span> <span style="color:#a6e22e">train</span>(Purchase <span style="color:#f92672">~</span> ., data<span style="color:#f92672">=</span>trainData, method<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;xgbDART&#39;</span>, tuneLength<span style="color:#f92672">=</span><span style="color:#ae81ff">5</span>, trControl <span style="color:#f92672">=</span> fitControl, verbose<span style="color:#f92672">=</span>F)
+</code></pre></div><p>8.4. Training SVM</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#a6e22e">set.seed</span>(<span style="color:#ae81ff">100</span>)
 
-<pre><code class="language-r">set.seed(100)
+<span style="color:#75715e"># Train the model using MARS</span>
+model_svmRadial <span style="color:#f92672">=</span> <span style="color:#a6e22e">train</span>(Purchase <span style="color:#f92672">~</span> ., data<span style="color:#f92672">=</span>trainData, method<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;svmRadial&#39;</span>, tuneLength<span style="color:#f92672">=</span><span style="color:#ae81ff">15</span>, trControl <span style="color:#f92672">=</span> fitControl)
+</code></pre></div><p>##8.5. Run resamples() to compare the models</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e"># Compare model performances using resample()</span>
+models_compare <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">resamples</span>(<span style="color:#a6e22e">list</span>(ADABOOST<span style="color:#f92672">=</span>model_adaboost, RF<span style="color:#f92672">=</span>model_rf, XGBDART<span style="color:#f92672">=</span>model_xgbDART, MARS<span style="color:#f92672">=</span>model_mars3, SVM<span style="color:#f92672">=</span>model_svmRadial))
 
-# Train the model using rf
-model_rf = train(Purchase ~ ., data=trainData, method='rf', tuneLength=5, trControl = fitControl)
-</code></pre>
-
-<p>8.3. Training xgBoost Dart</p>
-
-<pre><code class="language-r">set.seed(100)
-
-# Train the model using MARS
-model_xgbDART = train(Purchase ~ ., data=trainData, method='xgbDART', tuneLength=5, trControl = fitControl, verbose=F)
-</code></pre>
-
-<p>8.4. Training SVM</p>
-
-<pre><code class="language-r">set.seed(100)
-
-# Train the model using MARS
-model_svmRadial = train(Purchase ~ ., data=trainData, method='svmRadial', tuneLength=15, trControl = fitControl)
-</code></pre>
-
-<p>##8.5. Run resamples() to compare the models</p>
-
-<pre><code class="language-r"># Compare model performances using resample()
-models_compare &lt;- resamples(list(ADABOOST=model_adaboost, RF=model_rf, XGBDART=model_xgbDART, MARS=model_mars3, SVM=model_svmRadial))
-
-# Summary of the models performances
-summary(models_compare)
-</code></pre>
-
-<pre><code>## 
+<span style="color:#75715e"># Summary of the models performances</span>
+<span style="color:#a6e22e">summary</span>(models_compare)
+</code></pre></div><pre><code>## 
 ## Call:
 ## summary.resamples(object = models_compare)
 ## 
@@ -1035,82 +768,55 @@ summary(models_compare)
 ## XGBDART  0.6567164 0.6969697 0.7014925 0.7304387 0.7462687 0.8507463    0
 ## MARS     0.6865672 0.7727273 0.7761194 0.7784261 0.7910448 0.8656716    0
 ## SVM      0.6417910 0.6818182 0.7313433 0.7363636 0.7462687 0.8805970    0
-</code></pre>
-
-<p>Let’s plot the resamples summary output.</p>
-
-<pre><code class="language-r"># Draw box plots to compare models
-scales &lt;- list(x=list(relation=&quot;free&quot;), y=list(relation=&quot;free&quot;))
-bwplot(models_compare, scales=scales)
-</code></pre>
-
-<p><img src="01_blog_caret_Tut_files/figure-html/unnamed-chunk-30-1.png" alt="" /><!-- --></p>
-
+</code></pre><p>Let’s plot the resamples summary output.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e"># Draw box plots to compare models</span>
+scales <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">list</span>(x<span style="color:#f92672">=</span><span style="color:#a6e22e">list</span>(relation<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;free&#34;</span>), y<span style="color:#f92672">=</span><span style="color:#a6e22e">list</span>(relation<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;free&#34;</span>))
+<span style="color:#a6e22e">bwplot</span>(models_compare, scales<span style="color:#f92672">=</span>scales)
+</code></pre></div><p><img src="01_blog_caret_Tut_files/figure-html/unnamed-chunk-30-1.png" alt=""><!-- raw HTML omitted --></p>
 <p>In the above output you can see clearly how the algorithms performed in terms of ROC, Specificity and Sensitivity and how consistent has it been.</p>
-
 <p>The xgbDART model appears to be the be best performing model overall because of the high ROC. But if you need a model that predicts the positives better, you might want to consider MARS, given its high sensitivity.</p>
-
 <p>Either way, you can now make an informed decision on which model to pick.</p>
-
 <p>#9. Ensembling the predictions
 ##9.1. How to ensemble predictions from multiple models using caretEnsemble?
 So we have predictions from multiple individual models. To do this we had to run the train() function once for each model, store the models and pass it to the res</p>
-
 <p>The caretEnsemble package lets you do just that.</p>
-
 <p>All you have to do is put the names of all the algorithms you want to run in a vector and pass it to caretEnsemble::caretList() instead of caret::train().</p>
-
-<pre><code class="language-r">library(caretEnsemble)
-</code></pre>
-
-<pre><code>## 
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#a6e22e">library</span>(caretEnsemble)
+</code></pre></div><pre><code>## 
 ## Attaching package: 'caretEnsemble'
-</code></pre>
-
-<pre><code>## The following object is masked from 'package:ggplot2':
+</code></pre><pre><code>## The following object is masked from 'package:ggplot2':
 ## 
 ##     autoplot
-</code></pre>
+</code></pre><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e"># Stacking Algorithms - Run multiple algos in one call.</span>
+trainControl <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">trainControl</span>(method<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;repeatedcv&#34;</span>, 
+                             number<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>, 
+                             repeats<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>,
+                             savePredictions<span style="color:#f92672">=</span><span style="color:#66d9ef">TRUE</span>, 
+                             classProbs<span style="color:#f92672">=</span><span style="color:#66d9ef">TRUE</span>)
 
-<pre><code class="language-r"># Stacking Algorithms - Run multiple algos in one call.
-trainControl &lt;- trainControl(method=&quot;repeatedcv&quot;, 
-                             number=10, 
-                             repeats=3,
-                             savePredictions=TRUE, 
-                             classProbs=TRUE)
+algorithmList <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#39;rf&#39;</span>, <span style="color:#e6db74">&#39;adaboost&#39;</span>, <span style="color:#e6db74">&#39;earth&#39;</span>, <span style="color:#e6db74">&#39;xgbDART&#39;</span>, <span style="color:#e6db74">&#39;svmRadial&#39;</span>)
 
-algorithmList &lt;- c('rf', 'adaboost', 'earth', 'xgbDART', 'svmRadial')
-
-set.seed(100)
-models &lt;- caretList(Purchase ~ ., data=trainData, trControl=trainControl, methodList=algorithmList) 
-results &lt;- resamples(models)
-</code></pre>
-
-<p>Plot the resamples output to compare the models.</p>
-
+<span style="color:#a6e22e">set.seed</span>(<span style="color:#ae81ff">100</span>)
+models <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">caretList</span>(Purchase <span style="color:#f92672">~</span> ., data<span style="color:#f92672">=</span>trainData, trControl<span style="color:#f92672">=</span>trainControl, methodList<span style="color:#f92672">=</span>algorithmList) 
+results <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">resamples</span>(models)
+</code></pre></div><p>Plot the resamples output to compare the models.</p>
 <p>Excellent! It is possible for further tune the model within caretList in a customised way.</p>
-
 <p>##9.2. How to combine the predictions of multiple models to form a final prediction
 That one function simplified a whole lot of work in one line of code.</p>
-
 <p>Here is another thought: Is it possible to combine these predicted values from multiple models somehow and make a new ensemble that predicts better?</p>
-
 <p>Turns out this can be done too, using the caretStack(). You just need to make sure you don’t use the same trainControl you used to build the models.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e"># Create the trainControl</span>
+<span style="color:#a6e22e">set.seed</span>(<span style="color:#ae81ff">101</span>)
+stackControl <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">trainControl</span>(method<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;repeatedcv&#34;</span>, 
+                             number<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>, 
+                             repeats<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>,
+                             savePredictions<span style="color:#f92672">=</span><span style="color:#66d9ef">TRUE</span>, 
+                             classProbs<span style="color:#f92672">=</span><span style="color:#66d9ef">TRUE</span>)
 
-<pre><code class="language-r"># Create the trainControl
-set.seed(101)
-stackControl &lt;- trainControl(method=&quot;repeatedcv&quot;, 
-                             number=10, 
-                             repeats=3,
-                             savePredictions=TRUE, 
-                             classProbs=TRUE)
-
-# Ensemble the predictions of `models` to form a new combined prediction based on glm
-stack.glm &lt;- caretStack(models, method=&quot;glm&quot;, metric=&quot;Accuracy&quot;, trControl=stackControl)
-print(stack.glm)
-</code></pre>
-
-<pre><code>## A glm ensemble of 2 base models: rf, adaboost, earth, xgbDART, svmRadial
+<span style="color:#75715e"># Ensemble the predictions of `models` to form a new combined prediction based on glm</span>
+stack.glm <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">caretStack</span>(models, method<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;glm&#34;</span>, metric<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Accuracy&#34;</span>, trControl<span style="color:#f92672">=</span>stackControl)
+<span style="color:#a6e22e">print</span>(stack.glm)
+</code></pre></div><pre><code>## A glm ensemble of 2 base models: rf, adaboost, earth, xgbDART, svmRadial
 ## 
 ## Ensemble results:
 ## Generalized Linear Model 
@@ -1126,16 +832,10 @@ print(stack.glm)
 ## 
 ##   Accuracy   Kappa    
 ##   0.8331519  0.6444917
-</code></pre>
-
-<p>A point to consider: The ensembles tend to perform better if the predictions are less correlated with each other.</p>
-
+</code></pre><p>A point to consider: The ensembles tend to perform better if the predictions are less correlated with each other.</p>
 <p>So you may want to try passing different types of models, both high and low performing rather than just stick to passing high accuracy models to the caretStack.</p>
-
-<pre><code class="language-r">print(stack.glm)
-</code></pre>
-
-<pre><code>## A glm ensemble of 2 base models: rf, adaboost, earth, xgbDART, svmRadial
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#a6e22e">print</span>(stack.glm)
+</code></pre></div><pre><code>## A glm ensemble of 2 base models: rf, adaboost, earth, xgbDART, svmRadial
 ## 
 ## Ensemble results:
 ## Generalized Linear Model 
@@ -1151,30 +851,17 @@ print(stack.glm)
 ## 
 ##   Accuracy   Kappa    
 ##   0.8331519  0.6444917
-</code></pre>
-
-<pre><code class="language-r"># Predict on testData
-stack_predicteds &lt;- predict(stack.glm, newdata=testData4)
-head(stack_predicteds)
-</code></pre>
-
-<pre><code>## [1] CH CH CH CH CH CH
+</code></pre><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e"># Predict on testData</span>
+stack_predicteds <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">predict</span>(stack.glm, newdata<span style="color:#f92672">=</span>testData4)
+<span style="color:#a6e22e">head</span>(stack_predicteds)
+</code></pre></div><pre><code>## [1] CH CH CH CH CH CH
 ## Levels: CH MM
-</code></pre>
-
-<h1 id="10-conclusion">10. Conclusion</h1>
-
+</code></pre><h1 id="10-conclusion">10. Conclusion</h1>
 <p>The purpose of this post was to cover the core pieces of the caret package and how you can effectively use it to build machine learning models.</p>
-
 <p>This information should serve as a reference and also as a template you can use to build a standardised machine learning workflow, so you can develop it further from there.</p>
-
-<pre><code class="language-r">bot$sendMessage('RMarkdown ready')
-</code></pre>
-
-<pre><code class="language-r">sessionInfo()
-</code></pre>
-
-<pre><code>## R version 3.4.4 (2018-03-15)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">bot<span style="color:#f92672">$</span><span style="color:#a6e22e">sendMessage</span>(<span style="color:#e6db74">&#39;RMarkdown ready&#39;</span>)
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#a6e22e">sessionInfo</span>()
+</code></pre></div><pre><code>## R version 3.4.4 (2018-03-15)
 ## Platform: x86_64-pc-linux-gnu (64-bit)
 ## Running under: Ubuntu 18.04.2 LTS
 ## 
@@ -1273,16 +960,13 @@ head(stack_predicteds)
     <div class="panel-body">
         <ul class="nav nav-pills nav-stacked">
             
-            <li><a href="../../../../../categories/cloud">cloud (3)</a>
+            <li><a href="../../../../../categories/cloud">cloud (5)</a>
             </li>
             
-            <li><a href="../../../../../categories/datascience">datascience (1)</a>
+            <li><a href="../../../../../categories/python">python (7)</a>
             </li>
             
-            <li><a href="../../../../../categories/python">python (5)</a>
-            </li>
-            
-            <li><a href="../../../../../categories/r">r (10)</a>
+            <li><a href="../../../../../categories/r">r (9)</a>
             </li>
             
         </ul>
@@ -1313,10 +997,16 @@ head(stack_predicteds)
             <li><a href="../../../../../tags/bigdata"><i class="fa fa-tags"></i> bigdata</a>
             </li>
             
+            <li><a href="../../../../../tags/django"><i class="fa fa-tags"></i> django</a>
+            </li>
+            
             <li><a href="../../../../../tags/docker"><i class="fa fa-tags"></i> docker</a>
             </li>
             
             <li><a href="../../../../../tags/engineering"><i class="fa fa-tags"></i> engineering</a>
+            </li>
+            
+            <li><a href="../../../../../tags/flask"><i class="fa fa-tags"></i> flask</a>
             </li>
             
             <li><a href="../../../../../tags/gcp"><i class="fa fa-tags"></i> gcp</a>
@@ -1326,6 +1016,9 @@ head(stack_predicteds)
             </li>
             
             <li><a href="../../../../../tags/ml"><i class="fa fa-tags"></i> ml</a>
+            </li>
+            
+            <li><a href="../../../../../tags/ops"><i class="fa fa-tags"></i> ops</a>
             </li>
             
             <li><a href="../../../../../tags/r-package"><i class="fa fa-tags"></i> r-package</a>

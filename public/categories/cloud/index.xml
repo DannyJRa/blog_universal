@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Cloud on Danny J. R.</title>
@@ -6,10 +6,28 @@
     <description>Recent content in Cloud on Danny J. R.</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 14 Apr 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 18 Aug 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/cloud/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Zeppelin Notebook</title>
+      <link>/blog/2019/08/18/95_zeppelin_blog/</link>
+      <pubDate>Sun, 18 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/2019/08/18/95_zeppelin_blog/</guid>
+      <description>&lt;p&gt;The Notebook is the place for all your needs, i.e.Data Ingestion, Data Discovery, Data Analytics, Data Visualization &amp;amp; Collaboration&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>VS-Code as a Server</title>
+      <link>/blog/2019/04/27/70_vscode_blog/</link>
+      <pubDate>Sat, 27 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/2019/04/27/70_vscode_blog/</guid>
+      <description>&lt;p&gt;Code on your Chromebook, tablet, and laptop with a consistent dev environment. If you have a Windows or Mac workstation, more easily develop for Linux. Take advantage of large cloud servers to speed up tests, compilations, downloads, and more.&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>GCP - Cloud Scheduler</title>

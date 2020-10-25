@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <meta charset="utf-8">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Flask with Connexion</title>
+  <meta name="author" content="" />
+
+  
+  <meta name="keywords" content="dannyjra, hugo, go">	
+  
+
+  
+  <meta name="description" content="Uuuups">	
+  
+
+  <meta name="generator" content="Hugo 0.68.0" />
+
+  <link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,500,700,800' rel='stylesheet' type='text/css'>
+
+  
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  
+  <link href="../../../../../css/animate.css" rel="stylesheet">
+
+  
+  
+    <link href="../../../../../css/style.danny.css" rel="stylesheet" id="theme-stylesheet">
+  
+
+
+  
+  <link href="../../../../../css/custom.css" rel="stylesheet">
+
+  
+  
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+  <link rel="shortcut icon" href="../../../../../img/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="../../../../../img/apple-touch-icon.png" />
+  
+
+  <link href="../../../../../css/owl.carousel.css" rel="stylesheet">
+  <link href="../../../../../css/owl.theme.css" rel="stylesheet">
+
+  <link rel="alternate" href="../../../../../index.xml" type="application/rss+xml" title="Danny J. R.">
+
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@GoHugoIO">
+  <meta name="twitter:title" content="Flask with Connexion">
+  <meta name="twitter:image" content="/img/banners/swagger_BLOG.png">
+  <meta name="twitter:description" content="Uuuups">
+
+  
+  <meta property="og:title" content="Flask with Connexion" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="/blog/2019/06/22/81_flask_connexion1_blog//" />
+  <meta property="og:image" content="img/logo_signature.png" />
+
+</head>
+
+
+  <body>
+
+    <div id="all">
+
+       
+
+        
+
+       
+
+       
+
+        <div id="content">
+            <div class="container">
+
+                <div class="row">
+
+                    
+
+                    <div class="col-md-9" id="blog-post">
+
+                        <p class="text-muted text-uppercase mb-small text-right">By <a href="#">DannyJRa</a> | June 22, 2019</p>
+
+                        <div id="post-content">
+                          <p>Connexion is a framework that automagically handles HTTP requests based on OpenAPI Specification (formerly known as Swagger Spec) of your API described in YAML format. Connexion allows you to write an OpenAPI specification, then maps the endpoints to your Python functions; this makes it unique, as many tools generate the specification based on your Python code. You can describe your REST API in as much detail as you want; then Connexion guarantees that it will work as you specified.</p>
+<h1 id="flask-with-connexion">FLask with Connexion</h1>
+<p>The goal of this article is to show you how to use Python 3, Flask, and Connexion to build useful REST APIs that can include input and output validation, and provide Swagger documentation.</p>
+<h2 id="benefits-of-connexion">Benefits of Connexion</h2>
+<p>That worked to demonstrate how the Connexion module helps you build a nice REST API along with interactive documentation.</p>
+<h3 id="swagger-ui">Swagger UI</h3>
+<p>The Swagger UI
+Now you have a simple web API running with a single URL endpoint. At this point, it would be reasonable to think, “configuring this with the swagger.yml file was cool and all, but what did it get me?”
+You’d be right to think that. We haven’t taken advantage of the input or output validation. All that swagger.yml gave us was a definition for the code path connected to the URL endpoint. However, what you also get for the extra work is the creation of the Swagger UI for your API.
+If you navigate to localhost:5000/api/ui, the system will bring up a page that looks something like this:</p>
+<p>This can be extremely useful when the API is complete as it gives you and your API users a way to explore and experiment with the API without having to write any code to do so.
+Building an API this way is very useful to me at work. Not only is the Swagger UI useful as a way to experiment with the API and read the provided documentation, but it’s also dynamic. Any time the configuration file changes, the Swagger UI changes as well.
+In addition, the configuration offers a nice, clean way to think about and create the API URL endpoints. I know from experience that APIs can develop in a sometimes random manner over time, making finding the code that supports the endpoints, and coordinating them, difficult at best.
+By separating the code from the API URL endpoint configuration, we decouple one from the other. This alone has been very useful to me in my work building API systems supporting single page web applications.</p>
+<h2 id="frontend-ajax">Frontend: Ajax</h2>
+<p>You’ll create a web application that displays the people on screen as well as allows the user to create new people, update existing people, and delete people. This will all be handled by AJAX calls from JavaScript to the people API URL endpoints.</p>
+<p>Source: <a href="https://realpython.com/flask-connexion-rest-api/#example-code">https://realpython.com/flask-connexion-rest-api/#example-code</a></p>
+<h1 id="peristent-data-store">Peristent data store</h1>
+<h2 id="sqlalchemy">SQLAlchemy</h2>
+<p>SQLAlchemy provides an Object Relational Model (ORM), which stores Python objects to a database representation of the object’s data. That can help you continue to think in a Pythonic way and not be concerned with how the object data will be represented in a database.</p>
+<h3 id="database-interaction">Database Interaction</h3>
+<h4 id="raw-sql">Raw SQL</h4>
+<p>A SQL query getting all of the data in our person table, sorted by last name, would look this this:
+SELECT * FROM person ORDER BY &lsquo;lname&rsquo;;
+This query tells the database engine to get all the fields from the person table and sort them in the default, ascending order using the lname field.
+If you were to run this query against a SQLite database containing the person table, the results would be a set of records containing all the rows in the table, with each row containing the data from all the fields making up a row. Below is an example using the SQLite command line tool running the above query against the person database table:
+sqlite&gt; SELECT * FROM person ORDER BY lname;</p>
+<h4 id="sqlalchemy1">SQLALchemy<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></h4>
+<p>Object Oriented Programming allows you to connect data together with behavior, the functions that operate on that data. By creating SQLAlchemy classes, you’re able to connect the fields from the database table rows to behavior, allowing you to interact with the data. Here’s the SQLAlchemy class definition for the data in the person database table:
+class Person(db.Model):
+<strong>tablename</strong> = &lsquo;person&rsquo;
+person_id = db.Column(db.Integer,
+primary_key=True)
+lname = db.Column(db.String)
+fname = db.Column(db.String)
+timestamp = db.Column(db.DateTime,
+default=datetime.utcnow,
+onupdate=datetime.utcnow)</p>
+<p>The class Person inherits from db.Model, which you’ll get to when you start building the program code. For now, it means you’re inheriting from a base class called Model, providing attributes and functionality common to all classes derived from it.</p>
+<p>The rest of the definitions are class-level attributes defined as follows:
+<strong>tablename</strong> = &lsquo;person&rsquo; connects the class definition to the person database table.
+person_id = db.Column(db.Integer, primary_key=True) creates a database column containing an integer acting as the primary key for the table. This also tells the database that person_id will be an autoincrementing Integer value.
+lname = db.Column(db.String) creates the last name field, a database column containing a string value.
+fname = db.Column(db.String) creates the first name field, a database column containing a string value.
+timestamp = db.Column(db.DateTime, default=datetime.utcnow, onupdate=datetime.utcnow) creates a timestamp field, a database column containing a date/time value. The default=datetime.utcnow parameter defaults the timestamp value to the current utcnow value when a record is created. The onupdate=datetime.utcnowparameter updates the timestamp with the current utcnow value when the record is updated.</p>
+<p>Note: UTC Timestamps
+You might be wondering why the timestamp in the above class defaults to and is updated by the datetime.utcnow() method, which returns a UTC, or Coordinated Universal Time. This is a way of standardizing your timestamp’s source.
+The source, or zero time, is a line running north and south from the Earth’s north to south pole through the UK. This is the zero time zone from which all other time zones are offset. By using this as the zero time source, your timestamps are offsets from this standard reference point.
+Should your application be accessed from different time zones, you have a way to perform date/time calculations. All you need is a UTC timestamp and the destination time zone.
+If you were to use local time zones as your timestamp source, then you couldn’t perform date/time calculations without information about the local time zones offset from zero time. Without the timestamp source information, you couldn’t do any date/time comparisons or math at all.
+Working with a timestamps based on UTC is a good standard to follow. Here’s a toolkitsite to work with and better understand them.</p>
+<p>Where are you heading with this Person class definition? The end goal is to be able to run a query using SQLAlchemy and get back a list of instances of the Person class. As an example, let’s look at the previous SQL statement:
+SELECT * FROM people ORDER BY lname;
+Show the same small example program from above, but now using SQLAlchemy:
+from models import Person</p>
+<p>people = Person.query.order_by(Person.lname).all()
+for person in people:
+print(f&rsquo;{person.fname} {person.lname}')</p>
+<h2 id="serialization">Serialization</h2>
+<p>Working with SQLAlchemy modeled data inside your programs is very convenient. It is especially convenient in programs that manipulate the data, perhaps making calculations or using it to create presentations on screen. Your application is a REST API essentially providing CRUD operations on the data, and as such it doesn’t perform much data manipulation.
+The REST API works with JSON data, and here you can run into an issue with the SQLAlchemy model. Because the data returned by SQLAlchemy are Python class instances, Connexion can’t serialize these class instances to JSON formatted data. Remember from Part 1 that Connexion is the tool you used to design and configure the REST API using a YAMLfile, and connect Python methods to it.</p>
+<p>In this context, serializing means converting Python objects, which can contain other Python objects and complex data types, into simpler data structures that can be parsed into JSON datatypes, which are listed here:
+• string: a string type
+• number: numbers supported by Python (integers, floats, longs)
+• object: a JSON object, which is roughly equivalent to a Python dictionary
+• array: roughly equivalent to a Python List
+• boolean: represented in JSON as true or false, but in Python as True or False
+• null: essentially a None in Python</p>
+<h4 id="marshmallow">Marshmallow</h4>
+<p>Marshmallow provides functionality to serialize and deserialize Python objects as they flow out of and into our JSON-based REST API. Marshmallow converts Python class instances to objects that can be converted to JSON.</p>
+<p>Your Person class is simple enough so getting the data attributes from it and creating a dictionary manually to return from our REST URL endpoints wouldn’t be very hard. In a more complex application with many larger SQLAlchemy models, this wouldn’t be the case. A better solution is to use a module called Marshmallow to do the work for you.</p>
+<hr>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>Adopted from <a href="https://realpython.com/flask-connexion-rest-api-part-2/">https://realpython.com/flask-connexion-rest-api-part-2/</a> <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+                        </div>
+                        
+                        
+                        <div id="comments">
+                            <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "blog-dannyrasch" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+                        </div>
+                        
+
+                    </div>
+                    
+
+                    
+
+                    
+
+                    <div class="col-md-3">
+
+                        
+
+                        
+
+
+
+
+<div class="panel panel-default sidebar-menu">
+
+    <div class="panel-heading">
+      <h3 class="panel-title">Categories</h3>
+    </div>
+
+    <div class="panel-body">
+        <ul class="nav nav-pills nav-stacked">
+            
+            <li><a href="../../../../../categories/cloud">cloud (5)</a>
+            </li>
+            
+            <li><a href="../../../../../categories/python">python (7)</a>
+            </li>
+            
+            <li><a href="../../../../../categories/r">r (9)</a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<div class="panel sidebar-menu">
+    <div class="panel-heading">
+      <h3 class="panel-title">Tags</h3>
+    </div>
+
+    <div class="panel-body">
+        <ul class="tag-cloud">
+            
+            <li><a href="../../../../../tags/api"><i class="fa fa-tags"></i> api</a>
+            </li>
+            
+            <li><a href="../../../../../tags/azure"><i class="fa fa-tags"></i> azure</a>
+            </li>
+            
+            <li><a href="../../../../../tags/bigdata"><i class="fa fa-tags"></i> bigdata</a>
+            </li>
+            
+            <li><a href="../../../../../tags/django"><i class="fa fa-tags"></i> django</a>
+            </li>
+            
+            <li><a href="../../../../../tags/docker"><i class="fa fa-tags"></i> docker</a>
+            </li>
+            
+            <li><a href="../../../../../tags/engineering"><i class="fa fa-tags"></i> engineering</a>
+            </li>
+            
+            <li><a href="../../../../../tags/flask"><i class="fa fa-tags"></i> flask</a>
+            </li>
+            
+            <li><a href="../../../../../tags/gcp"><i class="fa fa-tags"></i> gcp</a>
+            </li>
+            
+            <li><a href="../../../../../tags/linux"><i class="fa fa-tags"></i> linux</a>
+            </li>
+            
+            <li><a href="../../../../../tags/ml"><i class="fa fa-tags"></i> ml</a>
+            </li>
+            
+            <li><a href="../../../../../tags/ops"><i class="fa fa-tags"></i> ops</a>
+            </li>
+            
+            <li><a href="../../../../../tags/r-package"><i class="fa fa-tags"></i> r-package</a>
+            </li>
+            
+            <li><a href="../../../../../tags/rstudio"><i class="fa fa-tags"></i> rstudio</a>
+            </li>
+            
+            <li><a href="../../../../../tags/set-up"><i class="fa fa-tags"></i> set-up</a>
+            </li>
+            
+            <li><a href="../../../../../tags/shiny"><i class="fa fa-tags"></i> shiny</a>
+            </li>
+            
+            <li><a href="../../../../../tags/viz"><i class="fa fa-tags"></i> viz</a>
+            </li>
+            
+            <li><a href="../../../../../tags/webdev"><i class="fa fa-tags"></i> webdev</a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+
+
+
+
+                        
+
+                    </div>
+                    
+
+                    
+
+                </div>
+                
+
+            </div>
+            
+        </div>
+        
+
+      
+
+    </div>
+    
+
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-140052731-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+<script src="//code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0/jquery.counterup.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-parallax/1.1.3/jquery-parallax.js"></script>
+
+<script src="//maps.googleapis.com/maps/api/js?key=AIzaSyBCT-G8KCwrp8_t_7W6TA9mX1RByDD0s2A&v=3.exp"></script>
+
+<script src="../../../../../js/hpneo.gmaps.js"></script>
+<script src="../../../../../js/gmaps.init.js"></script>
+<script src="../../../../../js/front.js"></script>
+
+
+<script src="../../../../../js/owl.carousel.min.js"></script>
+
+
+  </body>
+</html>

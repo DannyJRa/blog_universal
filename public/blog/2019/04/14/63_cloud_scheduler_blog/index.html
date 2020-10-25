@@ -17,7 +17,7 @@
   <meta name="description" content="Uuuups">	
   
 
-  <meta name="generator" content="Hugo 0.55.5" />
+  <meta name="generator" content="Hugo 0.68.0" />
 
   <link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,500,700,800' rel='stylesheet' type='text/css'>
 
@@ -59,7 +59,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@GoHugoIO">
   <meta name="twitter:title" content="GCP - Cloud Scheduler">
-  <meta name="twitter:image" content="/img/banners/63_GoogleCloudFunctions_Title.png">
+  <meta name="twitter:image" content="/img/banners/63_cloud_scheduler_BLOG.png">
   <meta name="twitter:description" content="Uuuups">
 
   
@@ -96,76 +96,47 @@
 
                         <div id="post-content">
                           <p>Add summary desdcription here</p>
-
 <h1 id="schedule-google-compute-engine-via-cloud-scheduler">Schedule Google Compute Engine via Cloud Scheduler</h1>
-
 <p>Google released Cloud Scheduler, which is a managed cron service that can perform tasks for other Google services. With that launch, Google also released a tutorial titled <a href="https://cloud.google.com/scheduler/docs/start-and-stop-compute-engine-instances-on-a-schedule">Scheduling Instances with Cloud Scheduler</a>, demonstrating how you can programmatically start and stop instances using Cloud Scheduler in conjunction with Cloud Functions.</p>
-
 <h2 id="create-pubsub-trigger">Create PubSub Trigger</h2>
-
-<pre><code class="language-bash">gcloud pubsub topics create start-instance-event
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gcloud pubsub topics create start-instance-event
 gcloud pubsub topics create stop-instance-event
-</code></pre>
-
-<pre><code class="language-bash">git clone https://github.com/GoogleCloudPlatform/nodejs-docs-samples.git
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone https://github.com/GoogleCloudPlatform/nodejs-docs-samples.git
 
 cd nodejs-docs-samples/functions/scheduleinstance/
-</code></pre>
-
-<h2 id="create-the-start-and-stop-functions">Create the start and stop functions</h2>
-
-<pre><code class="language-bash">cd nodejs-docs-samples/functions/scheduleinstance/
-gcloud functions deploy startInstancePubSub \
-    --trigger-topic start-instance-event \
-    --runtime nodejs6
-</code></pre>
-
-<pre><code class="language-bash">cd nodejs-docs-samples/functions/scheduleinstance/
-gcloud functions deploy stopInstancePubSub \
-    --trigger-topic stop-instance-event \
-    --runtime nodejs6
-</code></pre>
-
-<p>Testing the function with the helper of encoded zone and instance name:</p>
-
-<pre><code class="language-bash">echo '{&quot;zone&quot;:&quot;europe-west3-c&quot;, &quot;instance&quot;:&quot;cloudbreak&quot;}' | base64
-</code></pre>
-
-<pre><code class="language-bash">gcloud functions call stopInstancePubSub \
-    --data '{&quot;data&quot;:&quot;eyJ6b25lIjoiZXVyb3BlLXdlc3QzLWMiLCAiaW5zdGFuY2UiOiJjbG91ZGJyZWFrIn0K&quot;}'
-</code></pre>
-
-<p>Check that the instance has a status of TERMINATED. It may take up to 30 seconds to finish shutting down.</p>
-
-<pre><code class="language-bash">gcloud compute instances describe cloudbreak \
-    --zone europe-west3-c \
-    | grep status
-</code></pre>
-
-<h2 id="set-up-the-cloud-scheduler-jobs-to-call-cloud-pub-sub">Set up the Cloud Scheduler jobs to call Cloud Pub/Sub</h2>
-
+</code></pre></div><h2 id="create-the-start-and-stop-functions">Create the start and stop functions</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd nodejs-docs-samples/functions/scheduleinstance/
+gcloud functions deploy startInstancePubSub <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    --trigger-topic start-instance-event <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    --runtime nodejs6
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd nodejs-docs-samples/functions/scheduleinstance/
+gcloud functions deploy stopInstancePubSub <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    --trigger-topic stop-instance-event <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    --runtime nodejs6
+</code></pre></div><p>Testing the function with the helper of encoded zone and instance name:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo <span style="color:#e6db74">&#39;{&#34;zone&#34;:&#34;europe-west3-c&#34;, &#34;instance&#34;:&#34;cloudbreak&#34;}&#39;</span> | base64
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gcloud functions call stopInstancePubSub <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    --data <span style="color:#e6db74">&#39;{&#34;data&#34;:&#34;eyJ6b25lIjoiZXVyb3BlLXdlc3QzLWMiLCAiaW5zdGFuY2UiOiJjbG91ZGJyZWFrIn0K&#34;}&#39;</span>
+</code></pre></div><p>Check that the instance has a status of TERMINATED. It may take up to 30 seconds to finish shutting down.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gcloud compute instances describe cloudbreak <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    --zone europe-west3-c <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    | grep status
+</code></pre></div><h2 id="set-up-the-cloud-scheduler-jobs-to-call-cloud-pubsub">Set up the Cloud Scheduler jobs to call Cloud Pub/Sub</h2>
 <p>Create the start job.</p>
-
-<pre><code class="language-bash">gcloud beta scheduler jobs create pubsub startup-workday-instance \
-    --schedule '35 9 * * 1-7' \
-    --topic start-instance-event \
-    --message-body '{&quot;zone&quot;:&quot;europe-west3-c&quot;, &quot;instance&quot;:&quot;cloudbreak&quot;}' \
-    --time-zone 'Europe/Zurich'
-</code></pre>
-
-<p>Create the stop job.</p>
-
-<pre><code class="language-bash">gcloud beta scheduler jobs create pubsub shutdown-workday-instance \
-    --schedule '45 09 * * 1-7' \
-    --topic stop-instance-event \
-    --message-body '{&quot;zone&quot;:&quot;europe-west3-c&quot;, &quot;instance&quot;:&quot;cloudbreak&quot;}' \
-    --time-zone 'Europe/Zurich'
-</code></pre>
-
-<p>Verify the job works</p>
-
-<pre><code class="language-bash">gcloud beta scheduler jobs run shutdown-workday-instance
-</code></pre>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gcloud beta scheduler jobs create pubsub startup-workday-instance <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    --schedule <span style="color:#e6db74">&#39;35 9 * * 1-7&#39;</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    --topic start-instance-event <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    --message-body <span style="color:#e6db74">&#39;{&#34;zone&#34;:&#34;europe-west3-c&#34;, &#34;instance&#34;:&#34;cloudbreak&#34;}&#39;</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    --time-zone <span style="color:#e6db74">&#39;Europe/Zurich&#39;</span>
+</code></pre></div><p>Create the stop job.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gcloud beta scheduler jobs create pubsub shutdown-workday-instance <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    --schedule <span style="color:#e6db74">&#39;45 09 * * 1-7&#39;</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    --topic stop-instance-event <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    --message-body <span style="color:#e6db74">&#39;{&#34;zone&#34;:&#34;europe-west3-c&#34;, &#34;instance&#34;:&#34;cloudbreak&#34;}&#39;</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    --time-zone <span style="color:#e6db74">&#39;Europe/Zurich&#39;</span>
+</code></pre></div><p>Verify the job works</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gcloud beta scheduler jobs run shutdown-workday-instance
+</code></pre></div>
                         </div>
                         
                         
@@ -218,16 +189,13 @@ gcloud functions deploy stopInstancePubSub \
     <div class="panel-body">
         <ul class="nav nav-pills nav-stacked">
             
-            <li><a href="../../../../../categories/cloud">cloud (3)</a>
+            <li><a href="../../../../../categories/cloud">cloud (5)</a>
             </li>
             
-            <li><a href="../../../../../categories/datascience">datascience (1)</a>
+            <li><a href="../../../../../categories/python">python (7)</a>
             </li>
             
-            <li><a href="../../../../../categories/python">python (5)</a>
-            </li>
-            
-            <li><a href="../../../../../categories/r">r (10)</a>
+            <li><a href="../../../../../categories/r">r (9)</a>
             </li>
             
         </ul>
@@ -258,10 +226,16 @@ gcloud functions deploy stopInstancePubSub \
             <li><a href="../../../../../tags/bigdata"><i class="fa fa-tags"></i> bigdata</a>
             </li>
             
+            <li><a href="../../../../../tags/django"><i class="fa fa-tags"></i> django</a>
+            </li>
+            
             <li><a href="../../../../../tags/docker"><i class="fa fa-tags"></i> docker</a>
             </li>
             
             <li><a href="../../../../../tags/engineering"><i class="fa fa-tags"></i> engineering</a>
+            </li>
+            
+            <li><a href="../../../../../tags/flask"><i class="fa fa-tags"></i> flask</a>
             </li>
             
             <li><a href="../../../../../tags/gcp"><i class="fa fa-tags"></i> gcp</a>
@@ -271,6 +245,9 @@ gcloud functions deploy stopInstancePubSub \
             </li>
             
             <li><a href="../../../../../tags/ml"><i class="fa fa-tags"></i> ml</a>
+            </li>
+            
+            <li><a href="../../../../../tags/ops"><i class="fa fa-tags"></i> ops</a>
             </li>
             
             <li><a href="../../../../../tags/r-package"><i class="fa fa-tags"></i> r-package</a>

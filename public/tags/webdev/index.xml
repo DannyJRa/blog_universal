@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>WebDev on Danny J. R.</title>
@@ -18,6 +18,16 @@
       
       <guid>/blog/2019/02/28/73_blogdown_blog/</guid>
       <description>&lt;p&gt;Using the blogdown package to create static websites in RStudio using R Markdown&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Django basics</title>
+      <link>/blog/2018/03/20/58_django_basics_blog/</link>
+      <pubDate>Tue, 20 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/2018/03/20/58_django_basics_blog/</guid>
+      <description>Getting started with Django Why Django Django is a Web framework written in Python. A Web framework is a software that supports the development of dynamic Web sites, applications, and services. It provides a set of tools and functionalities that solves many common problems associated with Web development, such as security features, database access, sessions, template processing, URL routing, internationalization, localization, and much more.
+Using a Web framework, such as Django, enables us to develop secure and reliable Web applications very quickly in a standardized way, without having to reinvent the wheel.</description>
     </item>
     
   </channel>

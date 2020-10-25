@@ -17,7 +17,7 @@
   <meta name="description" content="Uuuups">	
   
 
-  <meta name="generator" content="Hugo 0.55.5" />
+  <meta name="generator" content="Hugo 0.68.0" />
 
   <link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,500,700,800' rel='stylesheet' type='text/css'>
 
@@ -95,109 +95,71 @@
                         <p class="text-muted text-uppercase mb-small text-right">January 1, 0001</p>
 
                         <div id="post-content">
-                          
-
-<h1 id="portainer-managing-docker-containers">Portainer: Managing Docker Containers</h1>
-
+                          <h1 id="portainer-managing-docker-containers">Portainer: Managing Docker Containers</h1>
 <p>Although I’m comfortable with the command line, it is nice to have a GUI to manage the containers.</p>
-
 <p>Portainer is an open-source management UI for Docker, including Docker Swarm environment. Portainer makes it easier for you to manage your Docker containers, it allows you to manage containers, images, networks, and volumes from the web-based Portainer dashboard.</p>
-
 <h2 id="prerequisites">Prerequisites</h2>
-
 <ul>
 <li>Ubuntu 18</li>
 <li>Root privielges</li>
 <li>docker</li>
 </ul>
-
 <h2 id="what-we-will-do">What we will do</h2>
-
 <ul>
 <li>Install and Configure Portainer</li>
 <li>Docker Environment Management</li>
 </ul>
-
 <h2 id="what-is-portainer">What is Portainer?</h2>
-
 <blockquote>
 <p>Portainer is an open-source web-based management user interface for Docker. It allows you to manage images, networks, and volumes in addition to containers. One really cool thing about Portainer is that it is a Docker container itself!</p>
 </blockquote>
-
 <h2 id="how-do-you-install-portainer">How Do You Install Portainer?</h2>
-
 <p>Portainer is easy to install because it is a Docker container. If you’ve installed other Docker containers (and if you haven’t you’re probably not interested in a Docker container management tool) this is just as easy. Assuming you already have Docker installed, create a volume and run the container:</p>
-
-<pre><code class="language-bash">docker volume create portainer_data
-docker run -d -p 8999:8999 --name portainer2 --restart always \
--v /var/run/docker.sock:/var/run/docker.sock \
--v $HOME/docker/volumes/portainer:/data portainer/portainer
-</code></pre>
-
-<p>Portainer is now running as a container, check it using the docker ps command.</p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker volume create portainer_data
+docker run -d -p 8999:8999 --name portainer2 --restart always <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>-v /var/run/docker.sock:/var/run/docker.sock <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>-v $HOME/docker/volumes/portainer:/data portainer/portainer
+</code></pre></div><p>Portainer is now running as a container, check it using the docker ps command.</p>
 <pre><code>docker ps
-</code></pre>
-
-<p>And you will get the result as below.
+</code></pre><p>And you will get the result as below.
 #TODO
 Screenshot</p>
-
-<p>You can then access the UI at <a href="http://yourip:9000/">http://yourip:9000/</a> and see a screen similar to:
+<p>You can then access the UI at http://yourip:9000/ and see a screen similar to:
 #TODO
 Portainer Home Screen</p>
-
 <p>Next, we will configure the Admin password for the Portainer.</p>
-
 <p>Open your web browser and type the server IP address with port 9000.</p>
-
-<p><a href="http://192.168.33.10:9000/">http://192.168.33.10:9000/</a></p>
-
+<p>http://192.168.33.10:9000/</p>
 <p>You will get the page about the admin user and password configuration.</p>
-
 <p>Portainer UI</p>
-
 <p>Type your strong admin password and click the &lsquo;Create user&rsquo; button.</p>
-
 <p>Now we need to define which environment Portainer will connect. Portainer offers support for standalone Docker environment, Docker Swarm, and Swarm mode.</p>
-
 <h2 id="what-can-you-do-with-portainer">What Can You Do With Portainer?</h2>
-
 <p>I won’t pretend to be an expert, but there are few features that caught me eye as a novice to Docker:</p>
-
 <ul>
 <li>Start, stop, remove and create containers</li>
 <li>Open up a console for direct command line interface with containers</li>
 <li>Manage images (download, delete, etc.)</li>
 <li>View container logs</li>
 </ul>
-
 <p>In addition to viewing container information, you can also see stats like memory usage and process utilization:</p>
-
 <ul>
 <li>Container stats</li>
 <li>Container Memory and CPU Utilization</li>
 </ul>
-
 <p>One really useful feature is the ability to recreate a container. Images for containers are updated all the time. In order to update your container with a new image you usually have to:</p>
-
 <ul>
 <li>Stop the container</li>
 <li>Remove the container</li>
 <li>Pull a new image</li>
-<li>Recreate and run the container with the same options as before
-<br /></li>
+<li>Recreate and run the container with the same options as before</li>
 </ul>
-
 <p>This isn’t too complicated, but it can get tedious for frequently updated containers. Portainer allows you to do this all in one click with the Recreate functionality. See the recreate button in image below:
 #TODO
 Portainer Container Screen</p>
-
 <h2 id="final-thoughts">Final Thoughts</h2>
-
 <p>It is very convinient to have a centralized web-based management and monitoring tool for all of my Docker containers, images, volumes, and network settings.</p>
-
-<p>[]<a href="https://portainer.readthedocs.io/en/stable/">https://portainer.readthedocs.io/en/stable/</a></p>
+<p>[]https://portainer.readthedocs.io/en/stable/</p>
 
                         </div>
                         
@@ -251,16 +213,13 @@ Portainer Container Screen</p>
     <div class="panel-body">
         <ul class="nav nav-pills nav-stacked">
             
-            <li><a href="../../../../../categories/cloud">cloud (3)</a>
+            <li><a href="../../../../../categories/cloud">cloud (5)</a>
             </li>
             
-            <li><a href="../../../../../categories/datascience">datascience (1)</a>
+            <li><a href="../../../../../categories/python">python (7)</a>
             </li>
             
-            <li><a href="../../../../../categories/python">python (5)</a>
-            </li>
-            
-            <li><a href="../../../../../categories/r">r (10)</a>
+            <li><a href="../../../../../categories/r">r (9)</a>
             </li>
             
         </ul>
@@ -291,10 +250,16 @@ Portainer Container Screen</p>
             <li><a href="../../../../../tags/bigdata"><i class="fa fa-tags"></i> bigdata</a>
             </li>
             
+            <li><a href="../../../../../tags/django"><i class="fa fa-tags"></i> django</a>
+            </li>
+            
             <li><a href="../../../../../tags/docker"><i class="fa fa-tags"></i> docker</a>
             </li>
             
             <li><a href="../../../../../tags/engineering"><i class="fa fa-tags"></i> engineering</a>
+            </li>
+            
+            <li><a href="../../../../../tags/flask"><i class="fa fa-tags"></i> flask</a>
             </li>
             
             <li><a href="../../../../../tags/gcp"><i class="fa fa-tags"></i> gcp</a>
@@ -304,6 +269,9 @@ Portainer Container Screen</p>
             </li>
             
             <li><a href="../../../../../tags/ml"><i class="fa fa-tags"></i> ml</a>
+            </li>
+            
+            <li><a href="../../../../../tags/ops"><i class="fa fa-tags"></i> ops</a>
             </li>
             
             <li><a href="../../../../../tags/r-package"><i class="fa fa-tags"></i> r-package</a>

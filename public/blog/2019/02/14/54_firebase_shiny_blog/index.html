@@ -17,7 +17,7 @@
   <meta name="description" content="Uuuups">	
   
 
-  <meta name="generator" content="Hugo 0.55.5" />
+  <meta name="generator" content="Hugo 0.68.0" />
 
   <link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,500,700,800' rel='stylesheet' type='text/css'>
 
@@ -96,53 +96,38 @@
 
                         <div id="post-content">
                           <p>Shiny App with Google Firebase authentification.</p>
-
 <h1 id="adding-firebase-authentication-to-shiny">Adding Firebase Authentication to Shiny</h1>
-
 <h2 id="firebase-and-shiny">Firebase and Shiny</h2>
-
 <p>Firebase is a mobile and web application development platform owned by Google. Firebase provides front-end solutions for authentication, database storage, object storage, messaging, and more. Firebase drastically reduces the time needed to develop certain types of highly scalable and secure applications.</p>
-
 <p>As heavy R users, Shiny is our favorite web development tool. Shiny allows us to build apps to quickly communicate our R analyses. Shiny’s elegant reactive model makes it simple to construct complex interactive data flows.</p>
-
 <p>Naturally we are interested in how Firebase can super charge our Shiny applications. There are many ways the two tools can be used together, but, to us, the most obvious was to add Firebase authentication to a Shiny app. Here we do exactly that:</p>
-
 <h2 id="benefits-over-building-a-custom-solution-in-r">Benefits over building a custom solution in R</h2>
-
 <p>Firebase authentication comes with security best practices out of the box. You never send passwords to your Shiny server; they are sent directly from the front-end to Firebase. No need to worry about proper ways to encrypt and store passwords.</p>
-
 <p>Firebase authentication has built in solutions for common authentication needs (e.g. email verification, two-factor authentication, password reset, provider sign in through Google, Facebook, Twitter, etc.)</p>
-
 <p>Many common authentication errors are checked automatically, and the proper error message is returned. e.g. if the user enters an email address without an “@” symbol, Firebase will respond with error code “auth/invalid-email” and an error message of “The email address is badly formatted.”</p>
-
 <p>When you sign into your Firebase project on <a href="https://firebase.google.com">https://firebase.google.com</a>, there is a nice UI for managing users. You can easily view registered users and click to disable or delete users. Additionally you can use Firebase Admin to programmatically manage users.</p>
-
 <p>Firebase authenticaion naturally integrates very nicely with the other Firebase services, and Firebase (as a Google product) can be easily integrated with all of Google Cloud Platform.</p>
-
-<h2 id="example-using-firebase-authentication-with-shiny-1">Example using Firebase Authentication with Shiny<sup class="footnote-ref" id="fnref:1"><a href="#fn:1">1</a></sup></h2>
-
+<h2 id="example-using-firebase-authentication-with-shiny1">Example using Firebase Authentication with Shiny<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></h2>
 <p>In this Shiny app we use the default Bootstrap css provided with Shiny, and we use Firebase&rsquo;s email/password authentication.</p>
-
-<p>Steps to Run this App Locally
-1. download or clone this repository
-2. Create a Firebase account, and in your new account create a project
-3. In your new Firebase project enable the email password authentication provider. This is the screen where you enable authentiation. Go to Firebase Console (e.g.)[<a href="https://console.firebase.google.com/u/0/project/projectfirebase-bced7/authentication/providers]:">https://console.firebase.google.com/u/0/project/projectfirebase-bced7/authentication/providers]:</a></p>
-
-<p><img src="../../../../../img/Firebase_authenfication_BLOG.jpg" alt="Firebase_authenfication" /></p>
-
+<p>Steps to Run this App Locally</p>
 <ol>
+<li>download or clone this repository</li>
+<li>Create a Firebase account, and in your new account create a project</li>
+<li>In your new Firebase project enable the email password authentication provider. This is the screen where you enable authentiation. Go to Firebase Console (e.g.)[https://console.firebase.google.com/u/0/project/projectfirebase-bced7/authentication/providers]:</li>
+</ol>
+<p><img src="../../../../../img/Firebase_authenfication_BLOG.jpg" alt="Firebase_authenfication"></p>
+<ol start="4">
 <li>Click the &ldquo;Web Setup&rdquo; button (top right in above screenshot) and copy your project&rsquo;s &ldquo;apiKey&rdquo;, &ldquo;authDomain&rdquo;, and &ldquo;projectId&rdquo; into the object defined in line 3 of the file &ldquo;www/sof-auth.js&rdquo;</li>
 <li>Run the Shiny app</li>
 </ol>
-<div class="footnotes">
-
-<hr />
-
+<section class="footnotes" role="doc-endnotes">
+<hr>
 <ol>
-<li id="fn:1">Addopted from <a href="https://www.tychobra.com/posts/2019-01-03-firebasse-auth-wtih-shiny/">https://www.tychobra.com/posts/2019-01-03-firebasse-auth-wtih-shiny/</a>
- <a class="footnote-return" href="#fnref:1"><sup>[return]</sup></a></li>
+<li id="fn:1" role="doc-endnote">
+<p>Addopted from <a href="https://www.tychobra.com/posts/2019-01-03-firebasse-auth-wtih-shiny/">https://www.tychobra.com/posts/2019-01-03-firebasse-auth-wtih-shiny/</a> <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
 </ol>
-</div>
+</section>
                         </div>
                         
                         
@@ -195,16 +180,13 @@
     <div class="panel-body">
         <ul class="nav nav-pills nav-stacked">
             
-            <li><a href="../../../../../categories/cloud">cloud (3)</a>
+            <li><a href="../../../../../categories/cloud">cloud (5)</a>
             </li>
             
-            <li><a href="../../../../../categories/datascience">datascience (1)</a>
+            <li><a href="../../../../../categories/python">python (7)</a>
             </li>
             
-            <li><a href="../../../../../categories/python">python (5)</a>
-            </li>
-            
-            <li><a href="../../../../../categories/r">r (10)</a>
+            <li><a href="../../../../../categories/r">r (9)</a>
             </li>
             
         </ul>
@@ -235,10 +217,16 @@
             <li><a href="../../../../../tags/bigdata"><i class="fa fa-tags"></i> bigdata</a>
             </li>
             
+            <li><a href="../../../../../tags/django"><i class="fa fa-tags"></i> django</a>
+            </li>
+            
             <li><a href="../../../../../tags/docker"><i class="fa fa-tags"></i> docker</a>
             </li>
             
             <li><a href="../../../../../tags/engineering"><i class="fa fa-tags"></i> engineering</a>
+            </li>
+            
+            <li><a href="../../../../../tags/flask"><i class="fa fa-tags"></i> flask</a>
             </li>
             
             <li><a href="../../../../../tags/gcp"><i class="fa fa-tags"></i> gcp</a>
@@ -248,6 +236,9 @@
             </li>
             
             <li><a href="../../../../../tags/ml"><i class="fa fa-tags"></i> ml</a>
+            </li>
+            
+            <li><a href="../../../../../tags/ops"><i class="fa fa-tags"></i> ops</a>
             </li>
             
             <li><a href="../../../../../tags/r-package"><i class="fa fa-tags"></i> r-package</a>

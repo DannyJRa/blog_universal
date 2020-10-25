@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>R on Danny J. R.</title>
@@ -19,7 +19,7 @@
       <guid>/blog/2019/05/09/72_nginx_blog/</guid>
       <description>Installing Nginx Server How To Install Nginx on Ubuntu 18.04[^1] Introduction Nginx is one of the most popular web servers in the world and is responsible for hosting some of the largest and highest-traffic sites on the internet. It is more resource-friendly than Apache in most cases and can be used as a web server or reverse proxy.
 Installing Nginx Install on Ubuntu 18.04 with &amp;hellip;
-sudo apt install nginx  FIrewall (optional) After accepting the procedure, apt will install Nginx and any required dependencies to your server.</description>
+sudo apt install nginx FIrewall (optional) After accepting the procedure, apt will install Nginx and any required dependencies to your server.</description>
     </item>
     
     <item>
@@ -42,15 +42,6 @@ sudo apt install nginx  FIrewall (optional) After accepting the procedure, apt w
     
     <item>
       <title>ML with Caret</title>
-      <link>/blog/2019/01/11/01_blog_caret_tut_blog-workstation/</link>
-      <pubDate>Fri, 11 Jan 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/blog/2019/01/11/01_blog_caret_tut_blog-workstation/</guid>
-      <description>&lt;p&gt;Add summary desdcription of blog&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>ML with Caret</title>
       <link>/blog/2019/01/11/01_blog_caret_tut_blog/</link>
       <pubDate>Fri, 11 Jan 2019 00:00:00 +0000</pubDate>
       
@@ -65,7 +56,6 @@ sudo apt install nginx  FIrewall (optional) After accepting the procedure, apt w
       
       <guid>/blog/2019/01/11/06_blog/</guid>
       <description>&lt;p&gt;Original post here: &lt;a href=&#34;https://dannyjra.github.io/06_Network_Analysis/01_blog_caret_Tut.html&#34;&gt;https://dannyjra.github.io/06_Network_Analysis/01_blog_caret_Tut.html&lt;/a&gt;&lt;/p&gt;
-
 &lt;p&gt;Add summary desdcription of blog&lt;/p&gt;</description>
     </item>
     
@@ -84,8 +74,7 @@ sudo apt install nginx  FIrewall (optional) After accepting the procedure, apt w
       <pubDate>Fri, 15 Jun 2018 00:00:00 +0000</pubDate>
       
       <guid>/blog/2018/06/15/04_r_packages_blog/</guid>
-      <description>&lt;p&gt;Original post here: &lt;a href=&#34;https://dannyjra.github.io/04_R_Packages/01_blog_caret_Tut.html&#34;&gt;https://dannyjra.github.io/04_R_Packages/01_blog_caret_Tut.html&lt;/a&gt;&lt;/p&gt;
-
+      <description>&lt;p&gt;Original post here: /home/danny/OneDrive/DataScience/41_DannyJRa.github.io/04_R_Packages/01_blog_caret_Tut.html&lt;/p&gt;
 &lt;p&gt;Add summary desdcription of blog&lt;/p&gt;</description>
     </item>
     
@@ -96,7 +85,6 @@ sudo apt install nginx  FIrewall (optional) After accepting the procedure, apt w
       
       <guid>/blog/2018/06/05/05_blog/</guid>
       <description>&lt;p&gt;Original post here: &lt;a href=&#34;https://dannyjra.github.io/05_Blog_BigData_Spark/01_blog_caret_Tut.html&#34;&gt;https://dannyjra.github.io/05_Blog_BigData_Spark/01_blog_caret_Tut.html&lt;/a&gt;&lt;/p&gt;
-
 &lt;p&gt;Add summary desdcription of blog&lt;/p&gt;</description>
     </item>
     
